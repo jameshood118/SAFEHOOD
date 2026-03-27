@@ -1,5 +1,5 @@
 // #region [ 📦 IMPORTS ]
-import { faBookJournalWhills, faClock, faMicrochip, faTerminal, faTimeline } from '@fortawesome/free-solid-svg-icons';
+import { faBookJournalWhills, faClock, faMicrochip, faTerminal, faTimeline, faUserShield } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Alert, Box, Card, CardContent, Chip, CircularProgress, Divider, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
@@ -8,21 +8,20 @@ import { supabase } from '../lib/supabase';
 // #endregion
 
 // #region [ 🏷️ TYPES ]
-// Define the strict union of our Human OS sectors
 export type HumanOSEntryType =
   | 'CAPTAINS_LOG'
   | 'OS_MANIFEST'
   | 'SAFEHOOD_PROTOCOL'
   | 'ANALOG_WASTELAND'
-  | 'observation' // Keep legacy for compatibility if needed
+  | 'observation'
   | 'incident'
   | 'directive';
 
 interface LogRecord {
   id: string;
   created_at: string;
-  entry_type: HumanOSEntryType; // <--- Apply the union here
-  entry_text: any; // Allow any here to handle both string and JSONB objects
+  entry_type: HumanOSEntryType;
+  entry_text: any; // The Smart Intake Valve
   is_deleted: boolean;
 }
 // #endregion
@@ -53,12 +52,10 @@ export const Manifests = () => {
 
     let parsedData = data;
 
-    // If it's a string, try to parse it. If it's already an object, skip this.
     if (typeof data === 'string') {
       try {
         parsedData = JSON.parse(data);
       } catch {
-        // If it's a string but NOT valid JSON, just render the string
         return (
           <Typography variant="body1" sx={{ color: 'text.primary', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>
             {data}
@@ -67,8 +64,6 @@ export const Manifests = () => {
       }
     }
 
-    // By this point, parsedData is guaranteed to be a valid object.
-    // Render it in the Foreverglades terminal style.
     return (
       <Box
         component="pre"
@@ -79,7 +74,7 @@ export const Manifests = () => {
           borderRadius: '8px',
           fontSize: '0.85rem',
           overflowX: 'auto',
-          color: '#00ff41', // Matching the Foreverglades Green
+          color: '#00ff41',
           border: '1px solid rgba(0, 255, 65, 0.1)',
           fontFamily: 'monospace'
         }}
@@ -90,22 +85,27 @@ export const Manifests = () => {
   };
   // #endregion
 
-  // 🛠️ Updated Filter: Capturing the 1,743 logs
+  // #region [ 🗃️ TAB PARTITIONS ]
+  // Tab 0: Chronological Timeline
   const chronologicalLogs = logs?.filter(l =>
-    l.entry_type === 'CAPTAINS_LOG' ||
-    l.entry_type === 'observation' ||
-    l.entry_type === 'incident'
+    ['CAPTAINS_LOG', 'observation', 'incident'].includes(l.entry_type)
   ) || [];
 
-  // 🛠️ Updated Filter: Capturing the System Directives
-  const manifestDirectives = logs?.filter(l =>
-    l.entry_type === 'OS_MANIFEST' ||
-    l.entry_type === 'SAFEHOOD_PROTOCOL' ||
-    l.entry_type === 'ANALOG_WASTELAND' ||
-    l.entry_type === 'directive'
+  // Tab 1: The Master OS Architecture
+  const systemManifests = logs?.filter(l =>
+    ['OS_MANIFEST', 'directive'].includes(l.entry_type)
   ) || [];
 
-  const activeData = activeTab === 0 ? chronologicalLogs : manifestDirectives;
+  // Tab 2: Operational Protocols
+  const coreProtocols = logs?.filter(l =>
+    ['SAFEHOOD_PROTOCOL', 'ANALOG_WASTELAND'].includes(l.entry_type)
+  ) || [];
+
+  const activeData =
+    activeTab === 0 ? chronologicalLogs :
+    activeTab === 1 ? systemManifests :
+    coreProtocols;
+  // #endregion
 
   return (
     <Box sx={{ width: '100%', maxWidth: '1000px', margin: '0 auto' }}>
@@ -121,16 +121,19 @@ export const Manifests = () => {
         </Typography>
       </Box>
 
-      {/* --- DUAL-BAND NAVIGATION --- */}
+      {/* --- TRI-BAND NAVIGATION --- */}
       <Box sx={{ borderBottom: 1, borderColor: 'rgba(255,255,255,0.1)', mb: 4 }}>
         <Tabs
           value={activeTab}
           onChange={(_, newValue) => setActiveTab(newValue)}
           textColor="secondary"
           indicatorColor="secondary"
+          variant="scrollable" // Allows scrolling on smaller screens
+          scrollButtons="auto"
         >
           <Tab icon={<FontAwesomeIcon icon={faTimeline} />} iconPosition="start" label="Captain's Logs" sx={{ fontWeight: 600, textTransform: 'none', fontSize: '1rem' }} />
           <Tab icon={<FontAwesomeIcon icon={faMicrochip} />} iconPosition="start" label="OS Manifest" sx={{ fontWeight: 600, textTransform: 'none', fontSize: '1rem' }} />
+          <Tab icon={<FontAwesomeIcon icon={faUserShield} />} iconPosition="start" label="Core Protocols" sx={{ fontWeight: 600, textTransform: 'none', fontSize: '1rem' }} />
         </Tabs>
       </Box>
 
@@ -150,12 +153,10 @@ export const Manifests = () => {
           )}
 
           {activeData.map((log) => {
-            // FIX: Safely handle null dates
             const safeDateString = log.created_at || new Date().toISOString();
             const logDate = new Date(safeDateString);
 
-            // 🛠️ Updated Visual Check:
-            // Ensures OS_MANIFEST, SAFEHOOD, and WASTELAND get the "System Cyan" styling
+            // Cyan styling for Manifests and Protocols
             const isManifestPartition = [
               'OS_MANIFEST',
               'SAFEHOOD_PROTOCOL',
@@ -166,17 +167,15 @@ export const Manifests = () => {
             return (
               <Card key={log.id} sx={{
                 borderLeft: '4px solid',
-                // Cyan for System Architecture, Purple for Historical Logs
                 borderColor: isManifestPartition ? '#00E5FF' : '#9C27B0',
                 bgcolor: 'background.paper',
-                mb: 2 // Adding a bit of breathing room
+                mb: 2
               }}>
                 <CardContent sx={{ p: { xs: 2, md: 3 } }}>
 
                   {/* Top Meta Row */}
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2, flexWrap: 'wrap', gap: 2 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                      {/* Ensure the Chip also uses the new check for its colors */}
                       <Chip
                         icon={<FontAwesomeIcon icon={faTerminal} />}
                         label={log.entry_type ? log.entry_type.replace('_', ' ').toUpperCase() : 'UNKNOWN'}
@@ -196,7 +195,6 @@ export const Manifests = () => {
                     <Box sx={{ textAlign: { xs: 'left', md: 'right' }, display: 'flex', alignItems: 'center', gap: 1 }}>
                       <FontAwesomeIcon icon={faClock} color="#888" size="sm" />
                       <Typography variant="body2" sx={{ color: 'text.secondary', fontFamily: 'monospace' }}>
-                        {/* 🛠️ WARNING 6133 CLEARED: logDate is used here */}
                         {logDate.toLocaleString()}
                       </Typography>
                     </Box>
@@ -206,7 +204,6 @@ export const Manifests = () => {
 
                   {/* The Payload */}
                   <Box sx={{ mt: 2 }}>
-                    {/* 🛠️ WARNING 6133 CLEARED: renderEntryText is used here */}
                     {renderEntryText(log.entry_text)}
                   </Box>
 
