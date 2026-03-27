@@ -2,27 +2,29 @@
 # Abort on error, unset vars, or pipeline failures
 set -euo pipefail
 
-# Repo root
 cd "$(git rev-parse --show-toplevel)"
 
-# Optional: allow skipping with tag
+echo ""
+echo "================================================================================"
+echo " 🛰️  SAFEHOOD ORBITAL UPLINK: EPISTEMIC VERIFICATION SEQUENCE"
+echo "================================================================================"
+
+# Optional: Override switch for emergency patches
 LAST_COMMIT_MSG="$(git log -1 --pretty=%B || true)"
 if echo "$LAST_COMMIT_MSG" | grep -qi '\[skip-precheck\]'; then
-  printf "⚠️  Skipping pre-push checks due to [skip-precheck] tag.\n"
+  printf " ⚠️  [ OVERRIDE DETECTED ] Skipping verification due to [skip-precheck] tag.\n"
   exit 0
 fi
 
-printf "🔍 Running Pre-Push Quality Gate...\n"
-
-# -------- Empty file check --------
-printf "📂 Checking for empty files...\n"
+# -------- 📂 GHOST NODE CHECK (Upstream Sync) --------
+printf " 📂 [ PHASE 1 ] Scanning upstream delta for Ghost Nodes...\n"
 
 UPSTREAM="$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || true)"
 if [ -n "$UPSTREAM" ]; then
   BASE="$(git merge-base HEAD "$UPSTREAM")"
   FILES_TO_CHECK="$(git diff --name-only --diff-filter=AM "$BASE"..HEAD)"
 else
-  printf "⚠️  No upstream configured — scanning entire repo...\n"
+  printf " ⚠️  [ ORBITAL WARNING ] No upstream configured. Scanning entire local matrix...\n"
   FILES_TO_CHECK="$(git ls-files)"
 fi
 
@@ -42,36 +44,44 @@ if [ -n "$FILES_TO_CHECK" ]; then
 fi
 
 if [ -n "$EMPTY_FILES" ]; then
-  printf "🛑 Empty files detected:\n%s\nPlease remove or fill them.\n" "$EMPTY_FILES"
+  printf "\n 🔴 [ AIRLOCK BREACH ] Upstream payload contains empty files:\n%s\n" "$EMPTY_FILES"
+  printf " 🛑 [ ABORT ] Purge ghost nodes before orbital sync.\n\n"
   exit 1
 fi
+printf " 🟢 [ NOMINAL ] Payload density verified.\n\n"
 
-printf "✅ No empty files found.\n"
 
-# -------- Prettier (check → auto-fix & stop) --------
-printf "🎨 Prettier — check\n"
+# -------- 🎨 PRETTIER (The Trellis Alignment) --------
+printf " 🎨 [ PHASE 2 ] Verifying Trellis Alignment (Prettier)...\n"
 if ! npx --no-install prettier --config .prettierrc.yml --ignore-path .prettierignore --check .; then
-  printf "💾 Prettier — writing fixes...\n"
+  printf " 🔧 [ AUTO-CORRECT ] Misalignment detected. Re-weaving the Trellis...\n"
   npx --no-install prettier --config .prettierrc.yml --ignore-path .prettierignore --write .
   git add -A
-  git commit -m "style: auto-format with Prettier [skip-precheck]"
-  printf "🛑 Prettier fixed files and committed. Push again.\n"
+  git commit -m "style: Auto-aligned structural Trellis [skip-precheck]"
+  printf "\n 🛑 [ SEQUENCE HALTED ] Trellis was auto-corrected and committed. Please re-initiate push sequence.\n\n"
   exit 1
 fi
-printf "✅ Prettier passed.\n"
+printf " 🟢 [ NOMINAL ] Trellis alignment is perfect.\n\n"
 
-# -------- ESLint (cached: src) --------
-printf "🧪 ESLint (cached, src)...\n"
+
+# -------- 🧪 ESLINT (Efficiency Trap Radar) --------
+printf " 🔬 [ PHASE 3 ] Sweeping for Efficiency Traps (ESLint)...\n"
+printf "    > Running rapid cached sweep on /src...\n"
 npx --no-install eslint src --ext .js,.jsx,.ts,.tsx --cache
 
-# -------- ESLint (strict) --------
-printf "✨ ESLint (strict)...\n"
+printf "    > Engaging strict zero-tolerance perimeter scan...\n"
 npx --no-install eslint . --max-warnings=0
-printf "✅ ESLint passed.\n"
+printf " 🟢 [ NOMINAL ] No traps detected. Sector is clear.\n\n"
 
-# -------- TypeScript --------
-printf "🛠️ TypeScript — type check\n"
+
+# -------- 🛠️ TYPESCRIPT (Ground Truth Verification) --------
+printf " ⚖️  [ PHASE 4 ] Verifying Epistemic Ground Truth (TypeScript)...\n"
 npx --no-install tsc --noEmit --pretty false
-printf "✅ TypeScript passed.\n"
+printf " 🟢 [ NOMINAL ] Epistemic validation passed. 42.\n\n"
 
-printf "🚀 All checks passed. Ready to push!\n"
+
+# -------- ✅ FINAL CLEARANCE --------
+echo "================================================================================"
+echo " 🚀 [ UPLINK APPROVED ] Jinba Ittai alignment confirmed. Safe to push payload."
+echo "================================================================================"
+echo ""
