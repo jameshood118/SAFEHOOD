@@ -3,6 +3,8 @@ import {
   faBiohazard,
   faClipboardList,
   faClockRotateLeft,
+  faHouseSignal // Added for the Home OS Nav Link
+  ,
   faUsers,
   faUserShield
 } from '@fortawesome/free-solid-svg-icons';
@@ -18,6 +20,8 @@ import { Personnel } from './pages/Personnel';
 
 // 🚀 THE REAL COMPONENTS (No more stubs!)
 import { ForevergladesTerminal } from './components/ForevergladesTerminal';
+import { FurryNodes } from './pages/FurryNodes';
+import { HomeOS } from './pages/Home'; // 🛠️ INJECTED HOME OS
 import { Manifests } from './pages/Manifests';
 // #endregion
 
@@ -78,6 +82,7 @@ const SafehoodLayout = () => {
     { text: 'Command Center', path: '/', icon: faUserShield },
     { text: 'Human OS', path: '/manifests', icon: faClipboardList },
     { text: 'Work OS', path: '/personnel', icon: faUsers },
+    { text: 'Home OS', path: '/home', icon: faHouseSignal }, // 🛠️ ADDED TO TOP NAV
     { text: 'Temporal Vault', path: '/temporal-logs', icon: faClockRotateLeft },
   ];
 
@@ -199,8 +204,9 @@ const App = () => {
           {/* 🚀 STUBS REMOVED. REAL COMPONENTS INJECTED. */}
           <Route path="manifests" element={<Manifests />} />
           <Route path="personnel" element={<Personnel />} />
+          <Route path="home" element={<HomeOS />} />          {/* 🛠️ INJECTED HOME ROUTE */}
           <Route path="temporal-logs" element={<ForevergladesTerminal />} />
-
+          <Route path="furry-nodes" element={<FurryNodes />} />
           <Route path="*" element={<NotFound />} />
         </Route>
 

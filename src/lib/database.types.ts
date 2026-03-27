@@ -34,6 +34,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      base_camp_intel: {
+        Row: {
+          content_type: string | null
+          created_at: string
+          id: string
+          is_deleted: boolean | null
+          raw_content: string
+          status: string | null
+        }
+        Insert: {
+          content_type?: string | null
+          created_at?: string
+          id?: string
+          is_deleted?: boolean | null
+          raw_content: string
+          status?: string | null
+        }
+        Update: {
+          content_type?: string | null
+          created_at?: string
+          id?: string
+          is_deleted?: boolean | null
+          raw_content?: string
+          status?: string | null
+        }
+        Relationships: []
+      }
       captains_logs: {
         Row: {
           created_at: string | null
@@ -124,6 +151,39 @@ export type Database = {
           is_deleted?: boolean | null
           last_name?: string
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      furry_nodes: {
+        Row: {
+          created_at: string
+          id: string
+          is_deleted: boolean | null
+          name: string
+          os_partition: string | null
+          species: string | null
+          status: string | null
+          telemetry_data: Json | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_deleted?: boolean | null
+          name: string
+          os_partition?: string | null
+          species?: string | null
+          status?: string | null
+          telemetry_data?: Json | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_deleted?: boolean | null
+          name?: string
+          os_partition?: string | null
+          species?: string | null
+          status?: string | null
+          telemetry_data?: Json | null
         }
         Relationships: []
       }
@@ -228,6 +288,51 @@ export type Database = {
           id?: string
           role?: Database["public"]["Enums"]["app_role"]
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      work_os_clients: {
+        Row: {
+          company_name: string
+          company_size: string | null
+          contact_email: string | null
+          created_at: string
+          id: string
+          industry: string | null
+          intake_data: Json | null
+          is_deleted: boolean | null
+          jinba_ittai_alignment: number | null
+          primary_contact: string | null
+          status: string | null
+          threat_level: string | null
+        }
+        Insert: {
+          company_name: string
+          company_size?: string | null
+          contact_email?: string | null
+          created_at?: string
+          id?: string
+          industry?: string | null
+          intake_data?: Json | null
+          is_deleted?: boolean | null
+          jinba_ittai_alignment?: number | null
+          primary_contact?: string | null
+          status?: string | null
+          threat_level?: string | null
+        }
+        Update: {
+          company_name?: string
+          company_size?: string | null
+          contact_email?: string | null
+          created_at?: string
+          id?: string
+          industry?: string | null
+          intake_data?: Json | null
+          is_deleted?: boolean | null
+          jinba_ittai_alignment?: number | null
+          primary_contact?: string | null
+          status?: string | null
+          threat_level?: string | null
         }
         Relationships: []
       }

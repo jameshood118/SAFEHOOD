@@ -55,7 +55,7 @@ const customTheme = createTheme({
 
   // 3. THE COMPONENT FIREWALL
   components: {
-    // GLOBAL CSS & FONTAWESOME HACKS
+// GLOBAL CSS & FONTAWESOME HACKS
     MuiCssBaseline: {
       styleOverrides: `
         /* Enforce smooth scrolling for cognitive accessibility */
@@ -75,6 +75,33 @@ const customTheme = createTheme({
         /* Ensure the FA icons don't get squished by flex-shrink */
         .svg-inline--fa, .fa, .fas, .far, .fal, .fab {
           flex-shrink: 0;
+        }
+
+        /* --------------------------------------------------- */
+        /* 🟣 AG GRID GLOBAL OVERRIDES (The Cyberpunk Skin)  */
+        /* --------------------------------------------------- */
+        .ag-theme-alpine-dark {
+          /* Match the Deepest Background (WCAG base) */
+          --ag-background-color: #121212 !important;
+
+          /* Match Elevated Surfaces (Cards, Drawers) */
+          --ag-header-background-color: #212121 !important;
+
+          /* High contrast boundaries */
+          --ag-border-color: rgba(255, 255, 255, 0.12) !important;
+          --ag-row-border-color: rgba(255, 255, 255, 0.05) !important;
+
+          /* Hover state logic */
+          --ag-row-hover-color: rgba(255, 255, 255, 0.03) !important;
+
+          /* Typography mapping */
+          --ag-font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+          --ag-font-size: 0.875rem !important;
+
+          /* The Action Focus (Cyan) */
+          --ag-selected-row-background-color: rgba(0, 229, 255, 0.1) !important;
+          --ag-range-selection-border-color: #00E5FF !important;
+          --ag-checkbox-checked-color: #00E5FF !important;
         }
       `,
     },
