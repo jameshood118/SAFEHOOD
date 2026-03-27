@@ -1,0 +1,18 @@
+# --- Dependencies & Builds ---
+node_modules/
+dist/
+dist-ssr/
+
+# --- Local Infrastructure ---
+# Do not parse any internal Docker or Supabase logs
+supabase/
+
+# --- Machine Generated / Community ---
+# Ignore changelogs if they are auto-generated
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+LICENSE
+
+# --- Playwright ---
+test-results/
+playwright-report/

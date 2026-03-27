@@ -1,0 +1,37 @@
+# --- Default behavior ---
+# Enforce LF line endings for all text files (Crucial for WSL2 + Docker harmony)
+* text=auto eol=lf
+
+# --- Explicit Text Files (Double-locking the frontend assets) ---
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.sql text eol=lf
+*.toml text eol=lf
+
+# --- Shell Scripts ---
+# These MUST be LF, or WSL/Docker will throw "\r command not found" errors.
+# We have a precheck.sh script in the package.json, so this is critical.
+*.sh text eol=lf
+
+# --- Windows Scripts ---
+# Just in case you ever need to run a native Windows script outside of WSL
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# --- Binary Files (Do Not Touch) ---
+# Prevents Git from corrupting images and fonts by trying to fix line endings
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary

@@ -1,0 +1,39 @@
+# --- Dependencies & Builds (Physical Layer) ---
+node_modules/
+dist/
+dist-ssr/
+.vite/
+tsconfig.tsbuildinfo
+
+# Lockfiles are machine-generated; manual formatting is System Noise
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# --- Playwright (Automated Verification) ---
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+# Visual snapshots are binary-like; Prettier will mangle them
+**/*.spec.ts-snapshots/
+**/*.spec.js-snapshots/
+
+# --- Machine Generated (High-Integrity Caution) ---
+# We ignore these to prevent Git Diff noise when re-generating
+src/lib/database.types.ts
+
+# --- System & Env ---
+.env
+.env.*
+*.log
+.DS_Store
+.eslintcache
+
+# --- Local Infrastructure ---
+# Prettier does not need to format our Docker configs or SQL migrations
+supabase/
+
+# --- Documentation ---
+# We let Prettier handle READMEs, but ignore local changelogs if auto-gen
+# CHANGELOG.md

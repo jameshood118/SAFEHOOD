@@ -1,0 +1,16 @@
+# Prettier configuration
+# This file controls formatting only. Linting rules live in ESLint.
+
+printWidth: 100
+tabWidth: 2
+useTabs: false
+
+semi: true
+singleQuote: true
+trailingComma: all
+quoteProps: as-needed`
+
+jsxSingleQuote: false
+arrowParens: always
+
+endOfLine: lf
