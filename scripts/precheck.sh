@@ -4,27 +4,35 @@ set -euo pipefail
 
 cd "$(git rev-parse --show-toplevel)"
 
+# -------- 🎨 ANSI COLOR CODES --------
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+PURPLE='\033[0;35m'
+NC='\033[0m' # No Color
+
 echo ""
-echo "================================================================================"
-echo " 🛰️  SAFEHOOD ORBITAL UPLINK: EPISTEMIC VERIFICATION SEQUENCE"
-echo "================================================================================"
+echo -e "${CYAN}================================================================================${NC}"
+echo -e "${CYAN} 🛰️  SAFEHOOD ORBITAL UPLINK: EPISTEMIC VERIFICATION SEQUENCE${NC}"
+echo -e "${CYAN}================================================================================${NC}"
 
 # Optional: Override switch for emergency patches
 LAST_COMMIT_MSG="$(git log -1 --pretty=%B || true)"
 if echo "$LAST_COMMIT_MSG" | grep -qi '\[skip-precheck\]'; then
-  printf " ⚠️  [ OVERRIDE DETECTED ] Skipping verification due to [skip-precheck] tag.\n"
+  printf "${YELLOW} ⚠️  [ OVERRIDE DETECTED ] Skipping verification due to [skip-precheck] tag.${NC}\n"
   exit 0
 fi
 
 # -------- 📂 GHOST NODE CHECK (Upstream Sync) --------
-printf " 📂 [ PHASE 1 ] Scanning upstream delta for Ghost Nodes...\n"
+printf "${PURPLE} 📂 [ PHASE 1 ] Scanning upstream delta for Ghost Nodes...${NC}\n"
 
 UPSTREAM="$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || true)"
 if [ -n "$UPSTREAM" ]; then
   BASE="$(git merge-base HEAD "$UPSTREAM")"
   FILES_TO_CHECK="$(git diff --name-only --diff-filter=AM "$BASE"..HEAD)"
 else
-  printf " ⚠️  [ ORBITAL WARNING ] No upstream configured. Scanning entire local matrix...\n"
+  printf "${YELLOW} ⚠️  [ ORBITAL WARNING ] No upstream configured. Scanning entire local matrix...${NC}\n"
   FILES_TO_CHECK="$(git ls-files)"
 fi
 
@@ -44,44 +52,44 @@ if [ -n "$FILES_TO_CHECK" ]; then
 fi
 
 if [ -n "$EMPTY_FILES" ]; then
-  printf "\n 🔴 [ AIRLOCK BREACH ] Upstream payload contains empty files:\n%s\n" "$EMPTY_FILES"
-  printf " 🛑 [ ABORT ] Purge ghost nodes before orbital sync.\n\n"
+  printf "\n${RED} 🔴 [ AIRLOCK BREACH ] Upstream payload contains empty files:\n%s${NC}\n" "$EMPTY_FILES"
+  printf "${RED} 🛑 [ ABORT ] Purge ghost nodes before orbital sync.${NC}\n\n"
   exit 1
 fi
-printf " 🟢 [ NOMINAL ] Payload density verified.\n\n"
+printf "${GREEN} 🟢 [ NOMINAL ] Payload density verified.${NC}\n\n"
 
 
 # -------- 🎨 PRETTIER (The Trellis Alignment) --------
-printf " 🎨 [ PHASE 2 ] Verifying Trellis Alignment (Prettier)...\n"
+printf "${PURPLE} 🎨 [ PHASE 2 ] Verifying Trellis Alignment (Prettier)...${NC}\n"
 if ! npx --no-install prettier --config .prettierrc.yml --ignore-path .prettierignore --check .; then
-  printf " 🔧 [ AUTO-CORRECT ] Misalignment detected. Re-weaving the Trellis...\n"
+  printf "${YELLOW} 🔧 [ AUTO-CORRECT ] Misalignment detected. Re-weaving the Trellis...${NC}\n"
   npx --no-install prettier --config .prettierrc.yml --ignore-path .prettierignore --write .
   git add -A
   git commit -m "style: Auto-aligned structural Trellis [skip-precheck]"
-  printf "\n 🛑 [ SEQUENCE HALTED ] Trellis was auto-corrected and committed. Please re-initiate push sequence.\n\n"
+  printf "\n${RED} 🛑 [ SEQUENCE HALTED ] Trellis was auto-corrected and committed. Please re-initiate push sequence.${NC}\n\n"
   exit 1
 fi
-printf " 🟢 [ NOMINAL ] Trellis alignment is perfect.\n\n"
+printf "${GREEN} 🟢 [ NOMINAL ] Trellis alignment is perfect.${NC}\n\n"
 
 
 # -------- 🧪 ESLINT (Efficiency Trap Radar) --------
-printf " 🔬 [ PHASE 3 ] Sweeping for Efficiency Traps (ESLint)...\n"
+printf "${PURPLE} 🔬 [ PHASE 3 ] Sweeping for Efficiency Traps (ESLint)...${NC}\n"
 printf "    > Running rapid cached sweep on /src...\n"
 npx --no-install eslint src --ext .js,.jsx,.ts,.tsx --cache
 
 printf "    > Engaging strict zero-tolerance perimeter scan...\n"
 npx --no-install eslint . --max-warnings=0
-printf " 🟢 [ NOMINAL ] No traps detected. Sector is clear.\n\n"
+printf "${GREEN} 🟢 [ NOMINAL ] No traps detected. Sector is clear.${NC}\n\n"
 
 
 # -------- 🛠️ TYPESCRIPT (Ground Truth Verification) --------
-printf " ⚖️  [ PHASE 4 ] Verifying Epistemic Ground Truth (TypeScript)...\n"
+printf "${PURPLE} ⚖️  [ PHASE 4 ] Verifying Epistemic Ground Truth (TypeScript)...${NC}\n"
 npx --no-install tsc --noEmit --pretty false
-printf " 🟢 [ NOMINAL ] Epistemic validation passed. 42.\n\n"
+printf "${GREEN} 🟢 [ NOMINAL ] Epistemic validation passed. 42.${NC}\n\n"
 
 
 # -------- ✅ FINAL CLEARANCE --------
-echo "================================================================================"
-echo " 🚀 [ UPLINK APPROVED ] Jinba Ittai alignment confirmed. Safe to push payload."
-echo "================================================================================"
+echo -e "${CYAN}================================================================================${NC}"
+echo -e "${GREEN} 🐁 🐾 🐾 🐾 🐈 🚀 [ UPLINK APPROVED ] Jinba Ittai alignment confirmed. Safe to push payload.${NC}"
+echo -e "${CYAN}================================================================================${NC}"
 echo ""

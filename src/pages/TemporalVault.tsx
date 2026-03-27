@@ -21,12 +21,24 @@ import { useQuery } from '@tanstack/react-query';
 import { supabase } from '../lib/supabase';
 // #endregion
 
+// #region [ 🏷️ TYPES ]
+export interface TemporalLog {
+  log_id: string; // 🛡️ Updated to string (UUID)
+  target_table: string;
+  record_id: string;
+  operation: string;
+  old_data: Record<string, unknown> | null;
+  changed_by: string; // 🛡️ Added from DB schema
+  changed_at: string;
+}
+// #endregion
+
 // #region [ 📡 THE EPISTEMIC FETCH ]
 const fetchLogs = async () => {
   // Calling the secure RPC pipe we just built in Postgres
   const { data, error } = await supabase.rpc('get_temporal_logs');
   if (error) throw new Error(error.message);
-  return data;
+  return data as TemporalLog[];
 };
 // #endregion
 
@@ -114,74 +126,78 @@ export const TemporalVault = () => {
             </Box>
           )}
 
-          {logs.map((log: any) => (
-            <Card
-              key={log.log_id}
-              sx={{
-                borderLeft: `4px solid`,
-                borderColor: `${getOperationColor(log.operation)}.main`,
-              }}
-            >
-              <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
-                {/* Log Meta */}
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    flexWrap: 'wrap',
-                    gap: 1,
-                  }}
-                >
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                    {getOperationIcon(log.operation)}
-                    <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-                      {log.operation} ON public.{log.target_table}
-                    </Typography>
-                    <Chip
-                      size="small"
-                      label={`ID: ${log.record_id.substring(0, 8)}...`}
-                      variant="outlined"
-                      sx={{ color: 'text.secondary' }}
-                    />
-                  </Box>
-                  <Typography
-                    variant="caption"
-                    sx={{ color: 'text.secondary', fontFamily: 'monospace' }}
+          {logs.map(
+            (
+              log, // 🛡️ NO MORE ANY: TypeScript inherently knows this is a TemporalLog
+            ) => (
+              <Card
+                key={log.log_id}
+                sx={{
+                  borderLeft: `4px solid`,
+                  borderColor: `${getOperationColor(log.operation)}.main`,
+                }}
+              >
+                <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+                  {/* Log Meta */}
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      flexWrap: 'wrap',
+                      gap: 1,
+                    }}
                   >
-                    {new Date(log.changed_at).toLocaleString()}
-                  </Typography>
-                </Box>
-
-                {/* Data Payload (Historical Snapshot) */}
-                {log.old_data && (
-                  <Box sx={{ mt: 1 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                      {getOperationIcon(log.operation)}
+                      <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+                        {log.operation} ON public.{log.target_table}
+                      </Typography>
+                      <Chip
+                        size="small"
+                        label={`ID: ${log.record_id.substring(0, 8)}...`}
+                        variant="outlined"
+                        sx={{ color: 'text.secondary' }}
+                      />
+                    </Box>
                     <Typography
                       variant="caption"
-                      color="text.secondary"
-                      sx={{ display: 'block', mb: 0.5, letterSpacing: '1px' }}
+                      sx={{ color: 'text.secondary', fontFamily: 'monospace' }}
                     >
-                      RECORD SNAPSHOT
+                      {new Date(log.changed_at).toLocaleString()}
                     </Typography>
-                    <Box
-                      component="pre"
-                      sx={{
-                        m: 0,
-                        p: 1.5,
-                        bgcolor: 'rgba(0,0,0,0.3)',
-                        borderRadius: '6px',
-                        fontSize: '0.85rem',
-                        overflowX: 'auto',
-                        color: 'primary.contrastText',
-                      }}
-                    >
-                      {JSON.stringify(log.old_data, null, 2)}
-                    </Box>
                   </Box>
-                )}
-              </CardContent>
-            </Card>
-          ))}
+
+                  {/* Data Payload (Historical Snapshot) */}
+                  {log.old_data && (
+                    <Box sx={{ mt: 1 }}>
+                      <Typography
+                        variant="caption"
+                        color="text.secondary"
+                        sx={{ display: 'block', mb: 0.5, letterSpacing: '1px' }}
+                      >
+                        RECORD SNAPSHOT
+                      </Typography>
+                      <Box
+                        component="pre"
+                        sx={{
+                          m: 0,
+                          p: 1.5,
+                          bgcolor: 'rgba(0,0,0,0.3)',
+                          borderRadius: '6px',
+                          fontSize: '0.85rem',
+                          overflowX: 'auto',
+                          color: 'primary.contrastText',
+                        }}
+                      >
+                        {JSON.stringify(log.old_data, null, 2)}
+                      </Box>
+                    </Box>
+                  )}
+                </CardContent>
+              </Card>
+            ),
+          )}
         </Stack>
       )}
     </Box>

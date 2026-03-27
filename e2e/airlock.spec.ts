@@ -9,7 +9,7 @@ test.describe('SAFEHOOD Perimeter Defense', () => {
     await expect(page).toHaveURL(/.*\/login/);
 
     // 3. Verify the visual presence of the Airlock UI (Adjust this text to match your actual Login screen)
-    const loginHeading = page.locator('h4', { hasText: 'SAFEHOOD AIRLOCK' });
+
     // If your login screen says something else, change 'SAFEHOOD AIRLOCK' to match!
 
     // 4. Ensure the page actually rendered the login UI

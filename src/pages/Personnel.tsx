@@ -48,7 +48,7 @@ interface WorkOSClient {
   status: 'LEAD' | 'ACTIVE' | 'COMPLETED' | 'ARCHIVED';
   threat_level: 'NOMINAL' | 'ELEVATED' | 'EFFICIENCY_TRAP';
   jinba_ittai_alignment: number;
-  intake_data: any;
+  intake_data: Record<string, unknown> | null; // 🛡️ NO MORE ANY
 }
 // #endregion
 

@@ -20,6 +20,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 
+import type { Session } from '@supabase/supabase-js'; // 🛡️ Import the strict type
 import { supabase } from './lib/supabase';
 import { Dashboard } from './pages/Dashboard';
 import { Login } from './pages/Login';
@@ -38,7 +39,8 @@ import { Manifests } from './pages/Manifests';
  * for an active session before allowing access to the children components.
  */
 const AuthGuard = ({ children }: { children: React.ReactNode }) => {
-  const [session, setSession] = useState<any>(null);
+  // 🛡️ NO MORE ANY: It is either a valid Supabase Session, or null if logged out.
+  const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

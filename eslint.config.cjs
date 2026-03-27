@@ -24,6 +24,7 @@ module.exports = [
   {
     ignores: [
       'eslint.config.cjs', // 🛑 THIS IS THE MAGIC LINE TO BLINDFOLD ESLINT
+      'uplink.js',
       'src/lib/database.types.ts', // Ignore machine-generated Supabase types
       '**/dist/**',
       '**/node_modules/**',
@@ -134,7 +135,13 @@ module.exports = [
   //     },
   //   },
   // },
-
+  {
+    files: ['src/tests/quarantine/**/*.ts'],
+    rules: {
+      '@typescript-eslint/ban-ts-comment': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
+  },
   // 5. PRETTIER (The Final Firewall)
   prettierConfig,
 ];

@@ -25,6 +25,7 @@ import {
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
+import type { CaptainsLog } from '../types'; // 🛡️ Import from the Armory
 // #endregion
 
 // #region [ 🗃️ THE ARCHITECTURE (Module Definitions) ]
@@ -82,7 +83,8 @@ const systemModules = [
 
 // #region [ 🚀 DASHBOARD VIEW ]
 export const Dashboard = () => {
-  const [recentLogs, setRecentLogs] = useState<any[]>([]);
+  // 🛡️ NO MORE ANY: We explicitly declare this as an array of CaptainsLog rows
+  const [recentLogs, setRecentLogs] = useState<CaptainsLog[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   // 📡 Fetch the latest 3 logs for the HUD
@@ -131,7 +133,7 @@ export const Dashboard = () => {
             component="p"
             sx={{ color: 'text.secondary', fontFamily: 'monospace', mt: 0.5 }}
           >
-            S.A.F.E.H.O.O.D. v2.1 // Awaiting Pilot Input
+            S.A.F.E.H.O.O.D. v2.1{'//'}Awaiting Pilot Input
           </Typography>
         </Box>
 
@@ -252,11 +254,17 @@ export const Dashboard = () => {
               ) : (
                 <Stack spacing={3}>
                   {recentLogs.map((log) => {
-                    const entry =
+                    // 🛡️ Cast the parsed JSON so TS knows what shape to expect
+                    const entry = (
                       typeof log.entry_text === 'string'
                         ? JSON.parse(log.entry_text)
-                        : log.entry_text;
+                        : log.entry_text
+                    ) as Record<string, string>;
+
                     const isSystem = log.entry_type !== 'CAPTAINS_LOG';
+
+                    // 🛡️ Safe Date Parsing: Fallback to current time if DB returns null
+                    const logDate = log.created_at ? new Date(log.created_at) : new Date();
 
                     return (
                       <Box
@@ -273,8 +281,8 @@ export const Dashboard = () => {
                             mb: 0.5,
                           }}
                         >
-                          {new Date(log.created_at).toLocaleDateString()} //{' '}
-                          {new Date(log.created_at).toLocaleTimeString([], {
+                          {logDate.toLocaleDateString()}{' '}
+                          {logDate.toLocaleTimeString([], {
                             hour: '2-digit',
                             minute: '2-digit',
                           })}

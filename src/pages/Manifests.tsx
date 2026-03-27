@@ -40,7 +40,7 @@ interface LogRecord {
   id: string;
   created_at: string;
   entry_type: HumanOSEntryType;
-  entry_text: any; // The Smart Intake Valve
+  entry_text: unknown; // 🛡️ NO MORE ANY: The payload is strictly unknown until parsed
   is_deleted: boolean;
 }
 // #endregion
@@ -71,10 +71,11 @@ export const Manifests = () => {
   });
 
   // #region [ 🛠️ PARSER ENGINE (The Smart Intake Valve) ]
-  const renderEntryText = (data: any) => {
+  const renderEntryText = (data: unknown) => {
+    // 🛡️ Strictly unknown
     if (!data) return null;
 
-    let parsedData = data;
+    let parsedData: unknown = data; // 🛡️ Flow the unknown type down
 
     if (typeof data === 'string') {
       try {

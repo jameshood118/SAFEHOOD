@@ -34,7 +34,7 @@ import { useMemo, useState } from 'react';
 import { supabase } from '../lib/supabase';
 
 // AG Grid Imports
-import type { ColDef } from 'ag-grid-community';
+import type { ColDef, ICellRendererParams } from 'ag-grid-community';
 import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
@@ -45,14 +45,14 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 // #endregion
 
 // #region [ 🏷️ TYPES ]
-interface FurryNode {
+export interface FurryNode {
   id: string;
   created_at: string;
   name: string;
   species: string;
   os_partition: 'HUMAN_OS' | 'WORK_OS';
   status: 'NOMINAL' | 'ZOOMIES' | 'HUNGRY' | 'MAINTENANCE_REQUIRED';
-  telemetry_data: any;
+  telemetry_data: Record<string, unknown> | null; // 🛡️ NO MORE ANY
 }
 // #endregion
 
@@ -184,7 +184,8 @@ export const FurryNodes = () => {
       {
         field: 'os_partition',
         headerName: 'OS PARTITION',
-        cellRenderer: (params: any) => {
+        cellRenderer: (params: ICellRendererParams<FurryNode>) => {
+          // 🛡️ STRICT TYPING
           if (!params.value) return null;
           const isWork = params.value === 'WORK_OS';
           return (
@@ -207,7 +208,8 @@ export const FurryNodes = () => {
       {
         field: 'status',
         headerName: 'STATUS',
-        cellRenderer: (params: any) => {
+        cellRenderer: (params: ICellRendererParams<FurryNode>) => {
+          // 🛡️ STRICT TYPING
           if (!params.value) return null;
           const colorData = getStatusColor(params.value);
           return (
@@ -462,7 +464,8 @@ export const FurryNodes = () => {
             fullWidth
             label="OS Partition"
             value={partition}
-            onChange={(e) => setPartition(e.target.value as any)}
+            // 🛡️ NO MORE ANY: Cast specifically to the allowed literal types
+            onChange={(e) => setPartition(e.target.value as 'HUMAN_OS' | 'WORK_OS')}
             sx={{
               '& .MuiOutlinedInput-root': {
                 color: '#00ff41',
