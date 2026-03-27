@@ -1,0 +1,25 @@
+{
+  "recommendations": [
+    /* --- The Core Logic (Strictness & Quality) --- */
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next",
+    "DavidAnson.vscode-markdownlint",
+
+    /* --- The AI Co-Pilots (The "Hyper-Threaded" Helpers) --- */
+    "github.copilot",
+    "github.copilot-chat",
+    "Google.gemini-cli-vscode-ide-companion",
+
+    /* --- The SAFEHOOD Perimeter (A11y & Infrastructure) --- */
+    "deque-systems.vscode-axe",
+    "ms-azuretools.vscode-docker",
+    "ms-python.pylint",
+
+    /* --- Visual Fidelity (The "Architect's" Lens) --- */
+    "vscode-icons-team.vscode-icons",
+    "oderwat.indent-rainbow",
+    "mechatroner.rainbow-csv",
+    "christian-kohler.path-intellisense"
+  ]
+}

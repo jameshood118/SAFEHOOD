@@ -1,0 +1,56 @@
+{
+  // --- SECTION 1: THE FORMATTING FIREWALL (PRETTIER) ---
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[markdown]": { "editor.defaultFormatter": "DavidAnson.vscode-markdownlint" },
+
+  // --- SECTION 2: ESLINT, AUTO-FIX & HYGIENE ---
+  "eslint.experimental.useFlatConfig": true, // Forces modern config recognition
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+
+  // --- SECTION 3: TYPESCRIPT / REACT 19 DX ---
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+  "typescript.suggest.autoImports": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+
+  // --- SECTION 4: THE ARCHITECT'S LENS (VISUAL CLARITY & AI) ---
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.stickyScroll.enabled": true,
+  "explorer.compactFolders": false,
+  "editor.renderWhitespace": "selection",
+  "axe.showA11yIssuesInEditor": true,
+  "editor.inlineSuggest.enabled": true, // Wakes up Copilot/Gemini
+
+  // --- SECTION 5: SYSTEM INTEGRITY (EXCLUSIONS) ---
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.eslintcache": true,
+    "**/dist": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "src/lib/database.types.ts": true
+  }
+}
