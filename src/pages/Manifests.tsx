@@ -1,7 +1,7 @@
 // #region [ 📦 IMPORTS ]
-import { faBookJournalWhills, faMicrochip, faTerminal, faTimeline } from '@fortawesome/free-solid-svg-icons';
+import { faBookJournalWhills, faClock, faMicrochip, faTerminal, faTimeline } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Alert, Box, Card, CardContent, Chip, CircularProgress, Stack, Tab, Tabs, Typography } from '@mui/material';
+import { Alert, Box, Card, CardContent, Chip, CircularProgress, Divider, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { supabase } from '../lib/supabase';
@@ -22,7 +22,7 @@ interface LogRecord {
   id: string;
   created_at: string;
   entry_type: HumanOSEntryType; // <--- Apply the union here
-  entry_text: string;
+  entry_text: any; // Allow any here to handle both string and JSONB objects
   is_deleted: boolean;
 }
 // #endregion
@@ -47,11 +47,28 @@ export const Manifests = () => {
     queryFn: fetchManifests,
   });
 
-  // #region [ 🛠️ PARSER ENGINE ]
-const renderEntryText = (text: string | null) => {
-  if (!text) return null;
-  try {
-    const parsed = JSON.parse(text);
+  // #region [ 🛠️ PARSER ENGINE (The Smart Intake Valve) ]
+  const renderEntryText = (data: any) => {
+    if (!data) return null;
+
+    let parsedData = data;
+
+    // If it's a string, try to parse it. If it's already an object, skip this.
+    if (typeof data === 'string') {
+      try {
+        parsedData = JSON.parse(data);
+      } catch {
+        // If it's a string but NOT valid JSON, just render the string
+        return (
+          <Typography variant="body1" sx={{ color: 'text.primary', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>
+            {data}
+          </Typography>
+        );
+      }
+    }
+
+    // By this point, parsedData is guaranteed to be a valid object.
+    // Render it in the Foreverglades terminal style.
     return (
       <Box
         component="pre"
@@ -67,33 +84,26 @@ const renderEntryText = (text: string | null) => {
           fontFamily: 'monospace'
         }}
       >
-        {JSON.stringify(parsed, null, 2)}
+        {JSON.stringify(parsedData, null, 2)}
       </Box>
     );
-  } catch {
-    return (
-      <Typography variant="body1" sx={{ color: 'text.primary', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>
-        {text}
-      </Typography>
-    );
-  }
-};
+  };
   // #endregion
 
-// 🛠️ Updated Filter: Capturing the 1,743 logs
-const chronologicalLogs = logs?.filter(l =>
-  l.entry_type === 'CAPTAINS_LOG' ||
-  l.entry_type === 'observation' ||
-  l.entry_type === 'incident'
-) || [];
+  // 🛠️ Updated Filter: Capturing the 1,743 logs
+  const chronologicalLogs = logs?.filter(l =>
+    l.entry_type === 'CAPTAINS_LOG' ||
+    l.entry_type === 'observation' ||
+    l.entry_type === 'incident'
+  ) || [];
 
-// 🛠️ Updated Filter: Capturing the System Directives
-const manifestDirectives = logs?.filter(l =>
-  l.entry_type === 'OS_MANIFEST' ||
-  l.entry_type === 'SAFEHOOD_PROTOCOL' ||
-  l.entry_type === 'ANALOG_WASTELAND' ||
-  l.entry_type === 'directive'
-) || [];
+  // 🛠️ Updated Filter: Capturing the System Directives
+  const manifestDirectives = logs?.filter(l =>
+    l.entry_type === 'OS_MANIFEST' ||
+    l.entry_type === 'SAFEHOOD_PROTOCOL' ||
+    l.entry_type === 'ANALOG_WASTELAND' ||
+    l.entry_type === 'directive'
+  ) || [];
 
   const activeData = activeTab === 0 ? chronologicalLogs : manifestDirectives;
 
@@ -139,48 +149,71 @@ const manifestDirectives = logs?.filter(l =>
             </Box>
           )}
 
-{activeData.map((log) => {
-  const safeDateString = log.created_at || new Date().toISOString();
-  const logDate = new Date(safeDateString);
+          {activeData.map((log) => {
+            // FIX: Safely handle null dates
+            const safeDateString = log.created_at || new Date().toISOString();
+            const logDate = new Date(safeDateString);
 
-  // 🛠️ Updated Visual Check:
-  // Ensures OS_MANIFEST, SAFEHOOD, and WASTELAND get the "System Cyan" styling
-  const isManifestPartition = [
-    'OS_MANIFEST',
-    'SAFEHOOD_PROTOCOL',
-    'ANALOG_WASTELAND',
-    'directive'
-  ].includes(log.entry_type);
+            // 🛠️ Updated Visual Check:
+            // Ensures OS_MANIFEST, SAFEHOOD, and WASTELAND get the "System Cyan" styling
+            const isManifestPartition = [
+              'OS_MANIFEST',
+              'SAFEHOOD_PROTOCOL',
+              'ANALOG_WASTELAND',
+              'directive'
+            ].includes(log.entry_type);
 
-  return (
-    <Card key={log.id} sx={{
-      borderLeft: '4px solid',
-      // Cyan for System Architecture, Purple for Historical Logs
-      borderColor: isManifestPartition ? '#00E5FF' : '#9C27B0',
-      bgcolor: 'background.paper',
-      mb: 2 // Adding a bit of breathing room
-    }}>
-      <CardContent sx={{ p: { xs: 2, md: 3 } }}>
-        {/* ... rest of your existing CardContent code ... */}
+            return (
+              <Card key={log.id} sx={{
+                borderLeft: '4px solid',
+                // Cyan for System Architecture, Purple for Historical Logs
+                borderColor: isManifestPartition ? '#00E5FF' : '#9C27B0',
+                bgcolor: 'background.paper',
+                mb: 2 // Adding a bit of breathing room
+              }}>
+                <CardContent sx={{ p: { xs: 2, md: 3 } }}>
 
-        {/* Ensure the Chip also uses the new check for its colors */}
-        <Chip
-          icon={<FontAwesomeIcon icon={faTerminal} />}
-          label={log.entry_type ? log.entry_type.replace('_', ' ').toUpperCase() : 'UNKNOWN'}
-          size="small"
-          sx={{
-            bgcolor: isManifestPartition ? 'rgba(0, 229, 255, 0.15)' : 'rgba(156, 39, 176, 0.15)',
-            color: isManifestPartition ? '#00E5FF' : '#E1BEE7',
-            fontWeight: 600,
-            letterSpacing: '1px'
-          }}
-        />
+                  {/* Top Meta Row */}
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2, flexWrap: 'wrap', gap: 2 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                      {/* Ensure the Chip also uses the new check for its colors */}
+                      <Chip
+                        icon={<FontAwesomeIcon icon={faTerminal} />}
+                        label={log.entry_type ? log.entry_type.replace('_', ' ').toUpperCase() : 'UNKNOWN'}
+                        size="small"
+                        sx={{
+                          bgcolor: isManifestPartition ? 'rgba(0, 229, 255, 0.15)' : 'rgba(156, 39, 176, 0.15)',
+                          color: isManifestPartition ? '#00E5FF' : '#E1BEE7',
+                          fontWeight: 600,
+                          letterSpacing: '1px'
+                        }}
+                      />
+                      <Typography variant="caption" sx={{ color: 'text.disabled', fontFamily: 'monospace' }}>
+                        ID: {log.id.substring(0, 8)}...
+                      </Typography>
+                    </Box>
 
-        {/* ... */}
-      </CardContent>
-    </Card>
-  );
-})}
+                    <Box sx={{ textAlign: { xs: 'left', md: 'right' }, display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <FontAwesomeIcon icon={faClock} color="#888" size="sm" />
+                      <Typography variant="body2" sx={{ color: 'text.secondary', fontFamily: 'monospace' }}>
+                        {/* 🛠️ WARNING 6133 CLEARED: logDate is used here */}
+                        {logDate.toLocaleString()}
+                      </Typography>
+                    </Box>
+                  </Box>
+
+                  <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.05)' }} />
+
+                  {/* The Payload */}
+                  <Box sx={{ mt: 2 }}>
+                    {/* 🛠️ WARNING 6133 CLEARED: renderEntryText is used here */}
+                    {renderEntryText(log.entry_text)}
+                  </Box>
+
+                </CardContent>
+              </Card>
+            );
+          })}
         </Stack>
       )}
     </Box>

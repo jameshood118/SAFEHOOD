@@ -37,46 +37,26 @@ export type Database = {
       captains_logs: {
         Row: {
           created_at: string | null
-          deleted_at: string | null
-          deleted_by: string | null
-          entry_text: string
-          entry_type: Database["public"]["Enums"]["log_type"]
+          entry_text: Json
+          entry_type: string
           id: string
           is_deleted: boolean | null
-          manifest_id: string
-          updated_at: string | null
         }
         Insert: {
           created_at?: string | null
-          deleted_at?: string | null
-          deleted_by?: string | null
-          entry_text: string
-          entry_type?: Database["public"]["Enums"]["log_type"]
+          entry_text: Json
+          entry_type: string
           id?: string
           is_deleted?: boolean | null
-          manifest_id: string
-          updated_at?: string | null
         }
         Update: {
           created_at?: string | null
-          deleted_at?: string | null
-          deleted_by?: string | null
-          entry_text?: string
-          entry_type?: Database["public"]["Enums"]["log_type"]
+          entry_text?: Json
+          entry_type?: string
           id?: string
           is_deleted?: boolean | null
-          manifest_id?: string
-          updated_at?: string | null
         }
-        Relationships: [
-          {
-            foreignKeyName: "captains_logs_manifest_id_fkey"
-            columns: ["manifest_id"]
-            isOneToOne: false
-            referencedRelation: "manifests"
-            referencedColumns: ["id"]
-          },
-        ]
+        Relationships: []
       }
       clients: {
         Row: {

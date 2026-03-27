@@ -1,5 +1,6 @@
 // #region [ 📦 IMPORTS ]
 import {
+  faBiohazard,
   faClipboardList,
   faClockRotateLeft,
   faUsers,
@@ -14,6 +15,10 @@ import { supabase } from './lib/supabase';
 import { Dashboard } from './pages/Dashboard';
 import { Login } from './pages/Login';
 import { Personnel } from './pages/Personnel';
+
+// 🚀 THE REAL COMPONENTS (No more stubs!)
+import { ForevergladesTerminal } from './components/ForevergladesTerminal';
+import { Manifests } from './pages/Manifests';
 // #endregion
 
 // #region [ 🔐 THE AUTH GATEKEEPER ]
@@ -154,10 +159,21 @@ const SafehoodLayout = () => {
 };
 // #endregion
 
-// #region [ 🚧 STUBBED PAGES (To be extracted later) ]
-const ManifestsStub = () => <Typography variant="h4" color="primary.contrastText">Human OS Manifests & Captains Logs</Typography>;
-const TemporalStub = () => <Typography variant="h4" color="primary.contrastText">The TARDIS Log (Immutable History)</Typography>;
-const NotFoundStub = () => <Typography variant="h4" color="error">404: Timeline Divergence Detected.</Typography>;
+// #region [ 🚧 404 COMPONENT ]
+const NotFound = () => (
+  <Box sx={{ textAlign: 'center', mt: 10 }}>
+    <FontAwesomeIcon icon={faBiohazard} size="4x" color="#f44336" />
+    <Typography variant="h3" sx={{ color: 'error.main', mt: 3, fontWeight: 800 }}>
+      404: TIMELINE DIVERGENCE
+    </Typography>
+    <Typography variant="body1" sx={{ color: 'text.secondary', mt: 2 }}>
+      The structural dampers cannot hold this logic. Route not found.
+    </Typography>
+    <Button component={Link} to="/" variant="outlined" sx={{ mt: 4, color: '#00E5FF', borderColor: '#00E5FF' }}>
+      RETURN TO COMMAND CENTER
+    </Button>
+  </Box>
+);
 // #endregion
 
 // #region [ 🚀 THE ROUTER ]
@@ -179,10 +195,13 @@ const App = () => {
           }
         >
           <Route index element={<Dashboard />} />
-          <Route path="manifests" element={<ManifestsStub />} />
+
+          {/* 🚀 STUBS REMOVED. REAL COMPONENTS INJECTED. */}
+          <Route path="manifests" element={<Manifests />} />
           <Route path="personnel" element={<Personnel />} />
-          <Route path="temporal-logs" element={<TemporalStub />} />
-          <Route path="*" element={<NotFoundStub />} />
+          <Route path="temporal-logs" element={<ForevergladesTerminal />} />
+
+          <Route path="*" element={<NotFound />} />
         </Route>
 
       </Routes>
