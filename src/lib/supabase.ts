@@ -8,7 +8,7 @@ const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 // The "Efficiency Trap" check: Fail loudly if the keys are missing
 if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error(
-    'SAFEHOOD CRITICAL: Missing Supabase environment variables. The Airlock cannot initialize.'
+    'SAFEHOOD CRITICAL: Missing Supabase environment variables. The Airlock cannot initialize.',
   );
 }
 

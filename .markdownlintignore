@@ -12,7 +12,13 @@ supabase/
 CHANGELOG.md
 CODE_OF_CONDUCT.md
 LICENSE
+LICENSE.md
 
 # --- Playwright ---
 test-results/
 playwright-report/
+
+# --- The Feral Agent's Quarantine Zone ---
+# Do not fail the build if the AI formats a bug report slightly wrong
+docs/bug-reports/
+qa-agent/docs/

@@ -37,3 +37,8 @@ supabase/
 # --- Documentation ---
 # We let Prettier handle READMEs, but ignore local changelogs if auto-gen
 # CHANGELOG.md
+
+# --- The Feral Agent's Quarantine Zone ---
+# The AI writes raw Markdown reports. Prettier formatting them causes false-positive push failures.
+docs/bug-reports/
+qa-agent/docs/

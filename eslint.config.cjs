@@ -23,6 +23,7 @@ module.exports = [
   // 1. GLOBAL IGNORES (Environment Optimization)
   {
     ignores: [
+      'eslint.config.cjs', // 🛑 THIS IS THE MAGIC LINE TO BLINDFOLD ESLINT
       'src/lib/database.types.ts', // Ignore machine-generated Supabase types
       '**/dist/**',
       '**/node_modules/**',
@@ -30,6 +31,16 @@ module.exports = [
       'supabase/**', // Do not lint the Docker infrastructure
       '**/*.mjs',
       '.gitattributes',
+
+      // --- Playwright (Automated Verification) ---
+      'test-results/**',
+      'playwright-report/**',
+      'blob-report/**',
+      '.playwright/**',
+
+      // --- The Feral Agent's Quarantine Zone ---
+      // ESLint should not attempt to parse raw markdown bug reports
+      'docs/bug-reports/**',
     ],
   },
 
@@ -78,10 +89,7 @@ module.exports = [
       // 🔒 Tightened: any is now an error (SAFEHOOD strictness)
       '@typescript-eslint/no-explicit-any': 'error',
 
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        { argsIgnorePattern: '^_' },
-      ],
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
 
       // --- MUI & SEMANTIC INTEGRITY (SAFEHOOD Protocol) ---
       // We block generic 'button' and 'a' tags to enforce MUI Button/Link for A11y
@@ -89,8 +97,7 @@ module.exports = [
         'error',
         {
           selector: "JSXOpeningElement[name.name='button']",
-          message:
-            'Use MUI <Button /> instead to ensure WCAG 2.2 / Section 508 compliance.',
+          message: 'Use MUI <Button /> instead to ensure WCAG 2.2 / Section 508 compliance.',
         },
         {
           selector: "JSXOpeningElement[name.name='a']",
@@ -127,7 +134,6 @@ module.exports = [
   //     },
   //   },
   // },
-
 
   // 5. PRETTIER (The Final Firewall)
   prettierConfig,

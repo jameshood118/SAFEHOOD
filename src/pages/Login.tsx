@@ -1,7 +1,16 @@
 // #region [ 📦 IMPORTS ]
 import { faEnvelope, faLock, faUserShield } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Alert, Box, Button, Card, CardContent, InputAdornment, TextField, Typography } from '@mui/material';
+import {
+  Alert,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  InputAdornment,
+  TextField,
+  Typography,
+} from '@mui/material';
 import { useState } from 'react';
 import { supabase } from '../lib/supabase';
 // #endregion
@@ -48,19 +57,26 @@ export const Login = () => {
         position: 'absolute', // Pulls it out of the App.tsx layout grid
         top: 0,
         left: 0,
-        zIndex: 9999 // Sits on top of everything
+        zIndex: 9999, // Sits on top of everything
       }}
     >
       <Card sx={{ maxWidth: 400, width: '100%', m: 2, border: '1px solid rgba(0, 229, 255, 0.2)' }}>
         <CardContent sx={{ p: 4, display: 'flex', flexDirection: 'column', gap: 3 }}>
-
           {/* Header */}
           <Box sx={{ textAlign: 'center', mb: 1 }}>
-            <FontAwesomeIcon icon={faUserShield} size="3x" color="#00E5FF" style={{ marginBottom: '16px' }} />
+            <FontAwesomeIcon
+              icon={faUserShield}
+              size="3x"
+              color="#00E5FF"
+              style={{ marginBottom: '16px' }}
+            />
             <Typography variant="h5" sx={{ fontWeight: 700, color: 'primary.contrastText' }}>
               SAFEHOOD PROTOCOL
             </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary', letterSpacing: '1px', textTransform: 'uppercase' }}>
+            <Typography
+              variant="body2"
+              sx={{ color: 'text.secondary', letterSpacing: '1px', textTransform: 'uppercase' }}
+            >
               Superadmin Authentication Required
             </Typography>
           </Box>
@@ -68,7 +84,10 @@ export const Login = () => {
           {error && <Alert severity="error">{error}</Alert>}
 
           {/* Form */}
-          <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <form
+            onSubmit={handleLogin}
+            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
+          >
             <TextField
               fullWidth
               label="System Email"
@@ -112,13 +131,12 @@ export const Login = () => {
                 mt: 2,
                 bgcolor: 'action.focus',
                 color: '#000',
-                '&:hover': { bgcolor: '#00B8CC' }
+                '&:hover': { bgcolor: '#00B8CC' },
               }}
             >
               {isLoading ? 'Verifying...' : 'Initialize Uplink'}
             </Button>
           </form>
-
         </CardContent>
       </Card>
     </Box>

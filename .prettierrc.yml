@@ -8,7 +8,7 @@ useTabs: false
 semi: true
 singleQuote: true
 trailingComma: all
-quoteProps: as-needed`
+quoteProps: as-needed
 
 jsxSingleQuote: false
 arrowParens: always

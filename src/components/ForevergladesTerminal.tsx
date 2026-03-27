@@ -3,7 +3,7 @@ import {
   faSatelliteDish,
   faSearch,
   faTerminal,
-  faTimes
+  faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -17,7 +17,7 @@ import {
   Paper,
   Stack,
   TextField,
-  Typography
+  Typography,
 } from '@mui/material';
 import { createClient } from '@supabase/supabase-js';
 import { useEffect, useMemo, useState } from 'react';
@@ -27,7 +27,7 @@ import { UplinkConsole } from './UplinkConsole';
 
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
+  import.meta.env.VITE_SUPABASE_ANON_KEY,
 );
 
 interface CaptainsLogEntry {
@@ -59,7 +59,9 @@ export const ForevergladesTerminal = () => {
 
   // 📡 Extracted fetch function so we can refresh after a new entry is submitted
   const performSystemAudit = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
     if (user) {
       setPilotAuthenticated(true);
@@ -81,18 +83,17 @@ export const ForevergladesTerminal = () => {
   // Filter Logic: The "Data Scrubber"
   const filteredLogs = useMemo(() => {
     return logs.filter((record) => {
-      const entry = typeof record.entry_text === 'string'
-        ? JSON.parse(record.entry_text) as CaptainsLogEntry
-        : record.entry_text as CaptainsLogEntry;
+      const entry =
+        typeof record.entry_text === 'string'
+          ? (JSON.parse(record.entry_text) as CaptainsLogEntry)
+          : (record.entry_text as CaptainsLogEntry);
 
       const matchesSearch =
         entry.subject?.toLowerCase().includes(searchQuery.toLowerCase()) ||
         entry.primary_data?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        entry.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+        entry.tags?.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()));
 
-      const matchesTag = selectedTag
-        ? entry.tags?.includes(selectedTag)
-        : true;
+      const matchesTag = selectedTag ? entry.tags?.includes(selectedTag) : true;
 
       return matchesSearch && matchesTag;
     });
@@ -100,31 +101,72 @@ export const ForevergladesTerminal = () => {
 
   if (isBooting) {
     return (
-      <Box component="main" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', bgcolor: '#0a0510', color: '#00ff41' }}>
+      <Box
+        component="main"
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '100vh',
+          bgcolor: '#0a0510',
+          color: '#00ff41',
+        }}
+      >
         <CircularProgress color="inherit" size={60} sx={{ mb: 4 }} />
-        <Typography variant="h5" component="p" sx={{ fontWeight: '700' }}>BOOTING HUMAN_OS... VERIFYING KERNEL...</Typography>
+        <Typography variant="h5" component="p" sx={{ fontWeight: '700' }}>
+          BOOTING HUMAN_OS... VERIFYING KERNEL...
+        </Typography>
       </Box>
     );
   }
 
   if (!pilotAuthenticated) {
     return (
-      <Box component="main" sx={{ p: 8, bgcolor: '#0a0510', color: '#ff1744', minHeight: '100vh', textAlign: 'center' }}>
+      <Box
+        component="main"
+        sx={{ p: 8, bgcolor: '#0a0510', color: '#ff1744', minHeight: '100vh', textAlign: 'center' }}
+      >
         <FontAwesomeIcon icon={faBiohazard} size="4x" />
-        <Typography variant="h2" component="h1" sx={{ mt: 4, fontWeight: 900 }}>ACCESS DENIED</Typography>
+        <Typography variant="h2" component="h1" sx={{ mt: 4, fontWeight: 900 }}>
+          ACCESS DENIED
+        </Typography>
       </Box>
     );
   }
 
   return (
-    <Box component="main" sx={{ minHeight: '100vh', bgcolor: '#0a0510', color: '#00ff41', fontFamily: 'monospace', p: { xs: 2, md: 4 }, position: 'relative' }}>
+    <Box
+      component="main"
+      sx={{
+        minHeight: '100vh',
+        bgcolor: '#0a0510',
+        color: '#00ff41',
+        fontFamily: 'monospace',
+        p: { xs: 2, md: 4 },
+        position: 'relative',
+      }}
+    >
       <Container maxWidth="lg">
-
         {/* Header Section with Toggle Button */}
-        <Box component="header" sx={{ mb: 4, borderBottom: '1px solid #1b5e20', pb: 4, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2 }}>
+        <Box
+          component="header"
+          sx={{
+            mb: 4,
+            borderBottom: '1px solid #1b5e20',
+            pb: 4,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: 2,
+          }}
+        >
           <Stack direction="row" spacing={2} alignItems="center">
             <FontAwesomeIcon icon={faTerminal} />
-            <Typography variant="h4" component="h1" sx={{ fontWeight: 800 }}>S.A.F.E.H.O.O.D. v2.1</Typography>
+            <Typography variant="h4" component="h1" sx={{ fontWeight: 800 }}>
+              S.A.F.E.H.O.O.D. v2.1
+            </Typography>
           </Stack>
 
           {/* 🔘 The Tactical Toggle */}
@@ -141,7 +183,7 @@ export const ForevergladesTerminal = () => {
               '&:hover': {
                 bgcolor: showUplink ? 'rgba(255, 23, 68, 0.1)' : 'rgba(138, 43, 226, 0.1)',
                 borderColor: showUplink ? '#ff1744' : '#8a2be2',
-              }
+              },
             }}
           >
             {showUplink ? 'CLOSE CONNECTION' : 'INITIATE UPLINK'}
@@ -204,16 +246,22 @@ export const ForevergladesTerminal = () => {
         <Stack spacing={3}>
           {filteredLogs.length > 0 ? (
             filteredLogs.map((record) => {
-              const entry = typeof record.entry_text === 'string'
-                ? JSON.parse(record.entry_text) as CaptainsLogEntry
-                : record.entry_text as CaptainsLogEntry;
+              const entry =
+                typeof record.entry_text === 'string'
+                  ? (JSON.parse(record.entry_text) as CaptainsLogEntry)
+                  : (record.entry_text as CaptainsLogEntry);
 
               return (
                 <Paper
                   key={record.id}
                   elevation={0}
                   component="article"
-                  sx={{ p: 3, bgcolor: 'rgba(0,0,0,0.6)', border: '1px solid #1b5e20', borderRadius: 0 }}
+                  sx={{
+                    p: 3,
+                    bgcolor: 'rgba(0,0,0,0.6)',
+                    border: '1px solid #1b5e20',
+                    borderRadius: 0,
+                  }}
                 >
                   <Stack direction="row" justifyContent="space-between" sx={{ mb: 1 }}>
                     <Typography variant="caption" component="time" sx={{ color: '#8a2be2' }}>
@@ -224,7 +272,11 @@ export const ForevergladesTerminal = () => {
                     </Typography>
                   </Stack>
 
-                  <Typography variant="h6" component="h2" sx={{ mb: 2, textTransform: 'uppercase' }}>
+                  <Typography
+                    variant="h6"
+                    component="h2"
+                    sx={{ mb: 2, textTransform: 'uppercase' }}
+                  >
                     {entry.subject}
                   </Typography>
 
@@ -245,7 +297,7 @@ export const ForevergladesTerminal = () => {
                           border: '1px solid #1b5e20',
                           borderRadius: 0,
                           cursor: 'pointer',
-                          '&:hover': { bgcolor: 'rgba(138, 43, 226, 0.2)', borderColor: '#8a2be2' }
+                          '&:hover': { bgcolor: 'rgba(138, 43, 226, 0.2)', borderColor: '#8a2be2' },
                         }}
                       />
                     ))}

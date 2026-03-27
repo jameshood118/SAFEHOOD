@@ -3,15 +3,22 @@ import {
   faBiohazard,
   faClipboardList,
   faClockRotateLeft,
-  faHouseSignal // Added for the Home OS Nav Link
-  ,
+  faHouseSignal, // Added for the Home OS Nav Link
   faUsers,
-  faUserShield
+  faUserShield,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AppBar, Box, Button, CircularProgress, Toolbar, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Link, Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Link,
+  Navigate,
+  Outlet,
+  Route,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
 
 import { supabase } from './lib/supabase';
 import { Dashboard } from './pages/Dashboard';
@@ -42,7 +49,9 @@ const AuthGuard = ({ children }: { children: React.ReactNode }) => {
     });
 
     // 2. Set up a listener for login/logout events across tabs
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
     });
 
@@ -52,7 +61,15 @@ const AuthGuard = ({ children }: { children: React.ReactNode }) => {
   // Show a tactical spinner while the token is being verified
   if (loading) {
     return (
-      <Box sx={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: 'background.default' }}>
+      <Box
+        sx={{
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          bgcolor: 'background.default',
+        }}
+      >
         <CircularProgress color="secondary" />
       </Box>
     );
@@ -88,7 +105,6 @@ const SafehoodLayout = () => {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
-
       {/* --- THE AIRLOCK HUD (Top Navigation) --- */}
       <AppBar
         position="static"
@@ -96,23 +112,40 @@ const SafehoodLayout = () => {
         sx={{
           bgcolor: 'background.paper', // #212121
           backgroundImage: 'none',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.12)'
+          borderBottom: '1px solid rgba(255, 255, 255, 0.12)',
         }}
       >
         <Toolbar sx={{ gap: { xs: 1, md: 3 }, px: { xs: 2, md: 4 } }}>
-
           {/* Branding */}
           <Box sx={{ display: 'flex', flexDirection: 'column', mr: 2 }}>
-            <Typography variant="h6" sx={{ fontWeight: 700, letterSpacing: '1px', color: 'primary.contrastText', lineHeight: 1.2 }}>
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: 700,
+                letterSpacing: '1px',
+                color: 'primary.contrastText',
+                lineHeight: 1.2,
+              }}
+            >
               SAFEHOOD
             </Typography>
-            <Typography variant="caption" sx={{ color: 'secondary.main', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.65rem' }}>
+            <Typography
+              variant="caption"
+              sx={{
+                color: 'secondary.main',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                fontSize: '0.65rem',
+              }}
+            >
               Protocol Active
             </Typography>
           </Box>
 
           {/* Navigation Links (Scrollable on small screens) */}
-          <Box sx={{ display: 'flex', gap: 1, flexGrow: 1, overflowX: 'auto', pb: { xs: 1, md: 0 } }}>
+          <Box
+            sx={{ display: 'flex', gap: 1, flexGrow: 1, overflowX: 'auto', pb: { xs: 1, md: 0 } }}
+          >
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
 
@@ -142,7 +175,6 @@ const SafehoodLayout = () => {
               );
             })}
           </Box>
-
         </Toolbar>
       </AppBar>
 
@@ -158,7 +190,6 @@ const SafehoodLayout = () => {
       >
         <Outlet />
       </Box>
-
     </Box>
   );
 };
@@ -174,7 +205,12 @@ const NotFound = () => (
     <Typography variant="body1" sx={{ color: 'text.secondary', mt: 2 }}>
       The structural dampers cannot hold this logic. Route not found.
     </Typography>
-    <Button component={Link} to="/" variant="outlined" sx={{ mt: 4, color: '#00E5FF', borderColor: '#00E5FF' }}>
+    <Button
+      component={Link}
+      to="/"
+      variant="outlined"
+      sx={{ mt: 4, color: '#00E5FF', borderColor: '#00E5FF' }}
+    >
       RETURN TO COMMAND CENTER
     </Button>
   </Box>
@@ -186,7 +222,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-
         {/* UNPROTECTED ROUTE: The Login Screen */}
         <Route path="/login" element={<Login />} />
 
@@ -200,16 +235,14 @@ const App = () => {
           }
         >
           <Route index element={<Dashboard />} />
-
           {/* 🚀 STUBS REMOVED. REAL COMPONENTS INJECTED. */}
           <Route path="manifests" element={<Manifests />} />
           <Route path="personnel" element={<Personnel />} />
-          <Route path="home" element={<HomeOS />} />          {/* 🛠️ INJECTED HOME ROUTE */}
+          <Route path="home" element={<HomeOS />} /> {/* 🛠️ INJECTED HOME ROUTE */}
           <Route path="temporal-logs" element={<ForevergladesTerminal />} />
           <Route path="furry-nodes" element={<FurryNodes />} />
           <Route path="*" element={<NotFound />} />
         </Route>
-
       </Routes>
     </BrowserRouter>
   );

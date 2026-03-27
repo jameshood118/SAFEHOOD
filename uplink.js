@@ -18,7 +18,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
 async function injectData() {
   console.log('🚀 Initializing Human OS Uplink...');
 
-// --- 1. PROCESS CAPTAIN'S LOGS (Historical Data) ---
+  // --- 1. PROCESS CAPTAIN'S LOGS (Historical Data) ---
   try {
     const fileContent = fs.readFileSync('./captains_logs_shares.json', 'utf-8');
     const logData = JSON.parse(fileContent);
@@ -31,7 +31,9 @@ async function injectData() {
 
       try {
         // Attempt to parse. If it's missing or weird, fallback to now.
-        entryDate = entry.timestamp ? new Date(entry.timestamp).toISOString() : new Date().toISOString();
+        entryDate = entry.timestamp
+          ? new Date(entry.timestamp).toISOString()
+          : new Date().toISOString();
       } catch (dateErr) {
         console.warn(`⚠️ Date fix for ${entry.id || 'unknown'}: using now.`);
         entryDate = new Date().toISOString();

@@ -7,21 +7,21 @@ const customTheme = createTheme({
     mode: 'dark',
     background: {
       default: '#121212', // Deepest background (WCAG base)
-      paper: '#212121',   // Elevated surfaces (Cards, Drawers)
+      paper: '#212121', // Elevated surfaces (Cards, Drawers)
     },
     primary: {
-      main: '#333333',    // Distinct from background for button boundaries
+      main: '#333333', // Distinct from background for button boundaries
       contrastText: '#FFFFFF', // 11.5:1 Contrast Ratio
     },
     secondary: {
-      main: '#E0F7FA',    // Light Cyan
+      main: '#E0F7FA', // Light Cyan
       contrastText: '#000000', // 19:1 Contrast Ratio (Exceeds AAA)
     },
     error: {
-      main: '#FF5252',    // Accessible red on dark backgrounds
+      main: '#FF5252', // Accessible red on dark backgrounds
     },
     action: {
-      focus: '#00E5FF',   // High-visibility cyan for keyboard navigation
+      focus: '#00E5FF', // High-visibility cyan for keyboard navigation
       active: '#FFFFFF',
     },
   },
@@ -55,7 +55,7 @@ const customTheme = createTheme({
 
   // 3. THE COMPONENT FIREWALL
   components: {
-// GLOBAL CSS & FONTAWESOME HACKS
+    // GLOBAL CSS & FONTAWESOME HACKS
     MuiCssBaseline: {
       styleOverrides: `
         /* Enforce smooth scrolling for cognitive accessibility */

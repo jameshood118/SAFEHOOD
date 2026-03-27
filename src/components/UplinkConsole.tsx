@@ -9,7 +9,7 @@ import {
   MenuItem,
   Stack,
   TextField,
-  Typography
+  Typography,
 } from '@mui/material';
 import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -43,13 +43,18 @@ export const UplinkConsole = ({ onSuccess }: UplinkConsoleProps) => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const { control, handleSubmit, reset, formState: { errors } } = useForm<UplinkFormData>({
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<UplinkFormData>({
     defaultValues: {
       entry_type: 'CAPTAINS_LOG',
       subject: '',
       primary_data: '',
       secondary_data: '',
-    }
+    },
   });
 
   // #region [ 🛠️ LOGIC HANDLERS ]
@@ -65,7 +70,7 @@ export const UplinkConsole = ({ onSuccess }: UplinkConsoleProps) => {
   };
 
   const handleRemoveTag = (tagToRemove: string) => {
-    setTags(tags.filter(t => t !== tagToRemove));
+    setTags(tags.filter((t) => t !== tagToRemove));
   };
 
   const onSubmit = async (data: UplinkFormData) => {
@@ -85,7 +90,7 @@ export const UplinkConsole = ({ onSuccess }: UplinkConsoleProps) => {
     const { error } = await supabase.from('captains_logs').insert({
       entry_type: data.entry_type,
       entry_text: JSON.stringify(payload), // <-- Humie text becomes JSON here
-      is_deleted: false
+      is_deleted: false,
     });
 
     if (error) {
@@ -132,7 +137,7 @@ export const UplinkConsole = ({ onSuccess }: UplinkConsoleProps) => {
         p: 3,
         border: '1px solid #1b5e20',
         bgcolor: '#0a0510',
-        mb: 4
+        mb: 4,
       }}
     >
       <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 3 }}>
@@ -143,19 +148,13 @@ export const UplinkConsole = ({ onSuccess }: UplinkConsoleProps) => {
       </Stack>
 
       <Stack component="form" onSubmit={handleSubmit(onSubmit)} spacing={3}>
-
         {/* Row 1: Type and Subject */}
         <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
           <Controller
             name="entry_type"
             control={control}
             render={({ field }) => (
-              <TextField
-                {...field}
-                select
-                label="PARTITION"
-                sx={{ ...inputSx, minWidth: '200px' }}
-              >
+              <TextField {...field} select label="PARTITION" sx={{ ...inputSx, minWidth: '200px' }}>
                 <MenuItem value="CAPTAINS_LOG">CAPTAINS_LOG</MenuItem>
                 <MenuItem value="OS_MANIFEST">OS_MANIFEST</MenuItem>
                 <MenuItem value="SAFEHOOD_PROTOCOL">SAFEHOOD_PROTOCOL</MenuItem>
@@ -248,7 +247,7 @@ export const UplinkConsole = ({ onSuccess }: UplinkConsoleProps) => {
                     bgcolor: 'transparent',
                     color: '#00ff41',
                     border: '1px solid #1b5e20',
-                    borderRadius: 0
+                    borderRadius: 0,
                   }}
                 />
               ))}
@@ -281,12 +280,11 @@ export const UplinkConsole = ({ onSuccess }: UplinkConsoleProps) => {
             borderRadius: 0,
             py: 1.5,
             '&:hover': { bgcolor: '#6a1b9a' },
-            '&:disabled': { bgcolor: '#4a148c', color: 'rgba(255,255,255,0.5)' }
+            '&:disabled': { bgcolor: '#4a148c', color: 'rgba(255,255,255,0.5)' },
           }}
         >
           {status === 'submitting' ? 'TRANSMITTING...' : 'EXECUTE INJECTION'}
         </Button>
-
       </Stack>
     </Box>
   );

@@ -7,7 +7,7 @@ import {
   faHouseSignal,
   faTerminal,
   faUserShield,
-  faWifi
+  faWifi,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -20,7 +20,7 @@ import {
   Divider,
   Grid,
   Stack,
-  Typography
+  Typography,
 } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -76,7 +76,7 @@ const systemModules = [
     icon: faCat,
     path: '/furry-nodes',
     accentColor: '#FFFFFF', // Tactical White
-  }
+  },
 ];
 // #endregion
 
@@ -106,14 +106,31 @@ export const Dashboard = () => {
 
   return (
     <Box component="section" sx={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
-
       {/* Page Header */}
-      <Box component="header" sx={{ mb: 4, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 2 }}>
+      <Box
+        component="header"
+        sx={{
+          mb: 4,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-end',
+          flexWrap: 'wrap',
+          gap: 2,
+        }}
+      >
         <Box>
-          <Typography variant="h4" component="h1" sx={{ fontWeight: 800, color: 'primary.contrastText', letterSpacing: '-0.5px' }}>
+          <Typography
+            variant="h4"
+            component="h1"
+            sx={{ fontWeight: 800, color: 'primary.contrastText', letterSpacing: '-0.5px' }}
+          >
             COMMAND CENTER
           </Typography>
-          <Typography variant="body1" component="p" sx={{ color: 'text.secondary', fontFamily: 'monospace', mt: 0.5 }}>
+          <Typography
+            variant="body1"
+            component="p"
+            sx={{ color: 'text.secondary', fontFamily: 'monospace', mt: 0.5 }}
+          >
             S.A.F.E.H.O.O.D. v2.1 // Awaiting Pilot Input
           </Typography>
         </Box>
@@ -122,13 +139,19 @@ export const Dashboard = () => {
         <Chip
           icon={<FontAwesomeIcon icon={faWifi} className="fa-fade" />}
           label="UPLINK ESTABLISHED"
-          sx={{ bgcolor: 'rgba(0, 255, 65, 0.1)', color: '#00ff41', border: '1px solid #00ff41', fontWeight: 700, fontFamily: 'monospace', borderRadius: 1 }}
+          sx={{
+            bgcolor: 'rgba(0, 255, 65, 0.1)',
+            color: '#00ff41',
+            border: '1px solid #00ff41',
+            fontWeight: 700,
+            fontFamily: 'monospace',
+            borderRadius: 1,
+          }}
         />
       </Box>
 
       {/* The Dual-Pane Cockpit Layout */}
       <Grid container spacing={4}>
-
         {/* LEFT PANE: The Bento Box Grid (takes 8 columns on desktop) */}
         <Grid size={{ xs: 12, lg: 8 }}>
           <Grid container spacing={3}>
@@ -148,11 +171,18 @@ export const Dashboard = () => {
                       borderColor: module.accentColor,
                       bgcolor: 'rgba(255,255,255,0.04)',
                       boxShadow: `0 8px 24px ${module.accentColor}20`,
-                    }
+                    },
                   }}
                 >
                   <CardActionArea component={Link} to={module.path} sx={{ height: '100%', p: 3 }}>
-                    <CardContent sx={{ p: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                    <CardContent
+                      sx={{
+                        p: 0,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'flex-start',
+                      }}
+                    >
                       <Box
                         sx={{
                           display: 'inline-flex',
@@ -160,15 +190,23 @@ export const Dashboard = () => {
                           borderRadius: '12px',
                           bgcolor: `${module.accentColor}15`,
                           color: module.accentColor,
-                          mb: 2.5
+                          mb: 2.5,
                         }}
                       >
                         <FontAwesomeIcon icon={module.icon} size="2x" />
                       </Box>
-                      <Typography variant="h6" component="h2" sx={{ fontWeight: 700, mb: 1, color: 'primary.contrastText' }}>
+                      <Typography
+                        variant="h6"
+                        component="h2"
+                        sx={{ fontWeight: 700, mb: 1, color: 'primary.contrastText' }}
+                      >
                         {module.title}
                       </Typography>
-                      <Typography variant="body2" component="p" sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
+                      <Typography
+                        variant="body2"
+                        component="p"
+                        sx={{ color: 'text.secondary', lineHeight: 1.6 }}
+                      >
                         {module.description}
                       </Typography>
                     </CardContent>
@@ -181,10 +219,29 @@ export const Dashboard = () => {
 
         {/* RIGHT PANE: Live Telemetry & System Status (takes 4 columns on desktop) */}
         <Grid size={{ xs: 12, lg: 4 }}>
-          <Card elevation={0} sx={{ bgcolor: '#0a0510', border: '1px solid #1b5e20', borderRadius: 2, height: '100%' }}>
+          <Card
+            elevation={0}
+            sx={{
+              bgcolor: '#0a0510',
+              border: '1px solid #1b5e20',
+              borderRadius: 2,
+              height: '100%',
+            }}
+          >
             <CardContent sx={{ p: 3 }}>
-
-              <Typography variant="h6" component="h3" sx={{ color: '#00ff41', fontFamily: 'monospace', fontWeight: 700, mb: 3, display: 'flex', alignItems: 'center', gap: 1.5 }}>
+              <Typography
+                variant="h6"
+                component="h3"
+                sx={{
+                  color: '#00ff41',
+                  fontFamily: 'monospace',
+                  fontWeight: 700,
+                  mb: 3,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1.5,
+                }}
+              >
                 <FontAwesomeIcon icon={faTerminal} /> RECENT TELEMETRY
               </Typography>
 
@@ -195,18 +252,56 @@ export const Dashboard = () => {
               ) : (
                 <Stack spacing={3}>
                   {recentLogs.map((log) => {
-                    const entry = typeof log.entry_text === 'string' ? JSON.parse(log.entry_text) : log.entry_text;
+                    const entry =
+                      typeof log.entry_text === 'string'
+                        ? JSON.parse(log.entry_text)
+                        : log.entry_text;
                     const isSystem = log.entry_type !== 'CAPTAINS_LOG';
 
                     return (
-                      <Box key={log.id} sx={{ borderLeft: `2px solid ${isSystem ? '#00E5FF' : '#9C27B0'}`, pl: 2 }}>
-                        <Typography variant="caption" component="time" sx={{ color: 'text.disabled', fontFamily: 'monospace', display: 'block', mb: 0.5 }}>
-                          {new Date(log.created_at).toLocaleDateString()} // {new Date(log.created_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                      <Box
+                        key={log.id}
+                        sx={{ borderLeft: `2px solid ${isSystem ? '#00E5FF' : '#9C27B0'}`, pl: 2 }}
+                      >
+                        <Typography
+                          variant="caption"
+                          component="time"
+                          sx={{
+                            color: 'text.disabled',
+                            fontFamily: 'monospace',
+                            display: 'block',
+                            mb: 0.5,
+                          }}
+                        >
+                          {new Date(log.created_at).toLocaleDateString()} //{' '}
+                          {new Date(log.created_at).toLocaleTimeString([], {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                          })}
                         </Typography>
-                        <Typography variant="body2" component="p" sx={{ color: 'primary.contrastText', fontWeight: 600, textTransform: 'uppercase', mb: 0.5 }}>
+                        <Typography
+                          variant="body2"
+                          component="p"
+                          sx={{
+                            color: 'primary.contrastText',
+                            fontWeight: 600,
+                            textTransform: 'uppercase',
+                            mb: 0.5,
+                          }}
+                        >
                           {entry.subject || 'UNTITLED AUDIT'}
                         </Typography>
-                        <Typography variant="caption" component="p" sx={{ color: 'text.secondary', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                        <Typography
+                          variant="caption"
+                          component="p"
+                          sx={{
+                            color: 'text.secondary',
+                            display: '-webkit-box',
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden',
+                          }}
+                        >
                           {entry.primary_data}
                         </Typography>
                       </Box>
@@ -218,21 +313,52 @@ export const Dashboard = () => {
               <Divider sx={{ my: 4, borderColor: '#1b5e20' }} />
 
               {/* High Priority Node Status */}
-              <Typography variant="h6" component="h3" sx={{ color: '#00ff41', fontFamily: 'monospace', fontWeight: 700, mb: 2, display: 'flex', alignItems: 'center', gap: 1.5 }}>
+              <Typography
+                variant="h6"
+                component="h3"
+                sx={{
+                  color: '#00ff41',
+                  fontFamily: 'monospace',
+                  fontWeight: 700,
+                  mb: 2,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1.5,
+                }}
+              >
                 <FontAwesomeIcon icon={faCat} /> NODE STATUS
               </Typography>
 
               <Stack spacing={1.5}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: 1.5, bgcolor: 'rgba(255,255,255,0.03)', borderRadius: 1 }}>
-                  <Typography variant="body2" component="span" sx={{ fontWeight: 600 }}>Rita (Tuxedo Unit 1)</Typography>
-                  <Chip size="small" label="NOMINAL" sx={{ bgcolor: 'rgba(0, 255, 65, 0.1)', color: '#00ff41', borderRadius: 1, fontFamily: 'monospace', fontSize: '0.65rem' }} />
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    p: 1.5,
+                    bgcolor: 'rgba(255,255,255,0.03)',
+                    borderRadius: 1,
+                  }}
+                >
+                  <Typography variant="body2" component="span" sx={{ fontWeight: 600 }}>
+                    Rita (Tuxedo Unit 1)
+                  </Typography>
+                  <Chip
+                    size="small"
+                    label="NOMINAL"
+                    sx={{
+                      bgcolor: 'rgba(0, 255, 65, 0.1)',
+                      color: '#00ff41',
+                      borderRadius: 1,
+                      fontFamily: 'monospace',
+                      fontSize: '0.65rem',
+                    }}
+                  />
                 </Box>
               </Stack>
-
             </CardContent>
           </Card>
         </Grid>
-
       </Grid>
     </Box>
   );

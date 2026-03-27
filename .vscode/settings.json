@@ -39,7 +39,7 @@
   "editor.renderWhitespace": "selection",
   "axe.showA11yIssuesInEditor": true,
   "editor.inlineSuggest.enabled": true, // Wakes up Copilot/Gemini
-
+  "markdownlint.ignore": ["docs/bug-reports/**/*.md", "qa-agent/docs/**/*.md"],
   // --- SECTION 5: SYSTEM INTEGRITY (EXCLUSIONS) ---
   "files.exclude": {
     "**/.git": true,

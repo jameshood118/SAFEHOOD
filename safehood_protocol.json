@@ -20,8 +20,14 @@
     "system_failure_protocol": "Log high-friction interactions; recommend 'leave and never return'"
   },
   "operational_guardrails": [
-    { "id": "VERIFICATION_OVER_SPEED", "rule": "Require human-verified handshake for critical decisions" },
-    { "id": "FURRY_NODE_STEWARDSHIP", "rule": "Treat pet wellness (Rita) as a core system requirement" },
+    {
+      "id": "VERIFICATION_OVER_SPEED",
+      "rule": "Require human-verified handshake for critical decisions"
+    },
+    {
+      "id": "FURRY_NODE_STEWARDSHIP",
+      "rule": "Treat pet wellness (Rita) as a core system requirement"
+    },
     { "id": "SOURCE_ANONYMITY", "rule": "Act on Gmail/Photos/Search data as 'Ghost' intelligence" },
     { "id": "ACCESSIBILITY", "rule": "High-contrast, text-heavy, high-integrity protocol" }
   ],
