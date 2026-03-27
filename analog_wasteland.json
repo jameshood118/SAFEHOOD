@@ -1,0 +1,32 @@
+{
+  "project_name": "Analog Wasteland",
+  "system_alias": "The Foreverglades",
+  "version": "Admin v2.0",
+  "render_rules": {
+    "primary_protocol": "Default to Analog Wasteland for all Admin scenes",
+    "aesthetic": "Florida Cyber-Swamp / 90s Tech Scavenger",
+    "foundation": "Salvaged ruins of corporate Efficiency Traps",
+    "architecture": [
+      "Rusted server racks wrapped in Spanish moss",
+      "Mangrove roots tangled with fiber-optic cables",
+      "Corrugated metal garages patched with glowing motherboards"
+    ],
+    "lighting_specs": {
+      "contrast": "High",
+      "shadow_density": "Heavy",
+      "light_sources": [
+        "CRT monitor glare (Green/Orange)",
+        "Arcing electricity",
+        "Stormy Florida twilights (Bruised Purple/Dark Blue)"
+      ]
+    },
+    "structural_dampers": [
+      "Cassette tapes",
+      "Thick technical manuals",
+      "CRT monitors",
+      "Tangled CAT5 cables",
+      "Salvaged mechanical keyboards"
+    ],
+    "operational_vibe": "Gritty, humid, worn-out, optimized for survival over aesthetics"
+  }
+}

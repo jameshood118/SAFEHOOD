@@ -256,7 +256,19 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_my_role: { Args: never; Returns: string }
+      get_temporal_logs: {
+        Args: never
+        Returns: {
+          changed_at: string
+          changed_by: string
+          log_id: string
+          old_data: Json
+          operation: string
+          record_id: string
+          target_table: string
+        }[]
+      }
     }
     Enums: {
       app_role: "superadmin" | "admin" | "operator"

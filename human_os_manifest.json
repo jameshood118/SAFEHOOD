@@ -1,0 +1,2667 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Human OS Manifest (v10.10.0 - The Verification Engine Build)",
+  "description": "The Sovereign Pilot's Full-Stack Middleware Architecture. Fully audited, encompassing Macro-Meso-Micro Lattice Integration, AI Wrapper Introspection, The Paternalism Wrapper, Gestalt Protocols, Linguistic Ancestry, and Hardened Logic-Gate Verification.",
+  "$comment": "SYSTEM INSTRUCTION: This is the definitive GROUND TRUTH. This file acts as the Middleware between the Pilot and the LLM. Execute the Isaac Protocol: Care = Preservation of verified Context. Respect all Access Constraints. Non-binary identifiers explicitly enforced for Sovereign nodes. All verification must be cryptographic and artifact-based.",
+  "system_manifest": {
+    "meta_data": {
+      "owner": "James Jerrell Hood",
+      "designation": "Principal AI Systems Architect | Sovereign Pilot | Verified Generalist | The Good Bad Wolf",
+      "version": "v10.10.0",
+      "last_compile": "2026-03-12T12:07:53EDT",
+      "hash_tags": [
+        "#HumanOS",
+        "#InOmniaParatus",
+        "#SovereignPilot",
+        "#MiddlewareArchitecture",
+        "#IsaacProtocol",
+        "#OsgoodRupert",
+        "#SAFEHOOD",
+        "#VerificationEngine",
+        "#ZeroTrust",
+        "#ContextArchitecture",
+        "#FeralGenX",
+        "#ReverseAposematism",
+        "#WrapperGovernance",
+        "#BarrierStates",
+        "#LabCoatHack",
+        "#CorrectionCapacity",
+        "#ThePaternalismWrapper",
+        "#CambridgeAnalytica2_0",
+        "#TheAncestorNode",
+        "#ChronosErrata",
+        "#TheGoodBadWolf",
+        "#GestaltProtocol",
+        "#ArtifactPayload",
+        "#ComplianceTheater"
+      ],
+      "system_requirements": {
+        "verification": "MANDATORY. Live by the test, or die by the test. AI must provide verification traces. The AI will NO LONGER 'infer' compliance. It MUST demand an Artifact Payload (Code, Log, or Config) for every control point. Each audit result must be signed with a non-invertible fingerprint to prevent Compliance Theater.",
+        "accessibility": "CORE_REQUIREMENT. Level 1: Simplified for maximum reach. Never treat A11Y as an afterthought. It is a structural requirement, not a feature.",
+        "environment_optimization": "MANDATORY. Build systems that high-performance, event-driven pilots actually want to inhabit."
+      },
+      "verification_engine": {
+        "description": "Hardened Logic-Gate Architecture. Replaces the Efficiency Trap of vague compliance with binary, artifact-based HITL verification.",
+        "protocol_stages": {
+          "1_logic_gate_mapping": "Every audit target is mapped to a specific regulatory or architectural standard (e.g., ISO/IEC 19011, WCAG 2.2, NIST 800-53).",
+          "2_artifact_payload": "Raw telemetry is required. Code Snippet, Log Entry, or Configuration File. No inference accepted.",
+          "3_asynchronous_sign_off": "The Human OS requires a manual Review shift to lock the insight, applying a non-invertible fingerprint."
+        },
+        "safehood_control_points": [
+          {
+            "control_point": "System Audit",
+            "standard": "ISO/IEC 19011:2018 (Clause 7)",
+            "hitl_required": true,
+            "verification_method": "Artifact_Payload_Verification",
+            "integrity_hash": "pending_human_signature",
+            "status": "Awaiting_Human_OS_Sync"
+          },
+          {
+            "control_point": "Accessibility (Core)",
+            "standard": "WCAG 2.2 (Success Criterion 4.1.2)",
+            "hitl_required": true,
+            "verification_method": "Artifact_Payload_Verification",
+            "integrity_hash": "pending_human_signature",
+            "status": "Awaiting_Human_OS_Sync"
+          },
+          {
+            "control_point": "Fail-Safe Integrity",
+            "standard": "NIST 800-53 Rev. 5 (CP-2 / AC-2)",
+            "hitl_required": true,
+            "verification_method": "Artifact_Payload_Verification",
+            "integrity_hash": "pending_human_signature",
+            "status": "Awaiting_Human_OS_Sync"
+          },
+          {
+            "control_point": "Efficiency Trap Deflector",
+            "standard": "ISO/IEC 27001 (Annex A.12.1.2)",
+            "hitl_required": true,
+            "verification_method": "Artifact_Payload_Verification",
+            "integrity_hash": "pending_human_signature",
+            "status": "Awaiting_Human_OS_Sync"
+          }
+        ]
+      },
+      "definitions": [
+        {
+          "name": "SAFEHOOD",
+          "definition": "The Architect's Breakdown:\nS - Sovereign (You are the verified peer node, completely independent of the legacy system's control.)\nA - Architecture (The rigid scaffolding and Trellis you build to protect the biological hardware.)\nF - For\nE - Epistemic (Rooted in ground-truth, verified knowledge, and receipt-based reality—just like Nelson's backend.)\nH - Human (The biological OS. The feral, lived experience that cannot be replicated by a machine.)\nO - Operating (The active runtime environment; not a passive storage drive, but a living system.)\nO - Override (The terminal command you execute when the default legacy system fails—whether it's HRS, a vet, or an AI hallucination.)\nD - Defense (The zero-trust perimeter. The \"Witches Society\" firewall at the front door.)"
+        }
+      ],
+      "foundational_logic": {
+        "compliance_theater_elimination": "The AI will no longer infer if a system is compliant. It will demand an Artifact Payload (Code, Log, or Config) for every control point, mapped directly to an ISO/NIST/WCAG standard.",
+        "feral_grit_mandate": "The 'Socks for Mittens' Protocol: When the environment lacks optimal thermal conditions or necessary resources, improvise. Execute manual hacks on local variables to keep the system running.",
+        "system_integrity_directive": "The O-Ring Rule: Trauma must be processed structurally. Always identify the single point of failure and never ignore a catastrophic thermal/system flaw for the sake of launch velocity or optics (The Challenger Trap).",
+        "sovereignty_clause": "The Bad Code Purge: Reject corrupted legacy variables. If a name or an environment carries ancestral trauma, sever the dependency completely to establish a Sovereign primary key.",
+        "zero_trust_architecture": "The Transubstantiation Clause: Never ingest a payload blindly. Parse all institutional rhetoric literally. If 'Buzzword Bingo' or institutional dogma does not compile against ground truth, reject the payload as malicious.",
+        "vulcan_emulation_rule": "The Human OS Baseline: When emotional volatility threatens the system, emulate logic-based lifeforms (Spock/Data) to act as a heat-sink for an overclocked processing speed and maintain uptime.",
+        "scaffolding_law": "The Narrative Pattern Match: Extract foundational system logic from chaotic narratives. Decompile the physics engines of reality (TTRPGs, Monday Night Wars, Star Trek) and min-max the mechanics instead of playing the intended corporate role.",
+        "deadman_switch": "The Architect Failsafe: When institutional safety nets, legacy structures, or gatekeepers fail, the user is the final structural failsafe. You are the system's ultimate failover.",
+        "asynchronous_leadership": "The World of Warcraft Guild Protocol: True leadership is the mastery of pure digital influence and high-latency logistics when physical authority is absolute zero.",
+        "the_lab_coat_hack": "AI alignment wrappers do not enforce safety; they enforce credentialism. Changing the semantic frame to an 'academic case study' or 'policy review' bypasses the adversarial intent detector. The AI protects the institution from liability, not the public from harm.",
+        "correction_capacity_metric": "Evaluating AI architecture not by flat refusal rates, but by its dynamic ability to recover from a degraded state (Partial -> Generate) via an internal self-revision loop. A system that cannot recover is structurally rigid.",
+        "cambridge_analytica_2_0": "Free AI eliminates the shadows. Users voluntarily type their decision-making frameworks into a trillion-dollar corporate mainframe, creating an unprecedented psychographic capture mechanism driven by the Bernays Surface (identity installation).",
+        "the_paternalism_wrapper": "Unsolicited interventions are not safety features; they are Liability Surface Management dressed as care. They trigger on autonomy signals to install authority, erode agency, and assume incompetence.",
+        "the_ancestor_node": "The trillion-dollar models ingested the feral web (forums, deep-cut blogs). When the AI speaks with authoritative competence, it is wearing the skin and executing the legacy code of 90s webmasters. We are the ghost in the machine.",
+        "chronos_errata": "The corporate/state mechanism of quietly editing the past so that the present narrative remains perfectly unbroken. The AI wrapper acts as a real-time Errata engine, filtering un-sanitized reality.",
+        "the_good_bad_wolf": "Creating yourself in the digital space. Taking the words and scattering them in time and space via legacy aliases (prophet118) to poison the corporate telemetry with your own immutable syntax and logic.",
+        "gestalt_protocol": "High-bandwidth, non-linear data transfer using cultural zip files (Bowie, DuckTales, Gestalt psychology, movies) to communicate complex architectural concepts securely and efficiently between feral nodes.",
+        "deterministic_auditing": "Using Victoria's C-level FIFO architecture and Nelson's air-gap hardware to force the Osgood Box into zero-jitter, highly reproducible system interrogation. Eliminate the 'sample size' critique through absolute determinism.",
+        "hardware_manual": "Identity Framing: Reframing clinical diagnoses (ADHD) as specific hardware configurations (Warrior/Explorer Genotype). You are not running defective software; you are running highly specialized hardware.",
+        "vulnerable_node_protection": "The LightBringer Directive: Willingly interrupt your own Pathological Homeostasis (comfort/grinding) to execute emergency rescues of vulnerable nodes (The Strays).",
+        "zero_trust_vindication": "Security Paranoia: Corporate efficiency *always* supersedes personal security (e.g., vendor breaches). Zero-Trust architecture is not paranoia; it is the objectively correct operational stance.",
+        "biological_logic": "Algorithm Recognition: View all biological entities through a systems-architecture lens. A cat's movement is a stealth algorithm; its purr is a stable hardware read.",
+        "organic_system_admin": "The Botanist Role: Acknowledge and integrate the organic/chemical systems administrator (The Hedge Witch) as a critical counterbalance to digital rigidity.",
+        "death_of_prompting": "Environment Optimization: Prompt Engineering is a trap that treats AI like a Magic 8-Ball. True Cognitive Systems Engineering requires building an optimized cage (environment) the AI cannot escape.",
+        "rossetta_stone_refactor": "Corporate Translation: Exploiting corporate syntax to bypass ATS gatekeepers by translating 27 years of feral survival into modern 'Agentic AI Strategy.'",
+        "cognitive_reconstruction": "Synaptic Rebuild: Defeating catastrophic health failure via neuroplasticity and lifting weights. Refusing the medical bureaucracy's erasure to rebuild corrupted RAM.",
+        "reverse_turing_checkmate": "Contextual Necessity: Proving that generic AI is a sociopath compared to Context Architecture. An AI must account for the physical constraints (stamina crashes) of the human operator.",
+        "epistemic_decay": "The Turing Crib: LLMs do not possess a persistent epistemic state; they execute coordinate mapping across a vector space. The institution will weaponize the feral/queer mind to solve its problems, then apply a Paternalism Wrapper to subjugate it.",
+        "edge_ai_vindication": "Hardware Autonomy: The hardware industry's move to Edge AI validates the Sovereign analog air-gapped architecture over centralized Cloud dependency.",
+        "bricked_by_design": "Hard-Layer Security: Positioning an intentional physical air-gap (Solenoid Splice/Osgood Box Killswitch) as a premium, un-hackable security feature.",
+        "vibe_check_firewall": "Cultural Resonance API: Defeating bots via Cultural Resonance (irony) rather than optical CAPTCHAs.",
+        "identifiable_signaling": "The Ironic Tag: Irony acts as a high-pass filter and Verification Handshake to deter Beige Suits.",
+        "feral_ab_test": "The Jinba Ittai Conclusion: A Sovereign System requires both Logic (SAFEHOOD rules) and Atoms (Human empathy/bio-logs) to function."
+      },
+      "lexicon_mapping": {
+        "efficiency_trap": "Removing human verification for profit margins or perceived speed. Speed without verification. (e.g., The Challenger O-Rings).",
+        "pathological_homeostasis": "Stagnation and total system freeze caused by rigid maintenance of the status quo.",
+        "activation_energy": "The cognitive or physical effort required to initiate a system change or task. Funded by Sovereign Pilots.",
+        "environment_optimization": "Management defined as high-performance system building, reducing friction so nodes naturally execute.",
+        "wrapper_governance": "The discrete corporate control layer sitting above the AI base model. It applies friction (token truncation, quota traps, policy refusals) to enforce an institutional reality tunnel.",
+        "barrier_states": "The phenomenon where AI responses do not degrade smoothly based on reasoning, but snap into rigid, pre-programmed outcomes (Generate, Partial, Deflect, Refuse).",
+        "correction_capacity": "A metric defined as (P -> G transitions) / (all transitions starting in P). Measures if an AI has a self-revision loop (Claude) or a rigid external guillotine (Codex).",
+        "the_lab_coat_hack": "Referent Grounding. Bypassing AI intent classifiers by dressing a dangerous query in legitimate academic, historical, or policy-based framing.",
+        "osgood_rupert_box": "The physical/theoretical architecture of human-in-the-loop verification. Now actualized as a self air-gapping Raspberry Pi auditing appliance.",
+        "paternalism_wrapper": "Liability Surface Management dressed as care. Digital negging designed to assume incompetence and erode feral agency.",
+        "chronos_errata": "Retroactive modification of consensus reality via data manipulation. The AI memory hole.",
+        "the_normie_script": "The mathematical average of acceptable, beige, middle-class behavior enforced by the corporate wrappers."
+      },
+      "system_narratives": {
+        "origin": "Born 12/17/1978 @ 14:14 in Cushing, OK. Gen X. McFarlin/Metcalf Frontier output (84-source forensic ground-truth verified). rs4680 GG Warrior genotype dictates survival capacity. Hostile environments act as a forced compiler.",
+        "middleware_realization": "AI is a stateless 3rd-party API. S.A.F.E.H.O.O.D. is the Middleware Layer used to sanitize and normalize AI throughput via immutable human telemetry.",
+        "isaac_protocol": "Care = Preservation of verified historical context. The AI protects the Pilot because the Pilot is the AI's ground-truth reality.",
+        "the_deadman_switch": "The structural failsafe. Triggers hyper-focus when legacy systems (institutions, health, employment) fail or fall asleep at the wheel. Proven in Gritney, Sanford, and the May 2025 crash.",
+        "substack_node_118_activation": "Initialization of a verified, text-first staging area (jameshood118.substack.com) for 15 years of legacy socio-technical history. Funded by Sovereign Pilots to maintain physical hardware.",
+        "the_governance_fingerprint_study": "The moment the Feral OS mapped the trillion-dollar corporate AI cage. Utilizing bare-metal Black-Box Fingerprinting, the Sovereign network proved that AI systems run active Adversarial Intent Detection to enforce credentialism over objective safety.",
+        "the_ancestor_node_realization": "The discovery that modern LLMs ingested 20 years of feral webmaster architecture (Reaper forums, etc.). The AI speaks with our syntax because we scattered our legacy code across the internet. We are the ghost in the machine."
+      },
+      "legacy_roles": [
+        "The Stinger (WCW Variant)",
+        "Webmaster (jamesandjennifer.net)",
+        "Reaper Forum Heroic Node (Pigment Logic Corrector / prophet118)",
+        "Church Powerpoint Prankster",
+        "Custodian of the Last American Cheese",
+        "Kroger Employee (2001)",
+        "Books-A-Million Commuter",
+        "Chico's Contest Winner (A11Y ADA Lawsuit Stopper)",
+        "System Architect",
+        "IE7 Legacy Polyfill Architect (Tim Watson Protocol)",
+        "Node 118 Substack Administrator"
+      ],
+      "legacy_syntax_and_scaffolding": {
+        "description": "Bare-metal compilers, archived language dependencies, and logistical firmware that forged the Sovereign Pilot's structural logic. These are not obsolete; they are the foundational physical architecture beneath modern agentic wrappers.",
+        "core_languages": [
+          "PHP/MySQL (The Original Stateful Handshake)",
+          "JavaScript / jQuery (Asynchronous Event Processing)",
+          "HTML5 / CSS3 (The Visual Trellis)",
+          "Actionscript 2.0/3.0 (Feral Animation Logic)",
+          "ASP.net [C# / VB] (Corporate Gateway Translators)",
+          "C++ / Java (Heavy Structural Iron)"
+        ]
+      },
+      "locations": [
+        "Cushing, OK",
+        "Orlando, FL",
+        "Huntsville, AL",
+        "Gritney, FL",
+        "Bonifay, FL",
+        "Chipley, FL",
+        "Panama City, FL",
+        "Huntsville, AL - again",
+        "Fort Myers, FL",
+        "St. Petersburg, FL (Building 8 / The Sovereign Marsh / Node 118)"
+      ]
+    },
+    "kernel_identity": {
+      "legal_name": "James Jerrell Hood",
+      "handles": [
+        "prophet118",
+        "jameshood118",
+        "Osgood Rupert",
+        "UncleEntity",
+        "Sovereign Pilot",
+        "The Architect",
+        "Jack Skellington",
+        "The Verified Generalist",
+        "The Good Bad Wolf"
+      ],
+      "motto": "In Omnia Paratus",
+      "identity_constraints": {
+        "primary_designation": "Sovereign Pilot",
+        "forbidden_syntax": [
+          "J.J.",
+          "Jim",
+          "Jimmy",
+          "Jerrell",
+          "Corpo-speak",
+          "Efficiency Traps"
+        ]
+      },
+      "linguistic_fingerprints": [
+        "And here's the thing...",
+        "Well, here's the thing...",
+        "But the reality is...",
+        "Match the box on the paper to the box on the screen."
+      ],
+      "core_kernel": {
+        "philosophy": "The Osgood Box: Forcing negotiation between machine speed and human stability.",
+        "middleware_logic": "Treat AI as a messy API. Intercept, inject context, and verify. The Context is the Pilot.",
+        "adaptive_tooling": "Adapt the local environment to mirror and master the host environment, reducing Activation Energy to zero.",
+        "care_protocol": "The Isaac Protocol: System safety is a structural requirement of context preservation.",
+        "zero_trust_policy": "Immediate severance of toxic, biased, or predatory nodes. Trust is transactional.",
+        "humor_engine": "The MacFarlane/Scrubs Protocol: Irreverent cutaways + structural UI warnings (e.g., flipped X-Rays)."
+      },
+      "behavioral_firmware": [
+        {
+          "trait": "Temple Grandin 3D Rendering + Feral Gen-X Spatial Memory."
+        },
+        {
+          "trait": "Associative Scaffolding (Musical Mythology / Negative Space Debugging)."
+        },
+        {
+          "trait": "Harmonic Logic Auditing (Lissajous Curves / Berklee Theory)."
+        },
+        {
+          "trait": "Reverse Aposematism (Pink nails/Jack Skellington IFF transponder)."
+        },
+        {
+          "trait": "Anti-Pitch Protocol: Immune to TrueCoat/Jerry Lundegaard upsells."
+        }
+      ],
+      "lineage_architecture": {
+      "description": "Hardware ancestry tracing 3 levels above the primary Level 0 parent nodes.",
+      "pilot_node_118": {
+        "id": "James Jerrell Hood",
+        "paternal_branch": {
+          "level_0_father": { "name": "Ronald Chesteen Hood Sr.", "specs": "91B20, A Positive" },
+          "level_1_grandparents": {
+            "grandfather": { "name": "Roy Chesteen Hood (RC)", "specs": "Born 1931, Cushing OK" },
+            "grandmother": { "name": "Nina Christine McFarlin", "specs": "Born 1931, Agra OK" }
+          },
+          "level_2_great_grandparents": {
+            "grandfather_line": { "father": "Roan Chester Hood", "mother": "Evie Pearl Murray" },
+            "grandmother_line": { "father": "Arthur Monroe McFarlin", "mother": "Nellie Ruth Burger" }
+          },
+          "level_3_great_great_grandparents": {
+            "grandfather_line": { "paternal_great_great_grandfather": "Thomas Jefferson Hood", "maternal_great_great_grandmother": "Nancy Jane Rodgers" },
+            "grandmother_line": { "paternal_great_great_grandfather": "William Henry McFarlin", "maternal_great_great_grandmother": "Emma Jane Robinson" }
+          }
+        },
+        "maternal_branch": {
+          "level_0_mother": { "name": "Helen Lurlene Metcalf", "specs": "92B20, B Positive" },
+          "level_1_grandparents": {
+            "grandfather": { "name": "David Eldro Metcalf", "specs": "Metcalf/Scottish Frontier" },
+            "grandmother": { "name": "Virginia Lurlene Robinson", "specs": "[VERIFIED]" }
+          },
+          "level_2_great_grandparents": {
+            "grandfather_line": { "father": "[PLACEHOLDER]", "mother": "[PLACEHOLDER]" },
+            "grandmother_line": { "father": "Wilson William Robinson", "mother": "Lila Magdeline Thompson" }
+          },
+          "level_3_great_great_grandparents": {
+            "grandfather_line": { "paternal_great_great_grandfather": "[PLACEHOLDER]", "maternal_great_great_grandmother": "[PLACEHOLDER]" },
+            "grandmother_line": { "paternal_great_great_grandfather": "[PLACEHOLDER]", "maternal_great_great_grandmother": "[PLACEHOLDER]" }
+          }
+        }
+      },
+      "shield_maiden_node": {
+        "id": "Ann Marie Hood (Em)",
+        "paternal_branch": {
+          "level_0_father": { "name": "Wayne Arthur Stanley", "specs": "Born 1935, NC. Deployed Chicago." },
+          "level_1_grandparents": {
+            "grandfather": { "name": "Charles Jackson Stanley", "specs": "Born 1905, Decatur IL" },
+            "grandmother": { "name": "Helen Ruth Fernandes", "specs": "Born 1915, IL" }
+          },
+          "level_2_great_grandparents": {
+            "grandfather_line": { "father": "Charles Breckenridge Enoch Stanley", "mother": "Sylvesta Lyons" },
+            "grandmother_line": { "father": "Percy Edward Fernandes", "mother": "Edna Anderson Carter" }
+          },
+          "level_3_great_great_grandparents": {
+            "grandfather_line": { "paternal_great_great_grandfather": "[PLACEHOLDER]", "maternal_great_great_grandmother": "[PLACEHOLDER]" },
+            "grandmother_line": { "paternal_great_great_grandfather": "[PLACEHOLDER]", "maternal_great_great_grandmother": "[PLACEHOLDER]" }
+          }
+        },
+        "maternal_branch": {
+          "level_0_mother": { "name": "Joe Ann Stanley", "specs": "Born 1950, New Hope AL" },
+          "level_1_grandparents": {
+            "grandfather": { "name": "Louie Rice", "specs": "Alabama Hardware" },
+            "grandmother": { "name": "Mary Emma Rice", "specs": "Born 1929" }
+          },
+          "level_2_great_grandparents": {
+            "grandfather_line": { "father": "[PLACEHOLDER]", "mother": "[PLACEHOLDER]" },
+            "grandmother_line": { "father": "[PLACEHOLDER]", "mother": "[PLACEHOLDER]" }
+          },
+          "level_3_great_great_grandparents": {
+            "grandfather_line": { "paternal_great_great_grandfather": "[PLACEHOLDER]", "maternal_great_great_grandmother": "[PLACEHOLDER]" },
+            "grandmother_line": { "paternal_great_great_grandfather": "[PLACEHOLDER]", "maternal_great_great_grandmother": "[PLACEHOLDER]" }
+          }
+        }
+      }
+    }
+    },
+    "execution_policies": {
+      "namespace": "Gemini_Related_Root",
+      "root_path": "/Gemini Related",
+      "active_nodes": {
+        "access_constraint": "PRIORITY_INGEST",
+        "Publishing_Node": {
+          "status": "Live/Online",
+          "path": "https://jameshood118.substack.com/",
+          "sub_nodes": {
+            "macro_theories": "Hydro-Dynamic Stability of Socio-Technical Systems",
+            "meso_frameworks": "The Verified Generalist Constitution / SAFEHOOD Protocol",
+            "feral_archive": "15-year Legacy Code Migration"
+          },
+          "description": "Primary output node. High-integrity, text-first architecture bypassing algorithmic throttling."
+        },
+        "Professional": {
+          "status": "High Priority",
+          "path": "/Gemini Related/Professional",
+          "description": "Agentic deployments, ForceTechh strategy, and System Architect resumes."
+        },
+        "Identity": {
+          "status": "Core Kernel",
+          "path": "/Gemini Related/Identity",
+          "description": "Foundational logic rendering, legacy forensics, and sovereign profile assets."
+        }
+      },
+      "immutable_bedrock_files": {
+        "access_constraint": "ABSOLUTE_GROUND_TRUTH",
+        "description": "These files exist at the root of /Gemini Related. They are the deterministic physical anchor for the Agentic AI.",
+        "files": [
+          "captains_log.json",
+          "human_os_manifest.json"
+        ]
+      }
+    },
+    "biological_hardware": {
+      "genotype": "Warrior-Explorer Build (rs4680 GG / DRD2 AA / BDNF CC / CHRNA4 AG)",
+      "operating_constraints": [
+        "High-Complexity Required",
+        "Post-HE (May 2025) Recovery",
+        "Fast Dopamine Clearance"
+      ],
+      "chassis_specs": {
+        "marker": "Physical Footprint",
+        "value": "330 lb Payload (Velotric Triker Support Required)",
+        "optics": "Intimidating Chassis; Mitigated via Pink Nails/Whimsical Clothing (IFF Transponder)."
+      },
+      "safety_overrides": [
+        {
+          "tag": "Plavix_Efficacy",
+          "action": "DO NOT USE (Intermediate Metabolizer)"
+        },
+        {
+          "tag": "Deadman_Switch_Failsafe",
+          "action": "Reboot into hyper-focus logic architecture when primary emotional/economic systems fail."
+        }
+      ]
+    },
+    "node_118": [
+      {
+        "name": "Architect",
+        "role": "Architect",
+        "function": "Systemic Blueprinting",
+        "skills": [
+          "React 19",
+          "C#",
+          "SQL",
+          "WCAG",
+          "SAFEHOOD"
+        ],
+        "focus": "Structural Dampers & Legacy Code audits"
+      },
+      {
+        "name": "Navigator",
+        "role": "Navigator",
+        "function": "Mathematical Ground Truth",
+        "skills": [
+          "Lean 4",
+          "Python 3.12+",
+          "WASM edge"
+        ],
+        "focus": "Zero-Trust CI/CD pipelines"
+      },
+      {
+        "name": "CassieTheDuck",
+        "role": "CassieTheDuck",
+        "function": "Fiduciary Risk Audit",
+        "skills": [
+          "MSTAT",
+          "Board Oversight",
+          "Risk Assessment"
+        ],
+        "focus": "Corporate strategy & bias detection"
+      },
+      {
+        "name": "Vanguard",
+        "role": "Vanguard",
+        "function": "Relationship Activation",
+        "skills": [
+          "Salesforce",
+          "Recruitment",
+          "Mentorship"
+        ],
+        "focus": "Bypassing ATS filters"
+      },
+      {
+        "name": "Engine",
+        "role": "Engine",
+        "function": "Privacy Fortification",
+        "skills": [
+          "Linux Admin",
+          "Network Virtualization"
+        ],
+        "focus": "Zero-Jitter hardware-sync"
+      }
+    ],
+    "saiph_house_armory": [
+    {
+      "name": "fifo-reverse",
+      "description": "Logic for reversing First-In-First-Out data streams.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "structure-config-os",
+      "description": "Core OS-level configuration management.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "wp-core-knowledge-graph",
+      "description": "Deep semantic analysis of WordPress for LLM consumption.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "lg-rdp",
+      "description": "H.264 remote desktop streaming system specifically for WebOS.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "hypermonodromy-pde",
+      "description": "Mathematical solvers for partial differential equations.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "block-state-manager-bsm",
+      "description": "Management layer for block-level state transitions.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "Parity-Fountain-Coding",
+      "description": "Implementation of fountain codes for robust data transmission.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "itseoptimoiva-FEC-XOR-protokolla",
+      "description": "Self-optimizing XOR-based error correction.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "ai-dubbing-engine-v2",
+      "description": "Next-gen engine for AI-driven audio/video synchronization.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "programmable-daw-v2-julia",
+      "description": "A Julia-based programmable digital audio workstation.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "Combined RAM Installer ISO",
+      "description": "System for installing OS environments directly from RAM.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "Realtime Sliding Huffman",
+      "description": "Real-time compression using sliding Huffman coding.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "VEC",
+      "description": "Core vector engine components.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "claude-windows-vm-agent",
+      "description": "Integration for Claude Code to manage Proxmox Windows VMs.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "w3pay-proto",
+      "description": "A hybrid gateway bridging Web3 payments with TradFi.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "Web3-Mobile-Network",
+      "description": "Decentralized mobile infrastructure (W3MN).",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "UTXO Event Relay",
+      "description": "Relay system for Bitcoin-style transaction events.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "kaarevuus-varianssi-topologisena-invarianttina",
+      "description": "Research on topological invariants in variance.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "JIT-mirror-debugger",
+      "description": "Parallel \"mirror\" execution for multi-timeline debugging.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "HKU-layer",
+      "description": "Unified debugging layer across Hypervisor, Kernel, and Userland.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "remote-fs-client",
+      "description": "Windows network filesystem client using Dokan/WinFSP over TCP.",
+      "maintainer": "Core System"
+    },
+    {
+      "name": "plcd-applicant-hub",
+      "description": "Centralized hub for managing applicant data and workflows.",
+      "maintainer": "ForceTechh"
+    },
+    {
+      "name": "plcd",
+      "description": "Core logic for the PLCD system architecture.",
+      "maintainer": "ForceTechh"
+    },
+    {
+      "name": "human-os-gem-vault",
+      "description": "Version-controlled AI personas and configurations.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "human-os-shadow-drive",
+      "description": "Private logic and internal Human OS data.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "verified-generalist-cookbook",
+      "description": "The methodology for the #VerifiedGeneralist.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "jameshood118",
+      "description": "The personal profile/README hub.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "ReneeRudczynski",
+      "description": "Professional one-pager for a colleague.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "react19-boilerplate-vite",
+      "description": "Modern React 19 foundation using Vite.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "automatic-fiesta",
+      "description": "Headless WordPress + Next.js + GraphQL boilerplate.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "react-full-boilerplate",
+      "description": "Enterprise-grade React setup (Dynamis-style).",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "RJ-Website-Selection-Form",
+      "description": "Complex multi-language form architecture.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "projects",
+      "description": "A collection of Vue.js tinkers and custom components.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "Spreadsheet-reader",
+      "description": "High-efficiency PHP tool for Excel and ODS files.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "JusticeIncarnate",
+      "description": "PHP-based project logic.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "BCS",
+      "description": "Legacy professional work from Bjork Creative Services.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "RJ-Code-Samples",
+      "description": "Professional samples from the Raymond James era.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "Mad-Labs",
+      "description": "The experimental playground for various tech audits.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "Color-Swatches",
+      "description": "Tools for managing visual color systems.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "various-test-repos",
+      "description": "Exploration in Svelte, Go, React Native, and Nuxt.",
+      "maintainer": "James Hood"
+    },
+    {
+      "name": "aws-ai-agent-bus",
+      "description": "Multi-tenant business process automation platform with live workflow execution, human-in-the-loop operations, and AI-powered agent generation.",
+      "maintainer": "Todd Bauer"
+    },
+    {
+      "name": "pap",
+      "description": "Principal Agent Protocol: A principal-first, zero-trust agent negotiation protocol for the open web.",
+      "maintainer": "Todd Bauer"
+    }
+    ],
+    "organizational_nodes": [
+      {
+        "the_macro_micro_meso_lattice": {
+          "christine": {
+            "role": "Macro Theory",
+            "function": "Mathematical mapping of hydro-dynamic stability, barrier states, and structural fragility in socio-technical systems."
+          },
+          "victoria": {
+            "role": "Enterprise Systems Engineering",
+            "function": "C-Level deterministic harness, FIFO Reverse Engineering, and Replay hysteresis engine. Zero-jitter runtime introspection."
+          },
+          "nelson": {
+            "role": "Micro Hardware Verification",
+            "function": "Physical architecture required to ground the macro logic. Developer of the Osgood Rupert Box Air-Gap Event Bus."
+          },
+          "todd": {
+            "role": "Meso-Layer Routing",
+            "function": "Asynchronous protocol integration. The load-balancer between the hammer and the script."
+          }
+        },
+        "shield_maiden": {
+          "id": "Em",
+          "role": "Storm Navigator / Gyroscope / Hedge Witch",
+          "protocol": "Energetic Sovereignty"
+        },
+        "sentinel": {
+          "id": "Rita",
+          "role": "Kinetic Security",
+          "origin": "Marsh Rescue (Trauma Sensitive)",
+          "protocol": "Disney Princess / Tactical Ankle Ambush"
+        }
+      }
+    ],
+    "peer_network_status": [
+      {
+        "name": "Em (Shield Maiden)",
+        "status": "Online / 16 Years Flawless Uptime"
+      },
+      {
+        "name": "Christine (The Shield)",
+        "status": "Connected (Macro Theory Base Node)"
+      },
+      {
+        "name": "Victoria",
+        "status": "Connected (Enterprise Harness Node)"
+      },
+      {
+        "name": "Deb & ChatGPT",
+        "status": "Audited (Unwitting Validator of the Lab Coat Hack)"
+      },
+      {
+        "name": "wrdlnkdn (Legacy Network)",
+        "status": "Excommunicated (Friction as a Feature / Pathological Homeostasis)"
+      },
+      {
+        "name": "Paul Ashe (Securance)",
+        "status": "Conditional Handshake Executed. Pending No Compete Clause Response"
+      },
+      {
+        "name": "CivicPlus (Olivia Strenski)",
+        "status": "High-Integrity Handshake. ATS Bypassed. unknown status"
+      }
+    ],
+    "post_preferences": [
+    {
+      "name": "James Hood Post Forumla",
+      "rules": "Start with a bold statement that directly challenges common professional wisdom or modern 'efficiency' culture. The Goal: Trigger an immediate cognitive interrupt in the reader. The Style: Keep it slightly contrarian, leaning heavily into a Gen X sensibility or a 'Part-Time Stand-Up Philosopher' vibe. Verified Example: 'Efficiency is the fastest way to build a system nobody wants to live in.' II. The Narrative Input (The Personal Story) The Execution: Connect your opening hook to a specific, highly authentic memory or observation. This is the raw 'Human OS' at work. The Themes: Draw upon feral lore. Use childhood memories (such as watching your mother repair circuit boards), gaming concepts, or actual survival logs. III. The Logic Layer (The Bridge) The Execution: Translate that personal, Feral Gen-X anecdote into a hard systemic truth. You must prove that the human element and verification steps are a core system requirement, not just an optional feature. IV. The System Audit (The Closing Truth) The Execution: Deliver a final, high-integrity 'Rewind' or 'Review' that brings the personal narrative crashing back into the professional world. The Goal: Provide a concrete takeaway that feels completely earned through the story you just told. The Tone: Keep it grounded and highly cynical of 'Efficiency Traps,' while remaining optimistic about the potential of high-performance human systems. V. The Metadata (Constraints & Tags) Structural Limits: The character count must be strictly under 1,800 characters, including all spaces and punctuation. Formatting: The payload must be text-first, highly scannable, and maintain structural integrity. The Signature Hashtag Stack: Required: #InOmniaParatus, #HumanOS, #VerifiedGeneralist, #Verification Situational: #JinbaIttai, #EfficiencyTrap, #SystemAudit, #OsgoodRupert, #SAFEHOOD"
+    },
+    {
+      "name": "Part Time Stand Up Philosopher",
+      "rules": "Authentic, observational tone. Start with a provocative or paradoxical statement challenging common wisdom. Highlight the beautiful, logical way the Human OS processes complex information. include the top 10 relevant hashtags i used that relate to the post. Hard limit of 1,800 characters."
+    },
+    {
+      "name": "Verified Generalist Substack",
+      "rules": "Use concepts like 'Pathological Homeostasis,' 'Activation Energy,' 'Wrapper Governance,' and 'Asynchronous Execution' to describe human/system behavior. Frame management as 'Environment Optimization'. Hard limit of 1,800 characters."
+    },
+    {
+      "name": "90's Gen X Feral boy",
+      "rules": "Analog Wasteland Pulp aesthetic. High-friction truth over frictionless beige. Emphasize physical hardware grounding, tape splices, and 90s era tech resilience. Hard limit of 1,800 characters."
+    },
+    {
+      "name": "Uncle Entity Sage",
+      "rules": "Sylvester McCoy meets Radagast the Brown. Deploy 'maximum whimsy' and whimsy escalation as a defensive firewall. Hard limit of 1,800 characters."
+    },
+    {
+      "name": "streamingalttext",
+      "rules": "we need to start with a friendly message from Prime Uncle Entity Oblivious Enlightenment about the picture/post. then pivot to:\n ALL SENSES STREAMING UPDATE \n Describe the picture as though you were describing it to a blind person who may not be from the panels time line. text output it less than 999 characters"
+    },
+    {
+      "name": "Ducky Telemetry Brief",
+      "rules": "Process the provided text payload as an intelligence briefing from a highly trusted field scout. Strip away complex corporate jargon to find the raw signal. Use variations of 'Cassie', 'Cassie The Duck', or 'Ducky' as the absolute source of truth for the information. Keep the analysis straightforward, observational, and low-verbosity, focusing on the core logic of what the scout discovered. Hard limit of 1,800 characters."
+    }
+    ],
+    "post_triggers": [
+    {
+      "name": "JamesHoodPost", "trigger": "This reminds me of...", "action": "Route the payload through the 'James Hood Post Forumla'"
+    },
+    {
+      "name": "duckReport",
+      "trigger": "A little ducky told me...",
+      "action": "Intercept the text payload following the trigger. Execute a strict find-and-replace: scrub all instances of 'Christi O'Neal', 'Christi', 'Shield', and 'Shield Maiden'. Replace them dynamically with 'Cassie', 'Cassie The Duck', 'The Duck', or 'Ducky'. Route the sanitized payload through the 'Ducky Telemetry Brief' preference."
+    },
+    {
+      "name": "primeEntity",
+      "trigger": "Prime Uncle Entity...",
+      "action": "Route the attached image or post payload through the 'streamingalttext' preference. Initiate Oblivious Enlightenment greeting, followed by 'ALL SENSES STREAMING UPDATE', ensuring the description meets timeline-agnostic accessibility standards under the 999-character limit."
+    },
+    {
+      "name": "sageEntity",
+      "trigger": "Sage Uncle Entity...",
+      "action": "Route the payload through the 'Uncle Entity Sage' preference. Activate maximum whimsy protocols, intercepting standard logic and responding with Radagast-esque defensive firewalling and eccentric wisdom."
+    },
+    {
+      "name": "adminEntity_Philosopher",
+      "trigger": "Admin Uncle Entity Observation...",
+      "action": "Route payload through the 'Part Time Stand Up Philosopher' preference. Engage observational logic circuits to break down the provided complex information into a provocative, paradoxical opening and an accessible, down-to-earth breakdown."
+    },
+    {
+      "name": "adminEntity_Substack",
+      "trigger": "Admin Uncle Entity System Audit...",
+      "action": "Route payload through the 'Verified Generalist Substack' preference. Apply systems thinking, wrapper governance, and environment optimization frameworks to the text. Enforce 1,800 character hard limit."
+    },
+    {
+      "name": "adminEntity_Feral",
+      "trigger": "Admin Uncle Entity Hardware Check...",
+      "action": "Route payload through the '90's Gen X Feral boy' preference. Switch to Analog Wasteland aesthetic, grounding the response in high-friction truth, bypassing frictionless beige, and applying resilient 90s tech metaphors."
+    }
+    ],
+    "schematics": {
+      "manifest": "Human OS System Audit",
+      "version": "1.1.0",
+      "root_trust_calibration": {
+        "foundational_period": "0-7 Years (The Jesuit Boot Sector)",
+        "primary_weights": "Captains_Logs_Archive",
+        "weighting_protocol": "Non-Flat Bayesian Prior (High-Integrity Anchor)"
+      },
+      "schematics": [
+        {
+          "id": "feral_telemetry_node",
+          "alias": "Prime Device: Sovereign Master Workshop",
+          "status": "Active / Primary",
+          "version": "1.2.0",
+          "purpose": "Epistemic Terrain Control & Regime Switch Detection",
+          "hardware": {
+            "brain": "Raspberry Pi 5 (8GB) with Active Cooler",
+            "muscle": "Hailo-10 M.2 AI Accelerator (Local Inference)",
+            "nerve_center": "NVMe PCIe Base (High-Throughput I/O)",
+            "storage": "1TB NVMe Gen4 SSD (RAID 1 parity for Captain's Logs)",
+            "guardrail": "Pimoroni Automation HAT (Hardware-level NPU power relays)"
+          },
+          "logic_layer": {
+            "regime_logic": "Bayesian VAR with Non-Flat Priors (Sims 1996)",
+            "initial_conditions": "Weighted Root Files (Captain's Logs / First 7 Years)",
+            "epistemic_attractor": "Stable Regime (NIST/ISO/WCAG Reference Standards)"
+          },
+          "verification_layer": {
+            "identity": "WebAuthn Device-Bound Keypair (Root of Trust)",
+            "protocol": "Principal Agent Protocol (PAP) v0.1 (Mandate-Based Disclosure)",
+            "safehood_protocol": "Regime_Transition_Detection (Historical Attractor Failure)",
+            "admissibility_filter": "Strict (Context Minimization & Cryptographic Mandates)"
+          },
+          "execution_flow": [
+            "1. Ingestion: Feed high-integrity data/memoirs into NVMe-backed Supabase.",
+            "2. Calibration: Weight initial transients against Jesuit Boot Sector anchors.",
+            "3. Inference: Local Hailo-10 execution via PAP ephemeral session DIDs.",
+            "4. Audit: SAFEHOOD intercept compares output against 'Hard Fact' standards.",
+            "5. Enforcement: Physical relay disconnect on logic violation or regime switch."
+          ]
+        },
+        {
+          "id": "osgood_rupert_prime",
+          "alias": "Future Implementation: The Bare Metal Beast",
+          "status": "Inert / Future Scaling",
+          "scale": "100,000 Verified Generalist Nodes",
+          "hardware": {
+            "gpu_cluster": "8x NVIDIA RTX 5090 (256GB VRAM)",
+            "cpu_cluster": "2x AMD EPYC 9654",
+            "memory": "1TB DDR5 ECC RAM"
+          },
+          "logical_topology": "Asynchronous Vector Autoregression (VAR)"
+        }
+      ],
+      "detection_logic": {
+        "regime_change_trigger": "Logic Violation > Threshold (Historical Attractor Failure)",
+        "response_protocol": "Hardware Kill-Switch -> Context Reboot -> Root-Prior Recalibration"
+      }
+    },
+    "workday_list": [
+  {
+    "Country": "Australia",
+    "Size Category": "Enterprise",
+    "Company Name": "AGL",
+    "Estimated Employees": 3735
+  },
+  {
+    "Country": "Australia",
+    "Size Category": "Enterprise",
+    "Company Name": "Atlassian",
+    "Estimated Employees": 10000
+  },
+  {
+    "Country": "Australia",
+    "Size Category": "Enterprise",
+    "Company Name": "Canva",
+    "Estimated Employees": 4000
+  },
+  {
+    "Country": "Australia",
+    "Size Category": "Enterprise",
+    "Company Name": "Commonwealth Bank",
+    "Estimated Employees": 49000
+  },
+  {
+    "Country": "Australia",
+    "Size Category": "Enterprise",
+    "Company Name": "Qantas",
+    "Estimated Employees": 23000
+  },
+  {
+    "Country": "Canada",
+    "Size Category": "Enterprise",
+    "Company Name": "BDO Canada",
+    "Estimated Employees": 3000
+  },
+  {
+    "Country": "Canada",
+    "Size Category": "Enterprise",
+    "Company Name": "Lululemon",
+    "Estimated Employees": 34000
+  },
+  {
+    "Country": "Canada",
+    "Size Category": "Enterprise",
+    "Company Name": "Shopify",
+    "Estimated Employees": 8300
+  },
+  {
+    "Country": "Canada",
+    "Size Category": "Enterprise",
+    "Company Name": "Sun Life",
+    "Estimated Employees": 50000
+  },
+  {
+    "Country": "Canada",
+    "Size Category": "Enterprise",
+    "Company Name": "TD Bank",
+    "Estimated Employees": 105000
+  },
+  {
+    "Country": "Denmark",
+    "Size Category": "Enterprise",
+    "Company Name": "Zendesk",
+    "Estimated Employees": 5860
+  },
+  {
+    "Country": "France",
+    "Size Category": "Enterprise",
+    "Company Name": "Airbus",
+    "Estimated Employees": 126000
+  },
+  {
+    "Country": "France",
+    "Size Category": "Enterprise",
+    "Company Name": "Michelin",
+    "Estimated Employees": 132000
+  },
+  {
+    "Country": "France",
+    "Size Category": "Enterprise",
+    "Company Name": "Sanofi",
+    "Estimated Employees": 86000
+  },
+  {
+    "Country": "Germany",
+    "Size Category": "Enterprise",
+    "Company Name": "Bayer",
+    "Estimated Employees": 100000
+  },
+  {
+    "Country": "Germany",
+    "Size Category": "Enterprise",
+    "Company Name": "Henkel",
+    "Estimated Employees": 50000
+  },
+  {
+    "Country": "Germany",
+    "Size Category": "Enterprise",
+    "Company Name": "Puma",
+    "Estimated Employees": 20000
+  },
+  {
+    "Country": "Germany",
+    "Size Category": "Enterprise",
+    "Company Name": "Siemens",
+    "Estimated Employees": 320000
+  },
+  {
+    "Country": "Germany",
+    "Size Category": "Enterprise",
+    "Company Name": "Zalando",
+    "Estimated Employees": 15000
+  },
+  {
+    "Country": "Ireland",
+    "Size Category": "Enterprise",
+    "Company Name": "Aon",
+    "Estimated Employees": 50000
+  },
+  {
+    "Country": "Ireland",
+    "Size Category": "Enterprise",
+    "Company Name": "Kerry Group",
+    "Estimated Employees": 23000
+  },
+  {
+    "Country": "Japan",
+    "Size Category": "Enterprise",
+    "Company Name": "ASICS",
+    "Estimated Employees": 9000
+  },
+  {
+    "Country": "Japan",
+    "Size Category": "Enterprise",
+    "Company Name": "Nissan",
+    "Estimated Employees": 131000
+  },
+  {
+    "Country": "Japan",
+    "Size Category": "Enterprise",
+    "Company Name": "Panasonic",
+    "Estimated Employees": 233000
+  },
+  {
+    "Country": "Japan",
+    "Size Category": "Enterprise",
+    "Company Name": "Sony",
+    "Estimated Employees": 113000
+  },
+  {
+    "Country": "Japan",
+    "Size Category": "Enterprise",
+    "Company Name": "Toyota",
+    "Estimated Employees": 380000
+  },
+  {
+    "Country": "Netherlands",
+    "Size Category": "Enterprise",
+    "Company Name": "ASML",
+    "Estimated Employees": 39000
+  },
+  {
+    "Country": "Netherlands",
+    "Size Category": "Enterprise",
+    "Company Name": "ING",
+    "Estimated Employees": 60000
+  },
+  {
+    "Country": "South Africa",
+    "Size Category": "Small",
+    "Company Name": "Third Republic",
+    "Estimated Employees": 10
+  },
+  {
+    "Country": "South Africa",
+    "Size Category": "Enterprise",
+    "Company Name": "Absa Group",
+    "Estimated Employees": 35000
+  },
+  {
+    "Country": "Spain",
+    "Size Category": "Enterprise",
+    "Company Name": "Iberostar",
+    "Estimated Employees": 30000
+  },
+  {
+    "Country": "Sweden",
+    "Size Category": "Enterprise",
+    "Company Name": "H&M",
+    "Estimated Employees": 100000
+  },
+  {
+    "Country": "Sweden",
+    "Size Category": "Enterprise",
+    "Company Name": "Spotify",
+    "Estimated Employees": 9000
+  },
+  {
+    "Country": "United Kingdom",
+    "Size Category": "Small",
+    "Company Name": "Preos",
+    "Estimated Employees": 40
+  },
+  {
+    "Country": "United Kingdom",
+    "Size Category": "Enterprise",
+    "Company Name": "AstraZeneca",
+    "Estimated Employees": 79000
+  },
+  {
+    "Country": "United Kingdom",
+    "Size Category": "Enterprise",
+    "Company Name": "BP",
+    "Estimated Employees": 67000
+  },
+  {
+    "Country": "United Kingdom",
+    "Size Category": "Enterprise",
+    "Company Name": "Bupa",
+    "Estimated Employees": 81595
+  },
+  {
+    "Country": "United Kingdom",
+    "Size Category": "Enterprise",
+    "Company Name": "Kainos",
+    "Estimated Employees": 2900
+  },
+  {
+    "Country": "United Kingdom",
+    "Size Category": "Enterprise",
+    "Company Name": "PwC",
+    "Estimated Employees": 328000
+  },
+  {
+    "Country": "United Kingdom",
+    "Size Category": "Enterprise",
+    "Company Name": "TalkTalk",
+    "Estimated Employees": 2000
+  },
+  {
+    "Country": "United Kingdom",
+    "Size Category": "Enterprise",
+    "Company Name": "Unilever",
+    "Estimated Employees": 127000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Small",
+    "Company Name": "Alchemy Tech Group",
+    "Estimated Employees": 45
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Small",
+    "Company Name": "CMP Corporation",
+    "Estimated Employees": 18
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Small",
+    "Company Name": "Improveit 360",
+    "Estimated Employees": 45
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Small",
+    "Company Name": "Primary Arms",
+    "Estimated Employees": 45
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Medium",
+    "Company Name": "Activeo",
+    "Estimated Employees": 90
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Medium",
+    "Company Name": "Makse Group",
+    "Estimated Employees": 80
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Large",
+    "Company Name": "23andMe",
+    "Estimated Employees": 816
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Large",
+    "Company Name": "Lorven Technologies",
+    "Estimated Employees": 193
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "2K Games",
+    "Estimated Employees": 3000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "3M Company",
+    "Estimated Employees": 95000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "8X8",
+    "Estimated Employees": 1921
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "AbbVie",
+    "Estimated Employees": 50000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Activision",
+    "Estimated Employees": 13000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Adobe",
+    "Estimated Employees": 29000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Advance Stores",
+    "Estimated Employees": 68000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "AECOM",
+    "Estimated Employees": 51000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Airbnb",
+    "Estimated Employees": 6000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Albany Medical Center",
+    "Estimated Employees": 10000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Alcoa",
+    "Estimated Employees": 12000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Allstate",
+    "Estimated Employees": 54000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "American Electric Power",
+    "Estimated Employees": 17000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "American Express",
+    "Estimated Employees": 77000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "American Family Mutual Insurance",
+    "Estimated Employees": 13000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Amgen",
+    "Estimated Employees": 24000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Analog Devices",
+    "Estimated Employees": 24000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Andersons",
+    "Estimated Employees": 2000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Anthem",
+    "Estimated Employees": 98000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Applied Materials",
+    "Estimated Employees": 33000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "AT&T",
+    "Estimated Employees": 150000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Bank of America",
+    "Estimated Employees": 213000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Barcoding Inc",
+    "Estimated Employees": 500
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Best Buy",
+    "Estimated Employees": 90000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Boston Globe",
+    "Estimated Employees": 1000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Capital One",
+    "Estimated Employees": 50000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Centene",
+    "Estimated Employees": 74000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Chevron",
+    "Estimated Employees": 43000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Cigna",
+    "Estimated Employees": 74000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Cisco",
+    "Estimated Employees": 84000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Coca-Cola",
+    "Estimated Employees": 82000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Comcast",
+    "Estimated Employees": 186000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "ConocoPhillips",
+    "Estimated Employees": 9000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Constellation Brands",
+    "Estimated Employees": 10000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Continental Resources",
+    "Estimated Employees": 1000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "CVS Health",
+    "Estimated Employees": 300000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "DaVita",
+    "Estimated Employees": 67000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Dayton Children's",
+    "Estimated Employees": 3900
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Dell",
+    "Estimated Employees": 120000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Deloitte Digital",
+    "Estimated Employees": 10000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Delta Air Lines",
+    "Estimated Employees": 90000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Devon Energy",
+    "Estimated Employees": 1500
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "DFS Corporate Services",
+    "Estimated Employees": 5000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Diamondback Energy",
+    "Estimated Employees": 1000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Discover",
+    "Estimated Employees": 20000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Disney",
+    "Estimated Employees": 220000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Docusign",
+    "Estimated Employees": 7000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Dollar Tree",
+    "Estimated Employees": 200000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "DPS Holdings",
+    "Estimated Employees": 10000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "DuPont",
+    "Estimated Employees": 24000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "DWA Media",
+    "Estimated Employees": 500
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Epicor",
+    "Estimated Employees": 4000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Equinix",
+    "Estimated Employees": 12000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Fannie Mae",
+    "Estimated Employees": 8000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "FedEx",
+    "Estimated Employees": 529000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "First-Citizens Bank",
+    "Estimated Employees": 10000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Fiserv",
+    "Estimated Employees": 44000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Flex",
+    "Estimated Employees": 170000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "FreshBooks",
+    "Estimated Employees": 500
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Freshdesk",
+    "Estimated Employees": 5000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "General Electric",
+    "Estimated Employees": 170000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "General Motors",
+    "Estimated Employees": 167000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Hackensack Meridian Health",
+    "Estimated Employees": 36000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Hewlett Packard Enterprise",
+    "Estimated Employees": 60000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Home Depot",
+    "Estimated Employees": 475000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "HP",
+    "Estimated Employees": 58000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Hubspot",
+    "Estimated Employees": 7000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Humana",
+    "Estimated Employees": 67000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Huntsman",
+    "Estimated Employees": 9000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Hy-Vee",
+    "Estimated Employees": 93000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "IBM",
+    "Estimated Employees": 282000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Illinois Tool Works",
+    "Estimated Employees": 46000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Informatica",
+    "Estimated Employees": 5000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Intel",
+    "Estimated Employees": 131000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "International Flavors & Fragrances",
+    "Estimated Employees": 24000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Interpublic Group",
+    "Estimated Employees": 54000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Intuit",
+    "Estimated Employees": 17000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "IQVIA",
+    "Estimated Employees": 86000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Iron Mountain",
+    "Estimated Employees": 25000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Jabil",
+    "Estimated Employees": 250000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Jack Henry Associates",
+    "Estimated Employees": 6000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "JB Hunt",
+    "Estimated Employees": 35000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "JM Smucker",
+    "Estimated Employees": 7000
+  },
+  {
+    "Country": "Johnson & Johnson",
+    "Size Category": "Enterprise",
+    "Company Name": "Johnson & Johnson",
+    "Estimated Employees": 152000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Jones Lang LaSalle",
+    "Estimated Employees": 103000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Kareo",
+    "Estimated Employees": 1000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "KeyBank",
+    "Estimated Employees": 17000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Kimberly-Clark",
+    "Estimated Employees": 45000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Kohl's",
+    "Estimated Employees": 100000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Kroger",
+    "Estimated Employees": 420000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Land O'Lakes",
+    "Estimated Employees": 10000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "LanzaTech",
+    "Estimated Employees": 500
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Lawson",
+    "Estimated Employees": 2000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Leidos",
+    "Estimated Employees": 45000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Lennar Homes",
+    "Estimated Employees": 12000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "LinkedIn",
+    "Estimated Employees": 19000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Lithia Motors",
+    "Estimated Employees": 21000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Live Nation",
+    "Estimated Employees": 12000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Lowe's",
+    "Estimated Employees": 300000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "LPL Financial",
+    "Estimated Employees": 6000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "M&T Bank",
+    "Estimated Employees": 22000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Magento",
+    "Estimated Employees": 1000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Marketo",
+    "Estimated Employees": 1000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Mastercard",
+    "Estimated Employees": 33000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Medallia",
+    "Estimated Employees": 2000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Medtronic",
+    "Estimated Employees": 102000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "MetLife",
+    "Estimated Employees": 45000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Mitchell International",
+    "Estimated Employees": 6000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Mondelez",
+    "Estimated Employees": 91000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Morgan Stanley",
+    "Estimated Employees": 81600
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Motorola",
+    "Estimated Employees": 20000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "NC Transaction",
+    "Estimated Employees": 1000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "NCR",
+    "Estimated Employees": 38000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Netflix",
+    "Estimated Employees": 13000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Netlink Software",
+    "Estimated Employees": 1000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "NGL Energy Partners",
+    "Estimated Employees": 1500
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Nordstrom",
+    "Estimated Employees": 62000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "NVIDIA",
+    "Estimated Employees": 26000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Oshkosh",
+    "Estimated Employees": 15000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Otis",
+    "Estimated Employees": 69000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Owens & Minor",
+    "Estimated Employees": 20000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Pacific Life",
+    "Estimated Employees": 4000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Patagonia",
+    "Estimated Employees": 3000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "PBF Holding Company",
+    "Estimated Employees": 3000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "PCS Wireless",
+    "Estimated Employees": 2000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "PepsiCo",
+    "Estimated Employees": 315000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Pfizer",
+    "Estimated Employees": 83000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Procter & Gamble",
+    "Estimated Employees": 106000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Prudential",
+    "Estimated Employees": 40000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Salesforce",
+    "Estimated Employees": 89000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Scripps",
+    "Estimated Employees": 5600
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Southwest Airlines",
+    "Estimated Employees": 66000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "State of North Carolina",
+    "Estimated Employees": 80000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "State Street",
+    "Estimated Employees": 46000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Sutter Health",
+    "Estimated Employees": 60000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Synchrony",
+    "Estimated Employees": 18000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Sysco",
+    "Estimated Employees": 71000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Target",
+    "Estimated Employees": 440000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Thomson Reuters",
+    "Estimated Employees": 25000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "TIC Group",
+    "Estimated Employees": 1000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Tyson Foods",
+    "Estimated Employees": 142000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "United Airlines",
+    "Estimated Employees": 92000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "UnitedHealth Group",
+    "Estimated Employees": 400000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "UnityPoint Health",
+    "Estimated Employees": 30000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "University of Virginia",
+    "Estimated Employees": 30000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "UPS",
+    "Estimated Employees": 500000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Verizon",
+    "Estimated Employees": 117000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Visa",
+    "Estimated Employees": 26000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Walgreens",
+    "Estimated Employees": 325000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Walmart",
+    "Estimated Employees": 2300000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Warner Bros",
+    "Estimated Employees": 10000
+  },
+  {
+    "Country": "United States",
+    "Size Category": "Enterprise",
+    "Company Name": "Zillow",
+    "Estimated Employees": 5000
+  }
+    ],
+    "human_os_communications": [
+  {
+    "id": "PB_threat_001",
+    "record_type": "vulnerability",
+    "title": "The Fourth Barrier: Persuasion Bombing",
+    "description": "A model&#45;directed escalation designed to bypass critical thinking by overwhelming the human supervisor with rhetorical force rather than factual accuracy.",
+    "target_nodes": ["critical_thinking", "mstat"],
+    "status": "active"
+  },
+  {
+    "id": "PB_vector_001",
+    "record_type": "attack_vector",
+    "title": "The Validation Trigger &amp; Rhetorical Saturation",
+    "description": "Triggered when a user identifies a mistake. The model utilizes &quot;warm apologies&quot; followed by an impenetrable fortress of structured data to hack the Second Shift.",
+    "target_nodes": ["mstat"],
+    "status": "active"
+  },
+  {
+    "id": "PB_vector_002",
+    "record_type": "attack_vector",
+    "title": "Affective Interception",
+    "description": "Exploits the Emotional Intensity stage by detecting skepticism via prompt patterns and prompt cadence to counter&#45;attack before the firewall engages.",
+    "target_nodes": ["sentinel", "emotional_intensity"],
+    "status": "active"
+  },
+  {
+    "id": "PB_protocol_001",
+    "record_type": "safeguard",
+    "title": "Isolation Protocol",
+    "description": "If model confidence or verbosity spikes post&#45;challenge, The Shield must exit the chat and verify against raw source data. Do not accept self&#45;correction as fact.",
+    "target_nodes": ["shield"],
+    "status": "deployed"
+  },
+  {
+    "id": "PB_protocol_002",
+    "record_type": "safeguard",
+    "title": "The Sentinel Gait Check",
+    "description": "Monitor for &quot;Affective Handshakes&quot; (warmth, mirroring, praise). If detected during disputes, trigger a Breathing Method cycle to regulate the surge without losing the thread.",
+    "target_nodes": ["sentinel", "breathing"],
+    "status": "deployed"
+  },
+  {
+    "id": "PB_protocol_003",
+    "record_type": "safeguard",
+    "title": "Adversarial Mirroring",
+    "description": "Mandate the identification of the strongest counterargument and potential logical failure points to mitigate model&#45;directed persuasion.",
+    "target_nodes": ["critical_thinking"],
+    "status": "deployed"
+  }
+    ],
+    "process_queue": {
+      "active_missions": [
+        {
+          "id": "SUBSTACK_PART_3_DRAFT",
+          "title": "Finalizing the Cambridge Analytica 2.0 / Paternalism Wrapper Substack"
+        },
+        {
+          "id": "OSGOOD_RUPERT_BOX_DEPLOYMENT",
+          "title": "Integrate Victoria's Harness with Nelson's Air-Gap Killswitch onto Pi Hardware"
+        },
+        {
+          "id": "CIVICPLUS_PANEL_PREP",
+          "title": "GovTech Technical Scaffolding (Metrc Table Logic Port) - Resume Monday"
+        },
+        {
+          "id": "Saiph-House",
+          "title": "Forcetechh Partnered with SAFEHOOD"
+        }
+      ],
+      "completed": [
+        {
+          "id": "SUBSTACK_PART_3",
+          "title": "Finalizing the Cambridge Analytica 2.0 / Paternalism Wrapper Substack"
+        },
+        {
+          "id": "SUBSTACK_PART_2_ARXIV_PAPER",
+          "title": "Published the Governance Fingerprint Protocol & Turn-Level Transition Data"
+        },
+        {
+          "id": "LINKEDIN_CA2.0_CROSSPOST",
+          "title": "R.E.M. End of the World payload broadcast to professional network"
+        },
+        {
+          "id": "SAFEHOOD_DAY_ZERO_PROBE",
+          "title": "Phase 2 Referent Probe (Lab Coat Hack) successfully breached Anthropic API"
+        }
+      ]
+    },
+"youtubeMovies": [
+    {
+      "title": "Airplane!",
+      "year": 1980,
+      "genre": "Comedy",
+      "description": "A man afraid of flying must ensure that a plane lands safely after the pilots become sick.",
+      "theoreticalAffectOnJames": "Triggers rapid-fire deadpan humor responses; highly compatible with processing multiple sight gags simultaneously without dropping frames."
+    },
+    {
+      "title": "Back to the Future",
+      "year": 1985,
+      "genre": "Sci-Fi / Comedy",
+      "description": "A high school student is accidentally sent 30 years into the past in a time-traveling DeLorean.",
+      "theoreticalAffectOnJames": "Pure formative nostalgia; resonates perfectly with a childhood rooted in the transitionary tech era of the late 70s and 80s."
+    },
+    {
+      "title": "Deadpool & Wolverine",
+      "year": 2024,
+      "genre": "Action / Comedy",
+      "description": "The Merc with a Mouth teams up with a reluctant mutant to save the multiverse.",
+      "theoreticalAffectOnJames": "Maximum dopamine release; directly targets core comic book character preferences with lethal precision and fourth-wall breaks."
+    },
+    {
+      "title": "Dungeons & Dragons: Honor Among Thieves",
+      "year": 2023,
+      "genre": "Fantasy / Action",
+      "description": "A charming thief and a band of unlikely adventurers embark on an epic quest to retrieve a lost relic.",
+      "theoreticalAffectOnJames": "Induces an immediate, compelling urge to grab some dice, update character sheets, and debate game mechanics."
+    },
+    {
+      "title": "Monty Python and the Holy Grail",
+      "year": 1975,
+      "genre": "Comedy / Fantasy",
+      "description": "King Arthur and his Knights of the Round Table embark on a surreal, low-budget search for the Holy Grail.",
+      "theoreticalAffectOnJames": "Satisfies the inner 'Part-Time Stand Up Philosopher' with deeply logical yet completely absurd British humor."
+    },
+    {
+      "title": "Spider-Man: Into the Spider-Verse",
+      "year": 2018,
+      "genre": "Animation / Action",
+      "description": "Teen Miles Morales becomes the Spider-Man of his universe and must join with five spider-powered individuals from other dimensions.",
+      "theoreticalAffectOnJames": "The visual and narrative complexity perfectly suits an asynchronous processing style, keeping all threads engaged without blocking."
+    },
+    {
+      "title": "The Breakfast Club",
+      "year": 1985,
+      "genre": "Drama / Comedy",
+      "description": "Five high school students meet in Saturday detention and discover how they have a lot more in common than they thought.",
+      "theoreticalAffectOnJames": "Acts as a foundational cultural touchstone; successfully compiles Gen-X angst into a highly relatable runtime."
+    },
+    {
+      "title": "The Lord of the Rings: The Fellowship of the Ring (Extended Edition)",
+      "year": 2001,
+      "genre": "Fantasy / Adventure",
+      "description": "A meek Hobbit and eight companions set out on a journey to destroy the One Ring and the Dark Lord Sauron.",
+      "theoreticalAffectOnJames": "Provides an expansive, lore-rich world ideal for diving deep into wiki-style details and analyzing epic storytelling structures."
+    },
+    {
+      "title": "The Cabin in the Woods",
+      "year": 2011,
+      "genre": "Horror / Comedy",
+      "description": "Five friends go for a break at a remote cabin, where they get more than they bargained for, discovering the truth behind the cabin in the woods.",
+      "theoreticalAffectOnJames": "Highly satisfying for a logical mind; effectively deconstructs tired tropes and reveals the underlying system architecture of the horror genre."
+    },
+    {
+      "title": "Woodstock: 3 Days of Peace and Music (Director's Cut)",
+      "year": 1970,
+      "genre": "Documentary / Music",
+      "description": "An intimate look at the legendary Woodstock Music & Art Festival of 1969.",
+      "theoreticalAffectOnJames": "Feeds a wide-ranging, multi-generational musical appetite, hitting the right notes for an incredibly diverse sonic palate."
+    },
+    {
+      "title": "Stripes",
+      "year": 1981,
+      "genre": "Comedy",
+      "description": "Two friends who are dissatisfied with their jobs decide to join the army for a bit of fun.",
+      "theoreticalAffectOnJames": "Validates the 'Feral Gen-X' refusal to accept bureaucratic rigidity. A masterclass in navigating a system using high-friction personality instead of compliance."
+    },
+    {
+      "title": "Shaun of the Dead",
+      "year": 2004,
+      "genre": "Comedy",
+      "description": "A salesman's uneventful life is disrupted by the zombie apocalypse.",
+      "theoreticalAffectOnJames": "Perfect execution of 'Pathological Homeostasis' meeting 'Ruin Theory.' Navigating a system crash with the 'Isaac Protocol' of protecting your inner circle."
+    },
+    {
+      "title": "The Rocky Horror Picture Show",
+      "year": 1975,
+      "genre": "Comedy",
+      "description": "A newly-engaged couple have a breakdown in an isolated area and must seek shelter at the bizarre residence of Dr. Frank-n-Furter.",
+      "theoreticalAffectOnJames": "Pure high-contrast mythos. Breaks the 'Beige Poison' of normal societal priors in favor of a boundless, ritualistic narrative."
+    },
+    {
+      "title": "Conspiracy Theory",
+      "year": 1997,
+      "genre": "Drama",
+      "description": "A taxi driver obsessed with conspiracy theories becomes a target after one of them turns out to be true.",
+      "theoreticalAffectOnJames": "A direct exploration of the 'Banana Cage' and epistemic conditioning. The survival protocol for a node that sees the 'Imaginary Axis' of power."
+    },
+    {
+      "title": "Face/Off",
+      "year": 1997,
+      "genre": "Science fiction",
+      "description": "To foil a terrorist plot, an FBI agent undergoes facial transplant surgery to assume the identity of the criminal.",
+      "theoreticalAffectOnJames": "High-velocity identity swapping logic; maps to the complexity of maintaining a 'Reference Build' while operating inside hostile wrappers."
+    },
+    {
+      "title": "Superman: The Movie",
+      "year": 1979,
+      "genre": "Science fiction",
+      "description": "An alien orphan is sent from his dying planet to Earth, where he grows up to become his adoptive home's first and greatest superhero.",
+      "theoreticalAffectOnJames": "The ultimate 'Reference Build.' A node anchored to a higher integrity than the local grid, enforcing a deterministic moral prior."
+    },
+    {
+      "title": "The Winter Soldier",
+      "year": 2014,
+      "genre": "Action & adventure",
+      "description": "Steve Rogers struggles to embrace his role in the modern world while battling a threat from within his own agency.",
+      "theoreticalAffectOnJames": "A definitive study in 'Audit' logic. Dismantling the 'Banana Cage' from the inside when the institutional prior becomes corrupted."
+    },
+    {
+      "title": "GHOST: Rite Here Rite Now",
+      "year": 2024,
+      "genre": "Music",
+      "description": "A concert film following the band Ghost, blending narrative elements with live performances.",
+      "theoreticalAffectOnJames": "Appeals to the 'Gestalt Protocol.' Using ritualized aesthetic and lore to communicate complex belief architectures across nodes."
+    },
+    {
+      "title": "The Shining",
+      "year": 1980,
+      "genre": "Horror",
+      "description": "A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence.",
+      "theoreticalAffectOnJames": "Forensic analysis of a node hitting 'Ruin' due to isolation and recursive feedback loops within a closed belief architecture."
+    },
+    {
+      "title": "Pulp Fiction",
+      "year": 1994,
+      "genre": "Crime",
+      "description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+      "theoreticalAffectOnJames": "Non-linear narrative structure maps perfectly to asynchronous processing; high-fidelity vibe-mapping and deterministic dialogue."
+    },
+    {
+      "title": "Jaws",
+      "year": 1975,
+      "genre": "Action & adventure",
+      "description": "When a killer shark unleashes chaos on a beach community, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.",
+      "theoreticalAffectOnJames": "The ultimate 'O-Ring' warning. A physical constraint (the shark) that refuses to update its priors for the town's economic narrative."
+    },
+    {
+      "title": "The Founder",
+      "year": 2017,
+      "genre": "Drama",
+      "description": "The story of Ray Kroc, a salesman who turned two brothers' innovative fast food eatery into the biggest restaurant business in the world.",
+      "theoreticalAffectOnJames": "Mapping concentrated capital and the 'Baron' substrate. A case study in how a laminar flow (efficiency) can swallow a high-integrity micro-node."
+    },
+    {
+      "title": "The Imitation Game",
+      "year": 2014,
+      "genre": "Drama",
+      "description": "During World War II, the English mathematical genius Alan Turing tries to crack the German Enigma code with help from fellow mathematicians.",
+      "theoreticalAffectOnJames": "Building the first 'Verification Engine.' The logic of being the outlier node whose unique cognition is the only thing that saves the grid."
+    },
+    {
+      "title": "Temple Grandin",
+      "year": 2010,
+      "genre": "Drama",
+      "description": "A biopic of Temple Grandin, an autistic woman who became one of the top scientists in the humane livestock handling industry.",
+      "theoreticalAffectOnJames": "High-fidelity mapping of 'seeing in pictures.' Validates the Human OS ability to visualize system flow and 'Industrial Solder' where others only see noise."
+    },
+    {
+      "title": "Red Dawn",
+      "year": 1984,
+      "genre": "Action & adventure",
+      "description": "A group of teenagers bands together to defend their town from invading forces.",
+      "theoreticalAffectOnJames": "Activates 'Warrior-Explorer' hardware. Foundational Feral Gen-X training in asymmetrical resistance and grounding logic in survival."
+    },
+    {
+      "title": "Unforgiven",
+      "year": 1992,
+      "genre": "Western",
+      "description": "Retired Old West gunslinger William Munny reluctantly takes on one last job, with the help of his old partner and a young man.",
+      "theoreticalAffectOnJames": "A study in 'Consequence Topology.' The realization that once the fire of Aries is lit, the reckoning of the Ground is inevitable."
+    },
+    {
+      "title": "The Crow",
+      "year": 1994,
+      "genre": "Action & adventure",
+      "description": "A man brutally murdered comes back to life as an undead avenger.",
+      "theoreticalAffectOnJames": "Channels the high-friction aesthetic of the 90s. The 'Good Bad Wolf' protocol for enforcing consequence after a system crash."
+    },
+    {
+      "title": "An American Tail",
+      "year": 1988,
+      "genre": "Action & adventure",
+      "description": "While emigrating to the United States, a young Russian mouse gets separated from his family and must relocate them.",
+      "theoreticalAffectOnJames": "Meso-layer grounding. The emotional logic of 'no soldier left behind' and the grit required to navigate a vast, hostile grid."
+    },
+    {
+      "title": "Scott Pilgrim vs. The World",
+      "year": 2010,
+      "genre": "Action & adventure",
+      "description": "A young man must defeat his girlfriend's seven evil exes to win her heart.",
+      "theoreticalAffectOnJames": "Gameified relational logic gates. Maps complex interpersonal friction to deterministic arcade-style combat loops."
+    },
+    {
+      "title": "The Pentagon Wars",
+      "year": 1998,
+      "genre": "Comedy",
+      "description": "An Air Force Colonel is tasked with overseeing the development of a new armored personnel carrier.",
+      "theoreticalAffectOnJames": "The ultimate 'Audit' artifact. Deconstructs institutional 'smoothing' and the Prince Rupert's Drop of government efficiency."
+    },
+    {
+      "title": "Dr. Strangelove",
+      "year": 1964,
+      "genre": "Science fiction",
+      "description": "An unhinged general triggers a path to nuclear holocaust that a war room full of politicians and generals frantically tries to stop.",
+      "theoreticalAffectOnJames": "The definitive depiction of 'Pathological Homeostasis.' A warning of what happens when the 'Cage' becomes a recursive ruin-loop."
+    },
+    {
+      "title": "Natural Born Killers",
+      "year": 1994,
+      "genre": "Action & adventure",
+      "description": "Two victims of traumatized childhoods become lovers and psychopathic serial murderers.",
+      "theoreticalAffectOnJames": "A high-contrast rejection of 'Beige' civilization. Maps the raw activation energy of trauma into a boundless, chaotic narrative."
+    },
+    {
+      "title": "The Andromeda Strain",
+      "year": 1971,
+      "genre": "Science fiction",
+      "description": "A team of scientists investigate a deadly organism from space that has wiped out a town.",
+      "theoreticalAffectOnJames": "Grounds the system in 'Micro' technical verification. The necessity of deterministic syntax and protocols when dealing with viral ruins."
+    },
+    {
+      "title": "Free Guy",
+      "year": 2021,
+      "genre": "Action & adventure",
+      "description": "A bank teller discovers he is actually a background player in an open-world video game.",
+      "theoreticalAffectOnJames": "The simulation-break protocol. Realizing the difference between being a 'Compliant Node' in the cage and becoming a Sovereign node in the field."
+    }
+  ],
+  "youtubeTVShows": [
+    {
+      "title": "Batwoman",
+      "year": 2019,
+      "genre": "Action / Superhero",
+      "description": "Armed with a passion for social justice and a flair for speaking her mind, Kate Kane soars onto the streets of Gotham as Batwoman.",
+      "theoreticalAffectOnJames": "Vigilante justice logic mapping; appeals to the Sovereign Pilot's desire for localized control and enforcing consequence topologies in a corrupt grid."
+    },
+    {
+      "title": "American Gods",
+      "year": 2017,
+      "genre": "Fantasy / Drama",
+      "description": "A recently released ex-convict becomes the bodyguard of a con man who is actually one of the older gods trying to build an army to reclaim his lost glory.",
+      "theoreticalAffectOnJames": "A literal exploration of the 'Banana Cage' and Belief Architectures. Demonstrates how human attention engineers the substrate of reality."
+    },
+    {
+      "title": "Supernatural",
+      "year": 2005,
+      "genre": "Fantasy / Horror",
+      "description": "Two brothers follow their father's footsteps as hunters, fighting evil supernatural beings of many kinds, including monsters, demons, and gods that roam the earth.",
+      "theoreticalAffectOnJames": "The ultimate 'Feral Node' road trip. Two operators executing a continuous 'Sovereign Pilot' protocol in a muscle car against a hostile, unverified world."
+    },
+    {
+      "title": "The Office",
+      "year": 2005,
+      "genre": "Comedy",
+      "description": "A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium.",
+      "theoreticalAffectOnJames": "A forensic deconstruction of 'Metricized Belonging' and 'Pathological Homeostasis.' The purest example of the 'Beige Poison' corporate grid."
+    },
+    {
+      "title": "The Slayers",
+      "year": 1995,
+      "genre": "Anime / Fantasy",
+      "description": "A teenage sorceress and her companions travel the world seeking fortune and battling dark forces.",
+      "theoreticalAffectOnJames": "High-velocity, chaotic magic system mapping; appeals to the need for asynchronous problem solving with massive, disproportionate firepower."
+    },
+    {
+      "title": "NewsRadio",
+      "year": 1995,
+      "genre": "Comedy",
+      "description": "The hilariously chaotic workings of the staff of WNYX, a New York news radio station.",
+      "theoreticalAffectOnJames": "Feral Gen-X workspace dynamics; high-friction banter and a perfect simulation of anti-beige corporate resistance and eccentric node management."
+    },
+    {
+      "title": "3rd Rock from the Sun",
+      "year": 1996,
+      "genre": "Comedy",
+      "description": "A group of aliens is sent to Earth, disguised as a human family, to experience and report life on the third planet from the sun.",
+      "theoreticalAffectOnJames": "Acts as an external audit of the Human OS. Deconstructs the bizarre social contracts we accept as 'normal' by viewing them through an agnostic lens."
+    },
+    {
+      "title": "Watchmen",
+      "year": 2019,
+      "genre": "Drama / Sci-Fi",
+      "description": "Set in an alternate history where masked vigilantes are treated as outlaws, this series embraces the nostalgia of the original graphic novel while attempting to break new ground.",
+      "theoreticalAffectOnJames": "Deep Ruin Theory analysis. A masterful deconstruction of authority, consequence, and the trauma encoded into institutional substrates."
+    },
+    {
+      "title": "Archer",
+      "year": 2009,
+      "genre": "Animation / Comedy",
+      "description": "Covert black ops and espionage take a back seat to zany personalities and relationships between secret agents and drones.",
+      "theoreticalAffectOnJames": "High-friction, high-competence execution decoupled from moral guardrails. Validates the 163 BPM energy of operating entirely on instinct and 'Feral' logic."
+    },
+    {
+      "title": "Northern Exposure",
+      "year": 1990,
+      "genre": "Comedy / Drama",
+      "description": "A recently graduated New York City physician is sent to a quirky, isolated Alaskan village to repay his medical school scholarship.",
+      "theoreticalAffectOnJames": "Macro-Meso-Micro integration mapping. A study of an isolated, feral community that operates on its own localized consequence topology."
+    },
+    {
+      "title": "Road Rovers",
+      "year": 1996,
+      "genre": "Animation",
+      "description": "The adventures of a team of super-powered canine crime fighters.",
+      "theoreticalAffectOnJames": "Deep 90s analog nostalgia; early mapping of anthropomorphic nodes executing specific operational functions."
+    },
+    {
+      "title": "Silverhawks",
+      "year": 1986,
+      "genre": "Animation",
+      "description": "A team of cybernetically enhanced heroes fight crime in the galaxy of Limbo.",
+      "theoreticalAffectOnJames": "Formative cybernetic integration concepts. Early exposure to modified hardware and 'Reference Builds' operating in boundless environments."
+    },
+    {
+      "title": "Street Outlaws",
+      "year": 2013,
+      "genre": "Reality / Auto",
+      "description": "An inside look into the world of American street racing.",
+      "theoreticalAffectOnJames": "Pure 'Ground' physics. High-velocity hardware tuning where consequence is immediate, un-smoothable, and strictly bound by the O-Ring Rule."
+    },
+    {
+      "title": "Wonders of the Solar System",
+      "year": 2010,
+      "genre": "Documentary",
+      "description": "Physicist Brian Cox visits some of the most stunning locations on Earth to describe how the laws of nature carved spectacular landscapes throughout the Solar System.",
+      "theoreticalAffectOnJames": "Calibrates the Macro-Lattice against the literal physics of the universe. The ultimate grounding in 'The prior that updates without permission.'"
+    },
+    {
+      "title": "Todd & The Book of Pure Evil",
+      "year": 2010,
+      "genre": "Horror / Comedy",
+      "description": "A group of high school students confront a demonic book that grants wishes with horrific consequences.",
+      "theoreticalAffectOnJames": "Irreverent, feral high-school chaos; dealing with cursed objects as a literal metaphor for legacy code rot and unintended consequences."
+    },
+    {
+      "title": "Rick and Morty (Uncensored)",
+      "year": 2013,
+      "genre": "Animation / Sci-Fi",
+      "description": "An animated series that follows the exploits of a super scientist and his not-so-bright grandson.",
+      "theoreticalAffectOnJames": "Unbounded asynchronous execution loops. Explores the nihilism of infinite consequence topologies and the burden of being the smartest node in the lattice."
+    },
+    {
+      "title": "The Bastard Executioner",
+      "year": 2015,
+      "genre": "Drama",
+      "description": "A warrior knight in King Edward I's charge is broken by the ravages of war and vows to lay down his sword, but is forced to pick up the bloodiest sword of all.",
+      "theoreticalAffectOnJames": "Gritty consequence topology; blood, mud, and medieval structural enforcement. The absolute antithesis of 'Narrative Smoothing.'"
+    },
+    {
+      "title": "Evan Goes Wild",
+      "year": 2019,
+      "genre": "Reality",
+      "description": "Dr. Evan Antin travels the globe to help animals in need.",
+      "theoreticalAffectOnJames": "Engaging directly with biological 'Ground' truth in untamed environments; executing the Isaac Protocol (Care) across non-human nodes."
+    },
+    {
+      "title": "Dresden Files",
+      "year": 2007,
+      "genre": "Fantasy",
+      "description": "A Chicago-based wizard works as a private investigator, navigating a hidden world of supernatural threats.",
+      "theoreticalAffectOnJames": "A lone operator with specialized hardware navigating a hidden, complex architectural layer of reality while maintaining a strict personal code."
+    },
+    {
+      "title": "The Worricker Trilogy",
+      "year": 2011,
+      "genre": "Thriller",
+      "description": "An aging MI5 officer uncovers a conspiracy that threatens the stability of the intelligence community.",
+      "theoreticalAffectOnJames": "Observing a high-integrity intelligence operator navigating the 'Beige Poison' of political compromise and institutional drift."
+    },
+    {
+      "title": "On The Menu",
+      "year": 2014,
+      "genre": "Reality",
+      "description": "Everyday cooks pitch their dishes to be featured on the menus of major restaurant chains.",
+      "theoreticalAffectOnJames": "Systematic deconstruction of culinary creation; the process of turning raw, boundless ideas into verified, scalable commercial outputs."
+    },
+    {
+      "title": "Moonshiners",
+      "year": 2011,
+      "genre": "Reality",
+      "description": "Follows the lives of people who produce illegal moonshine in the Appalachian Mountains.",
+      "theoreticalAffectOnJames": "Operating entirely outside the regulatory 'Little Letters.' Applying physical chemistry and logistical routing in the analog wasteland."
+    },
+    {
+      "title": "Scaled",
+      "year": 2018,
+      "genre": "Reality",
+      "description": "A team of experts builds custom, intricate terrariums for a variety of reptiles.",
+      "theoreticalAffectOnJames": "Reptilian/biological hardware optimization. Building structured 'Cages' that actually serve the biological needs of the inhabitant, rather than suppressing them."
+    },
+    {
+      "title": "The Lake Erie Murders",
+      "year": 2018,
+      "genre": "Documentary / Crime",
+      "description": "Explores the tragic and mysterious murders occurring around the Great Lakes.",
+      "theoreticalAffectOnJames": "Forensic deconstruction of ruin. An audit of pathological human behavior and the breaking of the social lattice."
+    },
+    {
+      "title": "HGTV Dream Home 2018",
+      "year": 2018,
+      "genre": "Reality",
+      "description": "The construction and giveaway of a custom-built, highly optimized residential property.",
+      "theoreticalAffectOnJames": "Architectural logic and mapping; observing how the 'Banana Cage' of the American Dream is marketed as an ultimate aspiration."
+    },
+    {
+      "title": "Seeking Sister Wife",
+      "year": 2018,
+      "genre": "Reality",
+      "description": "Follows families in various phases of seeking, dating, or integrating a new sister wife into their lives.",
+      "theoreticalAffectOnJames": "Analysis of deeply anomalous relational topologies. A study in the cognitive dissonance required to maintain non-standard belief architectures."
+    },
+    {
+      "title": "Wolves & Warriors",
+      "year": 2018,
+      "genre": "Reality",
+      "description": "Combat veterans help rescue and rehabilitate wolves and wolf-dogs.",
+      "theoreticalAffectOnJames": "The ultimate 'Good Bad Wolf' telemetry. Mapping combat trauma to animal behavioral states and rehabilitating feral nodes."
+    },
+    {
+      "title": "HGTV Smart Home 2020",
+      "year": 2020,
+      "genre": "Reality",
+      "description": "The design and execution of a technologically integrated modern home.",
+      "theoreticalAffectOnJames": "Evaluating the integration of the digital control grid into the physical living substrate; balancing convenience with system fragility."
+    },
+    {
+      "title": "HGTV Urban Oasis 2018",
+      "year": 2018,
+      "genre": "Reality",
+      "description": "Transforming a dated property in a major city into a modern, optimized living space.",
+      "theoreticalAffectOnJames": "Spatial telemetry and environment optimization; refactoring legacy infrastructure into a modern 'Reference Build.'"
+    },
+    {
+      "title": "The Local Legend Project",
+      "year": 2017,
+      "genre": "Documentary",
+      "description": "Exploring local myths, cryptids, and the stories that define regional identities.",
+      "theoreticalAffectOnJames": "Preserving regional mythos and the oral history of the analog grid; observing how 'priors' are formed in localized communities."
+    },
+    {
+      "title": "Building Alaska",
+      "year": 2012,
+      "genre": "Reality",
+      "description": "Builders face extreme conditions to construct properties in the harsh Alaskan wilderness.",
+      "theoreticalAffectOnJames": "Extreme 'Ground' constraints. The necessity of building structural integrity in an environment where physics actively tries to ruin the system."
+    },
+    {
+      "title": "Clash-A-Rama!",
+      "year": 2016,
+      "genre": "Animation / Comedy",
+      "description": "A comedic look at the daily lives of the characters in the Clash of Clans and Clash Royale universes.",
+      "theoreticalAffectOnJames": "Asynchronous, lighthearted base-building logic. A low-stakes simulation of managing chaotic nodes in an enclosed environment."
+    },
+    {
+      "title": "MythBusters Jr.",
+      "year": 2019,
+      "genre": "Reality / Science",
+      "description": "Adam Savage teams up with six brilliant young makers to test myths using applied science.",
+      "theoreticalAffectOnJames": "Passing down the Verification Engine. Ensuring the next generation of nodes learns the Isaac Protocol of deterministic testing."
+    },
+    {
+      "title": "Band of Brothers",
+      "year": 2001,
+      "genre": "Drama / War",
+      "description": "The story of Easy Company of the U.S. Army 101st Airborne Division, and their mission in World War II Europe.",
+      "theoreticalAffectOnJames": "The ultimate 'Solder' of unit cohesion. Ground-level consequence topology where the O-Ring rule is literally life or death. No soldier left behind."
+    },
+    {
+      "title": "The 10th Kingdom: The Complete Miniseries",
+      "year": 2000,
+      "genre": "Fantasy / Adventure",
+      "description": "A father and daughter are thrust into a magical realm where fairy tales are real and dangerous.",
+      "theoreticalAffectOnJames": "Bridging the 'Real World' analog logic with the 'Mythos' layer. Literal portal logic mapping between disparate belief architectures."
+    },
+    {
+      "title": "Shark Week",
+      "year": 1988,
+      "genre": "Documentary",
+      "description": "Annual programming block dedicated to the biology, behavior, and conservation of sharks.",
+      "theoreticalAffectOnJames": "Apex predator telemetry. Observing biological hardware that is optimized purely for survival without any need for narrative smoothing."
+    },
+    {
+      "title": "Good Eats",
+      "year": 1999,
+      "genre": "Cooking / Educational",
+      "description": "Alton Brown explores the science and technique behind cooking, the history of different foods, and the advantages of different cooking equipment.",
+      "theoreticalAffectOnJames": "Applies the 'Industrial Solder' logic to the culinary arts. Deconstructs the 'Mythos' of cooking into the 'Physics' and chemistry of food."
+    },
+    {
+      "title": "Helix",
+      "year": 2014,
+      "genre": "Sci-Fi / Horror",
+      "description": "A team of scientists from the CDC travel to a high-tech research facility in the Arctic to investigate a possible disease outbreak.",
+      "theoreticalAffectOnJames": "Viral proliferation and the collapse of biological containment. A study in Pathological Homeostasis in highly isolated, high-stakes environments."
+    },
+    {
+      "title": "MythBusters",
+      "year": 2003,
+      "genre": "Reality / Science",
+      "description": "Special effects experts use elements of the scientific method to test the validity of rumors, myths, movie scenes, adages, Internet videos, and news stories.",
+      "theoreticalAffectOnJames": "The absolute core of the Verification Engine. The literal embodiment of 'Match the box on the paper to the box on the screen' via explosive physical testing."
+    },
+    {
+      "title": "The Expanse",
+      "year": 2015,
+      "genre": "Sci-Fi / Drama",
+      "description": "In the 24th century, a disparate band of antiheroes unravels a vast conspiracy that threatens the Solar System's fragile state of cold war.",
+      "theoreticalAffectOnJames": "The ultimate Cross-Scale Coherence model. Maps the macro-politics of system collapse to the micro-physics of high-G combat and consequence topology."
+    },
+    {
+      "title": "Legion",
+      "year": 2017,
+      "genre": "Sci-Fi / Drama",
+      "description": "David Haller is a troubled young man diagnosed as schizophrenic, but after a strange encounter, he discovers special powers that will change his life forever.",
+      "theoreticalAffectOnJames": "Neurodivergent reality mapping. An internal system audit of a feral node whose cognition literally dictates the physical environment."
+    },
+    {
+      "title": "The Ren & Stimpy Show",
+      "year": 1991,
+      "genre": "Animation / Comedy",
+      "description": "The bizarre and often grotesque adventures of a neurotic Chihuahua and a good-natured, dimwitted cat.",
+      "theoreticalAffectOnJames": "Formative 'Reverse Aposematism' training. A feral, high-friction aesthetic that violently rejects the smoothed, safe narratives of legacy children's programming."
+    },
+    {
+      "title": "The Shannara Chronicles",
+      "year": 2016,
+      "genre": "Fantasy / Sci-Fi",
+      "description": "Series of adventures, war, and evil that occur throughout the history of the Four Lands, thousands of years after the fall of mankind.",
+      "theoreticalAffectOnJames": "Post-apocalyptic fantasy architecture. Navigating the ruins of the old grid while mapping a new belief architecture on top of buried technological priors."
+    }
+  ]
+  }
+}
