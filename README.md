@@ -17,7 +17,7 @@ This isn&#39;t just a tech stack; it&#39;s a protocol designed to protect the &q
 * **S - Sovereign** (You are the verified peer node, completely independent of the legacy system&#39;s control.)
 * **A - Architecture** (The rigid scaffolding and Trellis you build to protect the biological hardware.)
 * **F - For**
-* **E - Epistemic** (Rooted in ground-truth, verified knowledge, and receipt-based reality—just like Nelson’s backend.)
+* **E - Epistemic** (Rooted in ground-truth, verified knowledge, and receipt-based reality.)
 * **H - Human** (The biological OS. The feral, lived experience that cannot be replicated by a machine.)
 * **O - Operating** (The active runtime environment; not a passive storage drive, but a living system.)
 * **O - Override** (The terminal command you execute when the default legacy system fails—whether it’s HRS, a vet, or an AI hallucination.)
