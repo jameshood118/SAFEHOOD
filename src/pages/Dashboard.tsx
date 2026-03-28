@@ -5,6 +5,7 @@ import {
   faCat,
   faClockRotateLeft,
   faHouseSignal,
+  faMicrochip, // 🤖 UPLINK ICON
   faTerminal,
   faUserShield,
   faWifi,
@@ -30,6 +31,14 @@ import type { CaptainsLog } from '../types'; // 🛡️ Import from the Armory
 
 // #region [ 🗃️ THE ARCHITECTURE (Module Definitions) ]
 const systemModules = [
+  {
+    id: 'ai-portal', // 🤖 THE NEW UPLINK TILE
+    title: 'SAFEHOOD AI',
+    description: 'Direct neural interface. Query the latent space of your OS.',
+    icon: faMicrochip,
+    path: '/ai-portal',
+    accentColor: '#00E5FF', // System Cyan
+  },
   {
     id: 'work-os',
     title: 'Work OS',
@@ -60,7 +69,7 @@ const systemModules = [
     description: 'Search, filter, and scrub the analog wasteland logs.',
     icon: faClockRotateLeft,
     path: '/temporal-logs',
-    accentColor: '#00E5FF', // System Cyan
+    accentColor: '#E040FB', // Neon Violet
   },
   {
     id: 'admin',

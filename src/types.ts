@@ -28,3 +28,18 @@ export interface ApiResponse<T> {
   data: T | null;
   error: string | null;
 }
+
+// ============================================================================
+// 🤖 AI UPLINK TYPES
+// ============================================================================
+export interface AIRequest {
+  prompt: string;
+  context_partition: 'HUMAN_OS' | 'WORK_OS' | 'SYSTEM';
+}
+
+export interface AIResponse {
+  id: string;
+  output: string;
+  latency_ms: number;
+  tokens_consumed: number;
+}
