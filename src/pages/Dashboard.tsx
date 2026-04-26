@@ -1,3 +1,4 @@
+// src/pages/Dashboard.tsx
 // #region [ 📦 IMPORTS ]
 import {
   faBrain,
@@ -5,7 +6,7 @@ import {
   faCat,
   faClockRotateLeft,
   faHouseSignal,
-  faMicrochip, // 🤖 UPLINK ICON
+  faMicrochip,
   faTerminal,
   faUserShield,
   faWifi,
@@ -26,18 +27,18 @@ import {
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import type { CaptainsLog } from '../types'; // 🛡️ Import from the Armory
+import type { CaptainsLog } from '../types';
 // #endregion
 
 // #region [ 🗃️ THE ARCHITECTURE (Module Definitions) ]
 const systemModules = [
   {
-    id: 'ai-portal', // 🤖 THE NEW UPLINK TILE
+    id: 'ai-portal',
     title: 'SAFEHOOD AI',
     description: 'Direct neural interface. Query the latent space of your OS.',
     icon: faMicrochip,
     path: '/ai-portal',
-    accentColor: '#00E5FF', // System Cyan
+    accentColor: '#00E5FF',
   },
   {
     id: 'work-os',
@@ -45,7 +46,7 @@ const systemModules = [
     description: 'Employees, Clients, Intern Hazards, and Furry Nodes.',
     icon: faBriefcase,
     path: '/personnel',
-    accentColor: '#4CAF50', // Tactical Green
+    accentColor: '#4CAF50',
   },
   {
     id: 'human-os',
@@ -53,7 +54,7 @@ const systemModules = [
     description: 'Captains Logs, Manifests, and Furry Nodes.',
     icon: faBrain,
     path: '/manifests',
-    accentColor: '#9C27B0', // Deep Purple
+    accentColor: '#9C27B0',
   },
   {
     id: 'home-os',
@@ -61,7 +62,7 @@ const systemModules = [
     description: 'Infrastructure, Inventory, and Base Camp Logistics.',
     icon: faHouseSignal,
     path: '/home',
-    accentColor: '#FF9800', // Warning Orange
+    accentColor: '#FF9800',
   },
   {
     id: 'temporal-vault',
@@ -69,7 +70,7 @@ const systemModules = [
     description: 'Search, filter, and scrub the analog wasteland logs.',
     icon: faClockRotateLeft,
     path: '/temporal-logs',
-    accentColor: '#E040FB', // Neon Violet
+    accentColor: '#E040FB',
   },
   {
     id: 'admin',
@@ -77,7 +78,7 @@ const systemModules = [
     description: 'Superadmin permissions, roles, and temporal settings.',
     icon: faUserShield,
     path: '/admin',
-    accentColor: '#F44336', // Critical Red
+    accentColor: '#F44336',
   },
   {
     id: 'furry-nodes',
@@ -85,18 +86,15 @@ const systemModules = [
     description: 'Direct telemetry on Rita and the Tuxedo fleet.',
     icon: faCat,
     path: '/furry-nodes',
-    accentColor: '#FFFFFF', // Tactical White
+    accentColor: '#FFFFFF',
   },
 ];
 // #endregion
 
-// #region [ 🚀 DASHBOARD VIEW ]
 export const Dashboard = () => {
-  // 🛡️ NO MORE ANY: We explicitly declare this as an array of CaptainsLog rows
   const [recentLogs, setRecentLogs] = useState<CaptainsLog[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // 📡 Fetch the latest 3 logs for the HUD
   useEffect(() => {
     const fetchRecentTelemetry = async () => {
       const { data, error } = await supabase
@@ -106,18 +104,15 @@ export const Dashboard = () => {
         .order('created_at', { ascending: false })
         .limit(3);
 
-      if (!error && data) {
-        setRecentLogs(data);
-      }
+      if (!error && data) setRecentLogs(data);
       setIsLoading(false);
     };
-
     fetchRecentTelemetry();
   }, []);
 
   return (
     <Box component="section" sx={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
-      {/* Page Header */}
+      {/* --- HEADER & STATUS --- */}
       <Box
         component="header"
         sx={{
@@ -145,25 +140,15 @@ export const Dashboard = () => {
             S.A.F.E.H.O.O.D. v2.1{'//'}Awaiting Pilot Input
           </Typography>
         </Box>
-
-        {/* Live Status Indicator */}
         <Chip
           icon={<FontAwesomeIcon icon={faWifi} className="fa-fade" />}
           label="UPLINK ESTABLISHED"
-          sx={{
-            bgcolor: 'rgba(0, 255, 65, 0.1)',
-            color: '#00ff41',
-            border: '1px solid #00ff41',
-            fontWeight: 700,
-            fontFamily: 'monospace',
-            borderRadius: 1,
-          }}
+          sx={{ bgcolor: 'rgba(0, 255, 65, 0.1)', color: '#00ff41', border: '1px solid #00ff41' }}
         />
       </Box>
 
-      {/* The Dual-Pane Cockpit Layout */}
       <Grid container spacing={4}>
-        {/* LEFT PANE: The Bento Box Grid (takes 8 columns on desktop) */}
+        {/* --- LEFT PANE: BENTO BOX NAV --- */}
         <Grid size={{ xs: 12, lg: 8 }}>
           <Grid container spacing={3}>
             {systemModules.map((module) => (
@@ -176,7 +161,6 @@ export const Dashboard = () => {
                     flexDirection: 'column',
                     bgcolor: 'rgba(255,255,255,0.02)',
                     transition: 'all 0.2s ease-in-out',
-                    border: '1px solid rgba(255, 255, 255, 0.05)',
                     '&:hover': {
                       transform: 'translateY(-4px)',
                       borderColor: module.accentColor,
@@ -228,7 +212,7 @@ export const Dashboard = () => {
           </Grid>
         </Grid>
 
-        {/* RIGHT PANE: Live Telemetry & System Status (takes 4 columns on desktop) */}
+        {/* --- RIGHT PANE: TELEMETRY HUD --- */}
         <Grid size={{ xs: 12, lg: 4 }}>
           <Card
             elevation={0}
@@ -263,16 +247,12 @@ export const Dashboard = () => {
               ) : (
                 <Stack spacing={3}>
                   {recentLogs.map((log) => {
-                    // 🛡️ Cast the parsed JSON so TS knows what shape to expect
                     const entry = (
                       typeof log.entry_text === 'string'
                         ? JSON.parse(log.entry_text)
                         : log.entry_text
                     ) as Record<string, string>;
-
                     const isSystem = log.entry_type !== 'CAPTAINS_LOG';
-
-                    // 🛡️ Safe Date Parsing: Fallback to current time if DB returns null
                     const logDate = log.created_at ? new Date(log.created_at) : new Date();
 
                     return (
@@ -291,10 +271,7 @@ export const Dashboard = () => {
                           }}
                         >
                           {logDate.toLocaleDateString()}{' '}
-                          {logDate.toLocaleTimeString([], {
-                            hour: '2-digit',
-                            minute: '2-digit',
-                          })}
+                          {logDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </Typography>
                         <Typography
                           variant="body2"
@@ -329,7 +306,6 @@ export const Dashboard = () => {
 
               <Divider sx={{ my: 4, borderColor: '#1b5e20' }} />
 
-              {/* High Priority Node Status */}
               <Typography
                 variant="h6"
                 component="h3"
@@ -363,13 +339,7 @@ export const Dashboard = () => {
                   <Chip
                     size="small"
                     label="NOMINAL"
-                    sx={{
-                      bgcolor: 'rgba(0, 255, 65, 0.1)',
-                      color: '#00ff41',
-                      borderRadius: 1,
-                      fontFamily: 'monospace',
-                      fontSize: '0.65rem',
-                    }}
+                    sx={{ bgcolor: 'rgba(0, 255, 65, 0.1)', color: '#00ff41' }}
                   />
                 </Box>
               </Stack>
@@ -380,4 +350,3 @@ export const Dashboard = () => {
     </Box>
   );
 };
-// #endregion

@@ -232,6 +232,21 @@ const customTheme = createTheme({
         arrow: { color: '#E0F7FA' },
       },
     },
+    // STATUS INDICATORS (Tactical Chips)
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          borderRadius: '4px', // Sharp tactical edges, replacing the default pill shape
+          fontFamily: 'monospace',
+          fontWeight: 700,
+          textTransform: 'uppercase',
+          letterSpacing: '0.5px',
+        },
+        sizeSmall: {
+          fontSize: '0.65rem',
+        },
+      },
+    },
   },
 });
 
