@@ -79,17 +79,6 @@ export const AIPortal = () => {
               label="Target Partition"
               value={partition}
               onChange={(e) => setPartition(e.target.value as 'HUMAN_OS' | 'WORK_OS' | 'SYSTEM')}
-              sx={{
-                '& .MuiOutlinedInput-root': {
-                  color: '#00ff41',
-                  fontFamily: 'monospace',
-                  borderRadius: 0,
-                  bgcolor: 'rgba(0, 255, 65, 0.05)',
-                  '& fieldset': { borderColor: 'rgba(0, 255, 65, 0.3)' },
-                  '&.Mui-focused fieldset': { borderColor: '#00ff41' },
-                },
-                '& .MuiInputLabel-root': { color: '#00ff41' },
-              }}
             >
               <MenuItem value="SYSTEM">SYSTEM (Root Access)</MenuItem>
               <MenuItem value="HUMAN_OS">HUMAN OS (Base Camp)</MenuItem>
@@ -103,16 +92,6 @@ export const AIPortal = () => {
               placeholder="Awaiting pilot input..."
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
-              sx={{
-                '& .MuiOutlinedInput-root': {
-                  color: '#00ff41',
-                  fontFamily: 'monospace',
-                  borderRadius: 0,
-                  bgcolor: 'rgba(0,0,0,0.4)',
-                  '& fieldset': { borderColor: 'rgba(0, 255, 65, 0.3)' },
-                  '&.Mui-focused fieldset': { borderColor: '#00ff41' },
-                },
-              }}
             />
 
             <Button

@@ -131,14 +131,11 @@ const customTheme = createTheme({
       },
     },
 
-    // BUTTONS (The Touch Target & FA Icon Fixes)
+    // BUTTONS
     MuiButtonBase: {
-      defaultProps: {
-        disableRipple: false, // Keep tactile feedback
-      },
+      defaultProps: { disableRipple: false },
       styleOverrides: {
         root: {
-          // WCAG 2.2 / Section 508 Universal Focus State
           '&.Mui-focusVisible': {
             outline: '3px solid #00E5FF',
             outlineOffset: '2px',
@@ -153,15 +150,14 @@ const customTheme = createTheme({
       },
       styleOverrides: {
         root: {
-          minHeight: '44px', // Section 508 / Apple Touch Target Standard
+          minHeight: '44px',
           minWidth: '44px',
           padding: '8px 20px',
           borderRadius: '8px',
-          gap: '10px', // Native spacing for raw <i class="fa..."> icons
+          gap: '10px',
         },
-        // Target MUI's native icon wrappers to handle FA layering
         startIcon: {
-          marginRight: 0, // Reset default margin since we use flex 'gap'
+          marginRight: 0,
           display: 'inline-flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -175,42 +171,54 @@ const customTheme = createTheme({
       },
     },
 
-    // ICON BUTTONS (Strict Touch Targets)
     MuiIconButton: {
       styleOverrides: {
         root: {
           minHeight: '44px',
           minWidth: '44px',
-          borderRadius: '8px', // Square-ish is better for alignment in dashboards
-          '&.Mui-focusVisible': {
-            outline: '3px solid #00E5FF',
-            outlineOffset: '2px',
-          },
+          borderRadius: '8px',
+          '&.Mui-focusVisible': { outline: '3px solid #00E5FF', outlineOffset: '2px' },
         },
       },
     },
 
-    // INPUTS (Forms must be unmistakable)
+    // =========================================================
+    // 🟢 GLOBAL TACTICAL INPUT STYLING
+    // =========================================================
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
           minHeight: '44px',
-          borderRadius: '8px',
+          borderRadius: 0, // Sharp tactical edges
+          fontFamily: 'monospace',
+          color: '#00ff41',
+          backgroundColor: 'rgba(0,0,0,0.4)',
           '& .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'rgba(255, 255, 255, 0.3)', // High contrast resting border
+            borderColor: 'rgba(0, 255, 65, 0.3)', // Resting boundary
           },
           '&:hover .MuiOutlinedInput-notchedOutline': {
-            borderColor: '#FFFFFF',
+            borderColor: 'rgba(0, 255, 65, 0.7)', // Hover boundary
           },
           '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-            borderColor: '#00E5FF',
+            borderColor: '#00ff41', // Locked boundary
             borderWidth: '2px',
           },
         },
       },
     },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: 'rgba(0, 255, 65, 0.7)',
+          fontFamily: 'monospace',
+          '&.Mui-focused': {
+            color: '#00ff41',
+          },
+        },
+      },
+    },
 
-    // TOOLTIPS (Required for FA Icon-only buttons)
+    // TOOLTIPS
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
@@ -221,9 +229,7 @@ const customTheme = createTheme({
           padding: '8px 12px',
           border: '1px solid #000000',
         },
-        arrow: {
-          color: '#E0F7FA',
-        },
+        arrow: { color: '#E0F7FA' },
       },
     },
   },
