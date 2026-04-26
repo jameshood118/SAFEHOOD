@@ -1,5 +1,5 @@
 // src/types.ts
-import type { Database } from './lib/database.types';
+import type { Database } from './types/database.types';
 
 // ============================================================================
 // 📦 SUPABASE DATABASE TYPES (The Core Truth)
@@ -42,4 +42,12 @@ export interface AIResponse {
   output: string;
   latency_ms: number;
   tokens_consumed: number;
+}
+
+export interface CompanyReview {
+  id: string;
+  client_id: string;
+  rating: number;
+  notes: string;
+  created_at: string;
 }

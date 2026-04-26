@@ -48,7 +48,16 @@ interface WorkOSClient {
   status: 'LEAD' | 'ACTIVE' | 'COMPLETED' | 'ARCHIVED';
   threat_level: 'NOMINAL' | 'ELEVATED' | 'EFFICIENCY_TRAP';
   jinba_ittai_alignment: number;
-  intake_data: Record<string, unknown> | null; // 🛡️ NO MORE ANY
+  intake_data: Record<string, unknown> | null;
+}
+
+// 🛡️ NEW SATELLITE TYPE: Performance Reviews
+export interface CompanyReview {
+  id: string;
+  client_id: string;
+  rating: number;
+  notes: string;
+  created_at: string;
 }
 // #endregion
 
@@ -121,6 +130,23 @@ export const Personnel = () => {
     queryFn: fetchClients,
   });
 
+  // 📡 Contextual Fetch: Only fires when a dossier is opened
+  const { data: clientReviews, isLoading: isLoadingReviews } = useQuery({
+    queryKey: ['company-reviews', selectedClient?.id],
+    queryFn: async () => {
+      if (!selectedClient) return [];
+      const { data, error } = await supabase
+        .from('company_reviews')
+        .select('*')
+        .eq('client_id', selectedClient.id)
+        .order('created_at', { ascending: false });
+
+      if (error) throw new Error(error.message);
+      return data as CompanyReview[];
+    },
+    enabled: !!selectedClient, // 🛡️ The Structural Damper
+  });
+
   // #region [ 🚀 THE MUTATIONS ]
   const inductClientMutation = useMutation({
     mutationFn: async () => {
@@ -176,22 +202,6 @@ export const Personnel = () => {
         client.industry?.toLowerCase().includes(searchLower)
       );
     }) || [];
-  // #endregion
-
-  // #region [ 🎨 STYLING VARS FOR FORM ]
-  const inputSx = {
-    '& .MuiOutlinedInput-root': {
-      color: '#00ff41',
-      fontFamily: 'monospace',
-      borderRadius: 0,
-      bgcolor: 'rgba(0,0,0,0.4)',
-      '& fieldset': { borderColor: '#1b5e20' },
-      '&:hover fieldset': { borderColor: '#4CAF50' },
-      '&.Mui-focused fieldset': { borderColor: '#4CAF50' },
-    },
-    '& .MuiInputLabel-root': { color: '#1b5e20', fontFamily: 'monospace' },
-    '& .MuiInputLabel-root.Mui-focused': { color: '#4CAF50' },
-  };
   // #endregion
 
   return (
@@ -252,18 +262,7 @@ export const Personnel = () => {
         variant="outlined"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        sx={{
-          mb: 4,
-          '& .MuiOutlinedInput-root': {
-            color: '#00ff41',
-            fontFamily: 'monospace',
-            borderRadius: 0,
-            bgcolor: 'rgba(0,0,0,0.4)',
-            '& fieldset': { borderColor: '#1b5e20' },
-            '&:hover fieldset': { borderColor: '#4CAF50' },
-            '&.Mui-focused fieldset': { borderColor: '#4CAF50' },
-          },
-        }}
+        sx={{ mb: 4 }}
         slotProps={{
           input: {
             startAdornment: (
@@ -523,14 +522,12 @@ export const Personnel = () => {
             required
             value={companyName}
             onChange={(e) => setCompanyName(e.target.value)}
-            sx={inputSx}
           />
           <TextField
             fullWidth
             label="Industry"
             value={industry}
             onChange={(e) => setIndustry(e.target.value)}
-            sx={inputSx}
           />
 
           <Typography variant="overline" sx={{ color: 'text.secondary', fontWeight: 700, mt: 2 }}>
@@ -542,7 +539,6 @@ export const Personnel = () => {
             required
             value={primaryContact}
             onChange={(e) => setPrimaryContact(e.target.value)}
-            sx={inputSx}
           />
           <TextField
             fullWidth
@@ -550,7 +546,6 @@ export const Personnel = () => {
             type="email"
             value={contactEmail}
             onChange={(e) => setContactEmail(e.target.value)}
-            sx={inputSx}
           />
 
           <Typography variant="overline" sx={{ color: 'text.secondary', fontWeight: 700, mt: 2 }}>
@@ -562,7 +557,6 @@ export const Personnel = () => {
             label="Threat Level"
             value={threatLevel}
             onChange={(e) => setThreatLevel(e.target.value)}
-            sx={inputSx}
           >
             <MenuItem value="NOMINAL">NOMINAL (Green Flag)</MenuItem>
             <MenuItem value="ELEVATED">ELEVATED (Proceed with Caution)</MenuItem>
@@ -575,7 +569,6 @@ export const Personnel = () => {
             inputProps={{ min: 1, max: 10 }}
             value={alignmentScore}
             onChange={(e) => setAlignmentScore(Number(e.target.value))}
-            sx={inputSx}
           />
 
           <Button
@@ -739,6 +732,98 @@ export const Personnel = () => {
                 <Box sx={{ p: 3, border: '1px dashed rgba(255,255,255,0.1)', textAlign: 'center' }}>
                   <Typography variant="body2" sx={{ color: 'text.disabled', fontStyle: 'italic' }}>
                     No intake payload detected for this node.
+                  </Typography>
+                </Box>
+              )}
+
+              {/* ========================================= */}
+              {/* 📝 PERFORMANCE REVIEWS & LOGS               */}
+              {/* ========================================= */}
+              <Divider sx={{ my: 4, borderColor: 'rgba(255,255,255,0.05)' }} />
+
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  mb: 2,
+                }}
+              >
+                <Typography
+                  variant="subtitle2"
+                  sx={{
+                    color: '#00E5FF',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1,
+                    fontFamily: 'monospace',
+                  }}
+                >
+                  <FontAwesomeIcon icon={faFileLines} /> PERFORMANCE LOGS
+                </Typography>
+                <Button
+                  size="small"
+                  variant="outlined"
+                  onClick={() => console.log('Uplink command initialized: Open Add Review Form')}
+                  sx={{
+                    color: '#00E5FF',
+                    borderColor: 'rgba(0, 229, 255, 0.3)',
+                    fontFamily: 'monospace',
+                    fontSize: '0.7rem',
+                  }}
+                >
+                  + ADD LOG
+                </Button>
+              </Box>
+
+              {isLoadingReviews ? (
+                <CircularProgress
+                  size={24}
+                  sx={{ color: '#00E5FF', display: 'block', mx: 'auto' }}
+                />
+              ) : clientReviews && clientReviews.length > 0 ? (
+                <Stack spacing={2}>
+                  {clientReviews.map((review) => (
+                    <Box
+                      key={review.id}
+                      sx={{
+                        bgcolor: 'rgba(255,255,255,0.02)',
+                        p: 2,
+                        borderLeft: '2px solid #00E5FF',
+                      }}
+                    >
+                      <Stack direction="row" justifyContent="space-between" mb={1}>
+                        <Typography
+                          variant="caption"
+                          sx={{ color: 'text.secondary', fontFamily: 'monospace' }}
+                        >
+                          {new Date(review.created_at).toLocaleDateString()}
+                        </Typography>
+                        <Chip
+                          label={`RATING: ${review.rating}/10`}
+                          size="small"
+                          sx={{
+                            bgcolor: 'rgba(0, 229, 255, 0.1)',
+                            color: '#00E5FF',
+                            fontFamily: 'monospace',
+                            fontSize: '0.65rem',
+                            borderRadius: 0,
+                            height: 20,
+                          }}
+                        />
+                      </Stack>
+                      <Typography variant="body2" sx={{ color: 'primary.contrastText' }}>
+                        {review.notes}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Stack>
+              ) : (
+                <Box
+                  sx={{ p: 3, border: '1px dashed rgba(0, 229, 255, 0.2)', textAlign: 'center' }}
+                >
+                  <Typography variant="body2" sx={{ color: 'text.disabled', fontStyle: 'italic' }}>
+                    No historical logs detected for this node.
                   </Typography>
                 </Box>
               )}

@@ -118,6 +118,38 @@ export type Database = {
         }
         Relationships: []
       }
+      company_reviews: {
+        Row: {
+          client_id: string
+          created_at: string | null
+          id: string
+          notes: string
+          rating: number
+        }
+        Insert: {
+          client_id: string
+          created_at?: string | null
+          id?: string
+          notes: string
+          rating: number
+        }
+        Update: {
+          client_id?: string
+          created_at?: string | null
+          id?: string
+          notes?: string
+          rating?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "company_reviews_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "work_os_clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       employees: {
         Row: {
           created_at: string | null
