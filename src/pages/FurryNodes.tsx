@@ -1,3 +1,4 @@
+// src/pages/FurryNodes.tsx
 // #region [ 📦 IMPORTS ]
 import {
   faBriefcase,
@@ -13,11 +14,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  Alert,
   Box,
   Button,
   Chip,
-  CircularProgress,
   Divider,
   Drawer,
   IconButton,
@@ -33,15 +32,9 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useMemo, useState } from 'react';
 import { supabase } from '../lib/supabase';
 
-// AG Grid Imports
+// 🚀 INJECT REUSABLE DATA TABLE
 import type { ColDef, ICellRendererParams } from 'ag-grid-community';
-import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community';
-import 'ag-grid-community/styles/ag-grid.css';
-import 'ag-grid-community/styles/ag-theme-alpine.css';
-import { AgGridReact } from 'ag-grid-react';
-
-// 🚀 AG GRID REQUIREMENT: Register the Community features
-ModuleRegistry.registerModules([AllCommunityModule]);
+import { DataTable } from '../components/DataTable';
 // #endregion
 
 // #region [ 🏷️ TYPES ]
@@ -52,7 +45,7 @@ export interface FurryNode {
   species: string;
   os_partition: 'HUMAN_OS' | 'WORK_OS';
   status: 'NOMINAL' | 'ZOOMIES' | 'HUNGRY' | 'MAINTENANCE_REQUIRED';
-  telemetry_data: Record<string, unknown> | null; // 🛡️ NO MORE ANY
+  telemetry_data: Record<string, unknown> | null;
 }
 // #endregion
 
@@ -161,31 +154,15 @@ export const FurryNodes = () => {
     }) || [];
   // #endregion
 
-  // #region [ 📊 AG GRID SETUP ]
-  const defaultColDef = useMemo<ColDef>(
-    () => ({
-      sortable: true,
-      filter: true,
-      resizable: true,
-      flex: 1,
-    }),
-    [],
-  );
-
+  // #region [ 📊 AG GRID COLUMN DEFINITIONS ]
   const columnDefs = useMemo<ColDef[]>(
     () => [
-      {
-        field: 'name',
-        headerName: 'DESIGNATION',
-        fontWeight: 'bold',
-        flex: 1.5,
-      },
+      { field: 'name', headerName: 'DESIGNATION', fontWeight: 'bold', flex: 1.5 },
       { field: 'species', headerName: 'SPECIES', flex: 1.5 },
       {
         field: 'os_partition',
         headerName: 'OS PARTITION',
         cellRenderer: (params: ICellRendererParams<FurryNode>) => {
-          // 🛡️ STRICT TYPING
           if (!params.value) return null;
           const isWork = params.value === 'WORK_OS';
           return (
@@ -209,7 +186,6 @@ export const FurryNodes = () => {
         field: 'status',
         headerName: 'STATUS',
         cellRenderer: (params: ICellRendererParams<FurryNode>) => {
-          // 🛡️ STRICT TYPING
           if (!params.value) return null;
           const colorData = getStatusColor(params.value);
           return (
@@ -268,14 +244,12 @@ export const FurryNodes = () => {
               gap: 2,
             }}
           >
-            <FontAwesomeIcon icon={faCat} color="#FFF" />
-            Global Furry Nodes
+            <FontAwesomeIcon icon={faCat} color="#FFF" /> Global Furry Nodes
           </Typography>
           <Typography variant="body1" sx={{ color: 'text.secondary', mt: 1 }}>
             Master telemetry database for all biological assets.
           </Typography>
         </Box>
-
         <Button
           variant="contained"
           startIcon={<FontAwesomeIcon icon={faPlus} />}
@@ -323,7 +297,6 @@ export const FurryNodes = () => {
             },
           }}
         />
-
         <ToggleButtonGroup
           value={partitionFilter}
           exclusive
@@ -354,46 +327,17 @@ export const FurryNodes = () => {
         </ToggleButtonGroup>
       </Stack>
 
-      {/* --- THE AG GRID DATATABLE --- */}
-      <Box
-        sx={{ flexGrow: 1, width: '100%', minHeight: '400px', cursor: 'pointer' }}
-        className="ag-theme-alpine-dark"
-      >
-        {isLoading ? (
-          <CircularProgress sx={{ color: '#FFF', display: 'block', mx: 'auto', mt: 8 }} />
-        ) : isError ? (
-          <Alert severity="error" sx={{ borderRadius: 0 }}>
-            Airlock Breach: {(error as Error).message}
-          </Alert>
-        ) : filteredNodes.length === 0 ? (
-          <Box
-            sx={{
-              p: 6,
-              textAlign: 'center',
-              border: '1px dashed rgba(255,255,255,0.2)',
-              bgcolor: 'rgba(0,0,0,0.2)',
-            }}
-          >
-            <FontAwesomeIcon icon={faPaw} size="3x" color="rgba(255,255,255,0.2)" />
-            <Typography
-              variant="h6"
-              sx={{ color: 'text.secondary', mt: 2, fontFamily: 'monospace' }}
-            >
-              NO BIOLOGICAL NODES DETECTED IN THIS PARTITION.
-            </Typography>
-          </Box>
-        ) : (
-          <AgGridReact
-            rowData={filteredNodes}
-            columnDefs={columnDefs}
-            defaultColDef={defaultColDef}
-            animateRows={true}
-            rowHeight={50}
-            headerHeight={40}
-            onRowClicked={(params) => setSelectedNode(params.data)}
-          />
-        )}
-      </Box>
+      {/* 🚀 THE REUSABLE DATATABLE */}
+      <DataTable
+        rowData={filteredNodes}
+        columnDefs={columnDefs}
+        onRowClicked={(node) => setSelectedNode(node)}
+        isLoading={isLoading}
+        isError={isError}
+        errorMessage={error?.message}
+        emptyMessage="NO BIOLOGICAL NODES DETECTED IN THIS PARTITION."
+        emptyIcon={faPaw}
+      />
 
       {/* ========================================================= */}
       {/* 🟢 DRAWER 1: MANUAL INTAKE                                */}
@@ -424,7 +368,6 @@ export const FurryNodes = () => {
             </IconButton>
           </Box>
           <Divider sx={{ borderColor: 'rgba(255,255,255,0.1)' }} />
-
           <TextField
             fullWidth
             label="Designation (Name)"
@@ -458,13 +401,11 @@ export const FurryNodes = () => {
               '& .MuiInputLabel-root.Mui-focused': { color: '#FFF' },
             }}
           />
-
           <TextField
             select
             fullWidth
             label="OS Partition"
             value={partition}
-            // 🛡️ NO MORE ANY: Cast specifically to the allowed literal types
             onChange={(e) => setPartition(e.target.value as 'HUMAN_OS' | 'WORK_OS')}
             sx={{
               '& .MuiOutlinedInput-root': {
@@ -480,7 +421,6 @@ export const FurryNodes = () => {
             <MenuItem value="HUMAN_OS">HUMAN OS (Personal / Base Camp)</MenuItem>
             <MenuItem value="WORK_OS">WORK OS (Professional / Office)</MenuItem>
           </TextField>
-
           <TextField
             select
             fullWidth
@@ -503,7 +443,6 @@ export const FurryNodes = () => {
             <MenuItem value="HUNGRY">LOW FUEL (Hungry)</MenuItem>
             <MenuItem value="MAINTENANCE_REQUIRED">MAINTENANCE (Vet Required)</MenuItem>
           </TextField>
-
           <Button
             fullWidth
             size="large"
@@ -578,7 +517,6 @@ export const FurryNodes = () => {
                   <FontAwesomeIcon icon={faXmark} />
                 </IconButton>
               </Box>
-
               <Stack direction="row" spacing={1} mb={2}>
                 <Chip
                   icon={
@@ -630,7 +568,6 @@ export const FurryNodes = () => {
               >
                 <FontAwesomeIcon icon={faFileLines} /> TELEMETRY PAYLOAD
               </Typography>
-
               {selectedNode.telemetry_data &&
               Object.keys(selectedNode.telemetry_data).length > 0 ? (
                 <Stack spacing={2}>

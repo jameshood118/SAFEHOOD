@@ -84,15 +84,22 @@ const customTheme = createTheme({
           /* Match the Deepest Background (WCAG base) */
           --ag-background-color: #121212 !important;
 
-          /* Match Elevated Surfaces (Cards, Drawers) */
-          --ag-header-background-color: #212121 !important;
+          /* Match Elevated Surfaces for Headers */
+          --ag-header-background-color: #0a0510 !important;
+
+          /* 🟢 TEXT VISIBILITY FIXES 🟢 */
+          --ag-data-color: #FFFFFF !important; /* Forces row text to be bright white */
+          --ag-header-foreground-color: #00ff41 !important; /* Tactical Green for column headers */
+
+          /* Subtle zebra striping for scannability */
+          --ag-odd-row-background-color: rgba(255, 255, 255, 0.02) !important;
 
           /* High contrast boundaries */
           --ag-border-color: rgba(255, 255, 255, 0.12) !important;
           --ag-row-border-color: rgba(255, 255, 255, 0.05) !important;
 
           /* Hover state logic */
-          --ag-row-hover-color: rgba(255, 255, 255, 0.03) !important;
+          --ag-row-hover-color: rgba(255, 255, 255, 0.06) !important;
 
           /* Typography mapping */
           --ag-font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
@@ -102,6 +109,9 @@ const customTheme = createTheme({
           --ag-selected-row-background-color: rgba(0, 229, 255, 0.1) !important;
           --ag-range-selection-border-color: #00E5FF !important;
           --ag-checkbox-checked-color: #00E5FF !important;
+
+          /* Give the cells a little breathing room */
+          --ag-cell-horizontal-padding: 16px !important;
         }
       `,
     },
