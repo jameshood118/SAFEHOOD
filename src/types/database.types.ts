@@ -1,518 +1,510 @@
-export type Json =
-  | string
-  | number
-  | boolean
-  | null
-  | { [key: string]: Json | undefined }
-  | Json[]
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[];
 
 export type Database = {
   graphql_public: {
     Tables: {
-      [_ in never]: never
-    }
+      [_ in never]: never;
+    };
     Views: {
-      [_ in never]: never
-    }
+      [_ in never]: never;
+    };
     Functions: {
       graphql: {
         Args: {
-          extensions?: Json
-          operationName?: string
-          query?: string
-          variables?: Json
-        }
-        Returns: Json
-      }
-    }
+          extensions?: Json;
+          operationName?: string;
+          query?: string;
+          variables?: Json;
+        };
+        Returns: Json;
+      };
+    };
     Enums: {
-      [_ in never]: never
-    }
+      [_ in never]: never;
+    };
     CompositeTypes: {
-      [_ in never]: never
-    }
-  }
+      [_ in never]: never;
+    };
+  };
   public: {
     Tables: {
       base_camp_intel: {
         Row: {
-          content_type: string | null
-          created_at: string
-          id: string
-          is_deleted: boolean | null
-          raw_content: string
-          status: string | null
-        }
+          content_type: string | null;
+          created_at: string;
+          id: string;
+          is_deleted: boolean | null;
+          raw_content: string;
+          status: string | null;
+        };
         Insert: {
-          content_type?: string | null
-          created_at?: string
-          id?: string
-          is_deleted?: boolean | null
-          raw_content: string
-          status?: string | null
-        }
+          content_type?: string | null;
+          created_at?: string;
+          id?: string;
+          is_deleted?: boolean | null;
+          raw_content: string;
+          status?: string | null;
+        };
         Update: {
-          content_type?: string | null
-          created_at?: string
-          id?: string
-          is_deleted?: boolean | null
-          raw_content?: string
-          status?: string | null
-        }
-        Relationships: []
-      }
+          content_type?: string | null;
+          created_at?: string;
+          id?: string;
+          is_deleted?: boolean | null;
+          raw_content?: string;
+          status?: string | null;
+        };
+        Relationships: [];
+      };
       captains_logs: {
         Row: {
-          created_at: string | null
-          entry_text: Json
-          entry_type: string
-          id: string
-          is_deleted: boolean | null
-        }
+          created_at: string | null;
+          entry_text: Json;
+          entry_type: string;
+          id: string;
+          is_deleted: boolean | null;
+        };
         Insert: {
-          created_at?: string | null
-          entry_text: Json
-          entry_type: string
-          id?: string
-          is_deleted?: boolean | null
-        }
+          created_at?: string | null;
+          entry_text: Json;
+          entry_type: string;
+          id?: string;
+          is_deleted?: boolean | null;
+        };
         Update: {
-          created_at?: string | null
-          entry_text?: Json
-          entry_type?: string
-          id?: string
-          is_deleted?: boolean | null
-        }
-        Relationships: []
-      }
+          created_at?: string | null;
+          entry_text?: Json;
+          entry_type?: string;
+          id?: string;
+          is_deleted?: boolean | null;
+        };
+        Relationships: [];
+      };
       clients: {
         Row: {
-          company_name: string
-          created_at: string | null
-          deleted_at: string | null
-          deleted_by: string | null
-          id: string
-          is_deleted: boolean | null
-          status: string | null
-          updated_at: string | null
-        }
+          company_name: string;
+          created_at: string | null;
+          deleted_at: string | null;
+          deleted_by: string | null;
+          id: string;
+          is_deleted: boolean | null;
+          status: string | null;
+          updated_at: string | null;
+        };
         Insert: {
-          company_name: string
-          created_at?: string | null
-          deleted_at?: string | null
-          deleted_by?: string | null
-          id?: string
-          is_deleted?: boolean | null
-          status?: string | null
-          updated_at?: string | null
-        }
+          company_name: string;
+          created_at?: string | null;
+          deleted_at?: string | null;
+          deleted_by?: string | null;
+          id?: string;
+          is_deleted?: boolean | null;
+          status?: string | null;
+          updated_at?: string | null;
+        };
         Update: {
-          company_name?: string
-          created_at?: string | null
-          deleted_at?: string | null
-          deleted_by?: string | null
-          id?: string
-          is_deleted?: boolean | null
-          status?: string | null
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
+          company_name?: string;
+          created_at?: string | null;
+          deleted_at?: string | null;
+          deleted_by?: string | null;
+          id?: string;
+          is_deleted?: boolean | null;
+          status?: string | null;
+          updated_at?: string | null;
+        };
+        Relationships: [];
+      };
       company_reviews: {
         Row: {
-          client_id: string
-          created_at: string | null
-          id: string
-          notes: string
-          rating: number
-        }
+          client_id: string;
+          created_at: string | null;
+          id: string;
+          notes: string;
+          rating: number;
+        };
         Insert: {
-          client_id: string
-          created_at?: string | null
-          id?: string
-          notes: string
-          rating: number
-        }
+          client_id: string;
+          created_at?: string | null;
+          id?: string;
+          notes: string;
+          rating: number;
+        };
         Update: {
-          client_id?: string
-          created_at?: string | null
-          id?: string
-          notes?: string
-          rating?: number
-        }
+          client_id?: string;
+          created_at?: string | null;
+          id?: string;
+          notes?: string;
+          rating?: number;
+        };
         Relationships: [
           {
-            foreignKeyName: "company_reviews_client_id_fkey"
-            columns: ["client_id"]
-            isOneToOne: false
-            referencedRelation: "work_os_clients"
-            referencedColumns: ["id"]
+            foreignKeyName: 'company_reviews_client_id_fkey';
+            columns: ['client_id'];
+            isOneToOne: false;
+            referencedRelation: 'work_os_clients';
+            referencedColumns: ['id'];
           },
-        ]
-      }
+        ];
+      };
       employees: {
         Row: {
-          created_at: string | null
-          deleted_at: string | null
-          deleted_by: string | null
-          department: string | null
-          first_name: string
-          id: string
-          is_deleted: boolean | null
-          last_name: string
-          updated_at: string | null
-        }
+          created_at: string | null;
+          deleted_at: string | null;
+          deleted_by: string | null;
+          department: string | null;
+          first_name: string;
+          id: string;
+          is_deleted: boolean | null;
+          last_name: string;
+          updated_at: string | null;
+        };
         Insert: {
-          created_at?: string | null
-          deleted_at?: string | null
-          deleted_by?: string | null
-          department?: string | null
-          first_name: string
-          id?: string
-          is_deleted?: boolean | null
-          last_name: string
-          updated_at?: string | null
-        }
+          created_at?: string | null;
+          deleted_at?: string | null;
+          deleted_by?: string | null;
+          department?: string | null;
+          first_name: string;
+          id?: string;
+          is_deleted?: boolean | null;
+          last_name: string;
+          updated_at?: string | null;
+        };
         Update: {
-          created_at?: string | null
-          deleted_at?: string | null
-          deleted_by?: string | null
-          department?: string | null
-          first_name?: string
-          id?: string
-          is_deleted?: boolean | null
-          last_name?: string
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
+          created_at?: string | null;
+          deleted_at?: string | null;
+          deleted_by?: string | null;
+          department?: string | null;
+          first_name?: string;
+          id?: string;
+          is_deleted?: boolean | null;
+          last_name?: string;
+          updated_at?: string | null;
+        };
+        Relationships: [];
+      };
       furry_nodes: {
         Row: {
-          created_at: string
-          id: string
-          is_deleted: boolean | null
-          name: string
-          os_partition: string | null
-          species: string | null
-          status: string | null
-          telemetry_data: Json | null
-        }
+          created_at: string;
+          id: string;
+          is_deleted: boolean | null;
+          name: string;
+          os_partition: string | null;
+          species: string | null;
+          status: string | null;
+          telemetry_data: Json | null;
+        };
         Insert: {
-          created_at?: string
-          id?: string
-          is_deleted?: boolean | null
-          name: string
-          os_partition?: string | null
-          species?: string | null
-          status?: string | null
-          telemetry_data?: Json | null
-        }
+          created_at?: string;
+          id?: string;
+          is_deleted?: boolean | null;
+          name: string;
+          os_partition?: string | null;
+          species?: string | null;
+          status?: string | null;
+          telemetry_data?: Json | null;
+        };
         Update: {
-          created_at?: string
-          id?: string
-          is_deleted?: boolean | null
-          name?: string
-          os_partition?: string | null
-          species?: string | null
-          status?: string | null
-          telemetry_data?: Json | null
-        }
-        Relationships: []
-      }
+          created_at?: string;
+          id?: string;
+          is_deleted?: boolean | null;
+          name?: string;
+          os_partition?: string | null;
+          species?: string | null;
+          status?: string | null;
+          telemetry_data?: Json | null;
+        };
+        Relationships: [];
+      };
       interns: {
         Row: {
-          created_at: string | null
-          deleted_at: string | null
-          deleted_by: string | null
-          first_name: string
-          id: string
-          is_deleted: boolean | null
-          last_name: string
-          michael_scott_notes: Json | null
-          updated_at: string | null
-        }
+          created_at: string | null;
+          deleted_at: string | null;
+          deleted_by: string | null;
+          first_name: string;
+          id: string;
+          is_deleted: boolean | null;
+          last_name: string;
+          michael_scott_notes: Json | null;
+          updated_at: string | null;
+        };
         Insert: {
-          created_at?: string | null
-          deleted_at?: string | null
-          deleted_by?: string | null
-          first_name: string
-          id?: string
-          is_deleted?: boolean | null
-          last_name: string
-          michael_scott_notes?: Json | null
-          updated_at?: string | null
-        }
+          created_at?: string | null;
+          deleted_at?: string | null;
+          deleted_by?: string | null;
+          first_name: string;
+          id?: string;
+          is_deleted?: boolean | null;
+          last_name: string;
+          michael_scott_notes?: Json | null;
+          updated_at?: string | null;
+        };
         Update: {
-          created_at?: string | null
-          deleted_at?: string | null
-          deleted_by?: string | null
-          first_name?: string
-          id?: string
-          is_deleted?: boolean | null
-          last_name?: string
-          michael_scott_notes?: Json | null
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
+          created_at?: string | null;
+          deleted_at?: string | null;
+          deleted_by?: string | null;
+          first_name?: string;
+          id?: string;
+          is_deleted?: boolean | null;
+          last_name?: string;
+          michael_scott_notes?: Json | null;
+          updated_at?: string | null;
+        };
+        Relationships: [];
+      };
       manifests: {
         Row: {
-          created_at: string | null
-          deleted_at: string | null
-          deleted_by: string | null
-          id: string
-          is_deleted: boolean | null
-          owner_id: string
-          status: string | null
-          title: string
-          updated_at: string | null
-        }
+          created_at: string | null;
+          deleted_at: string | null;
+          deleted_by: string | null;
+          id: string;
+          is_deleted: boolean | null;
+          owner_id: string;
+          status: string | null;
+          title: string;
+          updated_at: string | null;
+        };
         Insert: {
-          created_at?: string | null
-          deleted_at?: string | null
-          deleted_by?: string | null
-          id?: string
-          is_deleted?: boolean | null
-          owner_id: string
-          status?: string | null
-          title: string
-          updated_at?: string | null
-        }
+          created_at?: string | null;
+          deleted_at?: string | null;
+          deleted_by?: string | null;
+          id?: string;
+          is_deleted?: boolean | null;
+          owner_id: string;
+          status?: string | null;
+          title: string;
+          updated_at?: string | null;
+        };
         Update: {
-          created_at?: string | null
-          deleted_at?: string | null
-          deleted_by?: string | null
-          id?: string
-          is_deleted?: boolean | null
-          owner_id?: string
-          status?: string | null
-          title?: string
-          updated_at?: string | null
-        }
+          created_at?: string | null;
+          deleted_at?: string | null;
+          deleted_by?: string | null;
+          id?: string;
+          is_deleted?: boolean | null;
+          owner_id?: string;
+          status?: string | null;
+          title?: string;
+          updated_at?: string | null;
+        };
         Relationships: [
           {
-            foreignKeyName: "manifests_owner_id_fkey"
-            columns: ["owner_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
+            foreignKeyName: 'manifests_owner_id_fkey';
+            columns: ['owner_id'];
+            isOneToOne: false;
+            referencedRelation: 'profiles';
+            referencedColumns: ['id'];
           },
-        ]
-      }
+        ];
+      };
       profiles: {
         Row: {
-          created_at: string | null
-          display_name: string | null
-          id: string
-          role: Database["public"]["Enums"]["app_role"]
-          updated_at: string | null
-        }
+          created_at: string | null;
+          display_name: string | null;
+          id: string;
+          role: Database['public']['Enums']['app_role'];
+          updated_at: string | null;
+        };
         Insert: {
-          created_at?: string | null
-          display_name?: string | null
-          id: string
-          role?: Database["public"]["Enums"]["app_role"]
-          updated_at?: string | null
-        }
+          created_at?: string | null;
+          display_name?: string | null;
+          id: string;
+          role?: Database['public']['Enums']['app_role'];
+          updated_at?: string | null;
+        };
         Update: {
-          created_at?: string | null
-          display_name?: string | null
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
+          created_at?: string | null;
+          display_name?: string | null;
+          id?: string;
+          role?: Database['public']['Enums']['app_role'];
+          updated_at?: string | null;
+        };
+        Relationships: [];
+      };
       work_os_clients: {
         Row: {
-          company_name: string
-          company_size: string | null
-          contact_email: string | null
-          created_at: string
-          id: string
-          industry: string | null
-          intake_data: Json | null
-          is_deleted: boolean | null
-          jinba_ittai_alignment: number | null
-          primary_contact: string | null
-          status: string | null
-          threat_level: string | null
-        }
+          company_name: string;
+          company_size: string | null;
+          contact_email: string | null;
+          created_at: string;
+          id: string;
+          industry: string | null;
+          intake_data: Json | null;
+          is_deleted: boolean | null;
+          jinba_ittai_alignment: number | null;
+          primary_contact: string | null;
+          status: string | null;
+          threat_level: string | null;
+        };
         Insert: {
-          company_name: string
-          company_size?: string | null
-          contact_email?: string | null
-          created_at?: string
-          id?: string
-          industry?: string | null
-          intake_data?: Json | null
-          is_deleted?: boolean | null
-          jinba_ittai_alignment?: number | null
-          primary_contact?: string | null
-          status?: string | null
-          threat_level?: string | null
-        }
+          company_name: string;
+          company_size?: string | null;
+          contact_email?: string | null;
+          created_at?: string;
+          id?: string;
+          industry?: string | null;
+          intake_data?: Json | null;
+          is_deleted?: boolean | null;
+          jinba_ittai_alignment?: number | null;
+          primary_contact?: string | null;
+          status?: string | null;
+          threat_level?: string | null;
+        };
         Update: {
-          company_name?: string
-          company_size?: string | null
-          contact_email?: string | null
-          created_at?: string
-          id?: string
-          industry?: string | null
-          intake_data?: Json | null
-          is_deleted?: boolean | null
-          jinba_ittai_alignment?: number | null
-          primary_contact?: string | null
-          status?: string | null
-          threat_level?: string | null
-        }
-        Relationships: []
-      }
-    }
+          company_name?: string;
+          company_size?: string | null;
+          contact_email?: string | null;
+          created_at?: string;
+          id?: string;
+          industry?: string | null;
+          intake_data?: Json | null;
+          is_deleted?: boolean | null;
+          jinba_ittai_alignment?: number | null;
+          primary_contact?: string | null;
+          status?: string | null;
+          threat_level?: string | null;
+        };
+        Relationships: [];
+      };
+    };
     Views: {
-      [_ in never]: never
-    }
+      [_ in never]: never;
+    };
     Functions: {
-      get_my_role: { Args: never; Returns: string }
+      get_my_role: { Args: never; Returns: string };
       get_temporal_logs: {
-        Args: never
+        Args: never;
         Returns: {
-          changed_at: string
-          changed_by: string
-          log_id: string
-          old_data: Json
-          operation: string
-          record_id: string
-          target_table: string
-        }[]
-      }
-    }
+          changed_at: string;
+          changed_by: string;
+          log_id: string;
+          old_data: Json;
+          operation: string;
+          record_id: string;
+          target_table: string;
+        }[];
+      };
+    };
     Enums: {
-      app_role: "superadmin" | "admin" | "operator"
-      log_type: "observation" | "incident" | "directive"
-    }
+      app_role: 'superadmin' | 'admin' | 'operator';
+      log_type: 'observation' | 'incident' | 'directive';
+    };
     CompositeTypes: {
-      [_ in never]: never
-    }
-  }
-}
+      [_ in never]: never;
+    };
+  };
+};
 
-type DatabaseWithoutInternals = Omit<Database, "__InternalSupabase">
+type DatabaseWithoutInternals = Omit<Database, '__InternalSupabase'>;
 
-type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, "public">]
+type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, 'public'>];
 
 export type Tables<
   DefaultSchemaTableNameOrOptions extends
-    | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
+    | keyof (DefaultSchema['Tables'] & DefaultSchema['Views'])
     | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof DatabaseWithoutInternals
+    schema: keyof DatabaseWithoutInternals;
   }
-    ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
-        DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
+    ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Tables'] &
+        DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Views'])
     : never = never,
 > = DefaultSchemaTableNameOrOptions extends {
-  schema: keyof DatabaseWithoutInternals
+  schema: keyof DatabaseWithoutInternals;
 }
-  ? (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
-      DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])[TableName] extends {
-      Row: infer R
+  ? (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Tables'] &
+      DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Views'])[TableName] extends {
+      Row: infer R;
     }
     ? R
     : never
-  : DefaultSchemaTableNameOrOptions extends keyof (DefaultSchema["Tables"] &
-        DefaultSchema["Views"])
-    ? (DefaultSchema["Tables"] &
-        DefaultSchema["Views"])[DefaultSchemaTableNameOrOptions] extends {
-        Row: infer R
+  : DefaultSchemaTableNameOrOptions extends keyof (DefaultSchema['Tables'] & DefaultSchema['Views'])
+    ? (DefaultSchema['Tables'] & DefaultSchema['Views'])[DefaultSchemaTableNameOrOptions] extends {
+        Row: infer R;
       }
       ? R
       : never
-    : never
+    : never;
 
 export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
-    | keyof DefaultSchema["Tables"]
+    | keyof DefaultSchema['Tables']
     | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof DatabaseWithoutInternals
+    schema: keyof DatabaseWithoutInternals;
   }
-    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Tables']
     : never = never,
 > = DefaultSchemaTableNameOrOptions extends {
-  schema: keyof DatabaseWithoutInternals
+  schema: keyof DatabaseWithoutInternals;
 }
-  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
-      Insert: infer I
+  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Tables'][TableName] extends {
+      Insert: infer I;
     }
     ? I
     : never
-  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"]
-    ? DefaultSchema["Tables"][DefaultSchemaTableNameOrOptions] extends {
-        Insert: infer I
+  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema['Tables']
+    ? DefaultSchema['Tables'][DefaultSchemaTableNameOrOptions] extends {
+        Insert: infer I;
       }
       ? I
       : never
-    : never
+    : never;
 
 export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
-    | keyof DefaultSchema["Tables"]
+    | keyof DefaultSchema['Tables']
     | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof DatabaseWithoutInternals
+    schema: keyof DatabaseWithoutInternals;
   }
-    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Tables']
     : never = never,
 > = DefaultSchemaTableNameOrOptions extends {
-  schema: keyof DatabaseWithoutInternals
+  schema: keyof DatabaseWithoutInternals;
 }
-  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
-      Update: infer U
+  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Tables'][TableName] extends {
+      Update: infer U;
     }
     ? U
     : never
-  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"]
-    ? DefaultSchema["Tables"][DefaultSchemaTableNameOrOptions] extends {
-        Update: infer U
+  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema['Tables']
+    ? DefaultSchema['Tables'][DefaultSchemaTableNameOrOptions] extends {
+        Update: infer U;
       }
       ? U
       : never
-    : never
+    : never;
 
 export type Enums<
   DefaultSchemaEnumNameOrOptions extends
-    | keyof DefaultSchema["Enums"]
+    | keyof DefaultSchema['Enums']
     | { schema: keyof DatabaseWithoutInternals },
   EnumName extends DefaultSchemaEnumNameOrOptions extends {
-    schema: keyof DatabaseWithoutInternals
+    schema: keyof DatabaseWithoutInternals;
   }
-    ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
+    ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions['schema']]['Enums']
     : never = never,
 > = DefaultSchemaEnumNameOrOptions extends {
-  schema: keyof DatabaseWithoutInternals
+  schema: keyof DatabaseWithoutInternals;
 }
-  ? DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"][EnumName]
-  : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema["Enums"]
-    ? DefaultSchema["Enums"][DefaultSchemaEnumNameOrOptions]
-    : never
+  ? DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions['schema']]['Enums'][EnumName]
+  : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema['Enums']
+    ? DefaultSchema['Enums'][DefaultSchemaEnumNameOrOptions]
+    : never;
 
 export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
-    | keyof DefaultSchema["CompositeTypes"]
+    | keyof DefaultSchema['CompositeTypes']
     | { schema: keyof DatabaseWithoutInternals },
   CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
-    schema: keyof DatabaseWithoutInternals
+    schema: keyof DatabaseWithoutInternals;
   }
-    ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
+    ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions['schema']]['CompositeTypes']
     : never = never,
 > = PublicCompositeTypeNameOrOptions extends {
-  schema: keyof DatabaseWithoutInternals
+  schema: keyof DatabaseWithoutInternals;
 }
-  ? DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
-  : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"]
-    ? DefaultSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
-    : never
+  ? DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions['schema']]['CompositeTypes'][CompositeTypeName]
+  : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema['CompositeTypes']
+    ? DefaultSchema['CompositeTypes'][PublicCompositeTypeNameOrOptions]
+    : never;
 
 export const Constants = {
   graphql_public: {
@@ -520,9 +512,8 @@ export const Constants = {
   },
   public: {
     Enums: {
-      app_role: ["superadmin", "admin", "operator"],
-      log_type: ["observation", "incident", "directive"],
+      app_role: ['superadmin', 'admin', 'operator'],
+      log_type: ['observation', 'incident', 'directive'],
     },
   },
-} as const
-
+} as const;
